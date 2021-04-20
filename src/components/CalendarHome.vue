@@ -1,67 +1,68 @@
 <template>
-  <div class="card-calendar container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6">
-          <h1 class="cal">ปฏิทินนักศึกษา</h1>
-        </div>
+  <div class="container">
+    <div class="row"><div class="index-panel">
+      <div class="index-panel-header clearfloat">
+        <h3>
+          ปฏิทินนักศึกษา
+        </h3>
+        <div class="line"></div>
       </div>
-      <div class="row">
-        <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6">
-          <!-- <h4>Countdown Time</h4> -->
-          <div id="clockdiv">
-            <h2>เหลือเวลา</h2>
-            <div>
-              <span class="days"></span>
-              <div class="smalltext">Days</div>
-            </div>
-            <div>
-              <span class="hours"></span>
-              <div class="smalltext">Hours</div>
-            </div>
-            <div>
-              <span class="minutes"></span>
-              <div class="smalltext">Minutes</div>
-            </div>
-            <div>
-              <span class="seconds"></span>
-              <div class="smalltext">Seconds</div>
-            </div>
-            <h4 class="text-cal">
-              ถึง <span class="text-span">{{ this.event_data }}</span>
-            </h4>
-          </div>
+    </div></div>
+    
+    <div class="col2">
+      <!-- <h4>Countdown Time</h4> -->
+      <div id="clockdiv">
+        <h2>เหลือเวลา</h2>
+        <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>
         </div>
-        <div class="col">
-          <div class="table-responsive">
-            <table
-              id="dtBasicExample"
-              class="table table-dark table-bordered table-sm table-hover"
-              cellspacing="0"
-              width="100%"
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Seconds</div>
+        </div>
+        <h4 class="text-cal">
+          ถึง <span class="text-span">{{ this.event_data }}</span>
+        </h4>
+      </div>
+    </div>
+    <!-- sdfdsf -->
+    <div class="col1">
+      <div class="table-responsive">
+        <table
+          id="dtBasicExample"
+          class="table table-default table-bordered table-sm table-hover"
+          cellspacing="0"
+          width="100%"
+        >
+          <thead class="thead-light"> 
+            <tr>
+              <th class="th-sm1">รายการ</th>
+              <th class="th-sm1">วันที่</th>
+            </tr>
+          </thead>
+          <tbody id="tableList">
+            <tr
+              v-for="date in dates"
+              :key="date.no"
+              :id="'date' + date.no"
+              v-on:click="selectCalendar(date)"
             >
-              <thead>
-                <tr>
-                  <th class="th-sm1">รายการ</th>
-                  <th class="th-sm1">วันที่</th>
-                </tr>
-              </thead>
-              <tbody id="tableList">
-                <tr
-                  v-for="date in dates"
-                  :key="date.no"
-                  :id="'date'+date.no"
-                  v-on:click="selectCalendar(date)"
-                >
-                  <td id="chk">
-                    {{ date.event }}
-                  </td>
-                  <td>{{ date.date_start }} - {{ date.date_end }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+              <td id="chk">
+                {{ date.event }}
+              </td>
+              <td>{{ date.date_start }} - {{ date.date_end }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -120,7 +121,6 @@ export default {
     };
   },
   created() {
-    
     // const day = new Date();
     // for (var i = 0; i < this.dates.length; i++) {
     //   if(Date.parse(day) < Date.parse(new Date(this.dates[i].start_date))){
@@ -184,7 +184,6 @@ export default {
 
     // },
     selectCalendar(event) {
-
       clearInterval(this.timeinterval);
       this.event_data = event.event;
       this.end_dates = event.start_date;
@@ -194,44 +193,35 @@ export default {
   },
   mounted: function() {
     this.timeinterval = setInterval(this.initializeClock, 100);
-     const day = new Date();
+    const day = new Date();
     for (var i = 0; i < this.dates.length; i++) {
-      if(Date.parse(day) < Date.parse(new Date(this.dates[i].start_date))){
+      if (Date.parse(day) < Date.parse(new Date(this.dates[i].start_date))) {
         this.end_dates = this.dates[i].start_date;
         this.event_data = this.dates[i].event;
         break;
-      }
-      else {
-        document.getElementById('date'+this.dates[i].no).style = "pointer-events: none; text-decoration: line-through;"
+      } else {
+        document.getElementById("date" + this.dates[i].no).style =
+          "pointer-events: none; text-decoration: line-through;";
       }
     }
-    
   },
   destroyed() {
-    clearInterval(this.timeinterval)
-  }
-
+    clearInterval(this.timeinterval);
+  },
 };
 </script>
 
 <style scoped>
-h1.cal {
-  color: #26384e;
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  padding: auto 0px;
-}
 h2 {
-  color: #fff;
+  color: #3b3b3b;
   font-weight: 200;
 }
 .text-cal {
-  color: #000000;
+  color: #3b3b3b;
   font-weight: bold;
 }
 .text-span {
-  color: #fff;
+  color: #da694b;
   font-size: 28px;
   font-weight: initial;
 }
@@ -264,15 +254,28 @@ h2 {
   color: #444;
 }
 
-.card-calendar {
-  margin: 30px auto;
-  background: #f37f5f;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px #f37f5f, 3px 5px 20px #e28d76;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 0px auto;
+.index-panel-header > h3 {
+  margin-top: 35px;
+  float: left;
+  margin-right: 36px;
+  font-size: 20px;
+  color: #3b3b3b;
+  font-weight: normal;
+}
+
+.index-panel-header .line {
+  float: left;
+  margin-top: 45px;
+  width: 200px;
+  border-top: 2px solid #da694b;
+}
+
+.col2 {
+  margin-right: 42px;
+  margin-left: 26px;
+}
+
+.row {
+  margin-top: 15px;
 }
 </style>
