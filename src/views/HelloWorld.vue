@@ -9,7 +9,6 @@
 import FullCalendar from "@fullcalendar/vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import listPlugin from "@fullcalendar/list";
 export default {
   name: "calendar-event",
   components: {
@@ -27,8 +26,8 @@ export default {
   data() {
     return {
       calendarOptions: {
-        plugins: [dayGridPlugin, interactionPlugin, listPlugin],
-        initialView: "listWeek",
+        plugins: [dayGridPlugin, interactionPlugin],
+        initialView: "dayGridMonth",
         dateClick: this.handleDateClick,
         events: [
           {
