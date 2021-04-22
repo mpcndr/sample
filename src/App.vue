@@ -28,7 +28,7 @@
               >วิชาเลือก</router-link
             >
             <router-link
-              to="/Hello"
+              to="/subject_selected"
               id="text-underline"
               class="nav-link"
               >หลักสูตร</router-link

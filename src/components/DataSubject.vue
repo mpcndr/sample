@@ -8,6 +8,8 @@
 </template>
 
 <script>
+// import Axios from "axios";
+//import queryString from "query-string";
 import go from "gojs";
 import TutorAnimation2 from "../components/TutorAnimation2.vue";
 export default {
@@ -17,334 +19,8 @@ export default {
   },
   data: function() {
     return {
-      nodeDataArray: [
-        {
-          key: 11,
-          text: "ปีการศึกษาปีที่ 1/1",
-          isGroup: true,
-        },
-        {
-          key: 12,
-          text: "ปีการศึกษาปีที่ 1/2",
-          isGroup: true,
-        },
-        {
-          key: 21,
-          text: "ปีการศึกษาปีที่ 2/1",
-          isGroup: true,
-        },
-        {
-          key: 22,
-          text: "ปีการศึกษาปีที่ 2/2",
-          isGroup: true,
-        },
-        {
-          key: 31,
-          text: "ปีการศึกษาปีที่ 3/1",
-          isGroup: true,
-        },
-        {
-          key: 32,
-          text: "ปีการศึกษาปีที่ 3/2",
-          isGroup: true,
-        },
-        {
-          key: 41,
-          text: "ปีการศึกษาปีที่ 4/1",
-          isGroup: true,
-        },
-        {
-          key: 42,
-          text: "ปีการศึกษาปีที่ 4/2",
-          isGroup: true,
-        },
-        /*------1 term 1 ------*/
-        {
-          key: "511100",
-          name: "PRECALCULUS",
-          group: 11,
-          grade: 1,
-        },
-        {
-          key: "511108",
-          name: "CALCULUS FOR COMPUTATIONAL SCIENTISTS I",
-          group: 11,
-          grade: -1,
-        },
-        {
-          key: "081102",
-          name: "ENGLISH FOR EVERYDAY USE",
-          group: 11,
-          grade: 1,
-        },
-        {
-          key: "514107",
-          name: "FUNDAMENTAL PHYSICS",
-          group: 11,
-          grade: 1,
-        },
-        {
-          key: "517121",
-          name: "COMPUTER PROGRAMMING SKILL I",
-          group: 11,
-          grade: -1,
-        },
-        {
-          key: "520101",
-          name: "FOUNDATION OF COMPUTER AND INFORMATICS",
-          group: 11,
-          grade: 1,
-        },
-        /*------1 term 2 ------*/
-        {
-          key: "081103",
-          name: "ENGLISH SKILLS DEVELOPMENT",
-          group: 12,
-          grade: 1,
-        },
-        {
-          key: "511109",
-          name: "CALCULUS FOR COMPUTATIONAL SCIENTISTS II",
-          group: 12,
-          grade: 0,
-        },
-        {
-          key: "515201",
-          name: "ELEMENTARY STATISTICS",
-          group: 12,
-          grade: 1,
-        },
-        {
-          key: "517122",
-          name: "COMPUTER PROGRAMMING SKILL II",
-          group: 12,
-          grade: 0,
-        },
-        {
-          key: "01",
-          name: "วิชาบังคับเลือกในหมวดศึกษาทั่วไป",
-          group: 12,
-          grade: 1,
-        },
-        /*------2 term 1 ------*/
-        {
-          key: "510201",
-          name: "SCIENTIFIC ENGLISH",
-          group: 21,
-          grade: 0,
-        },
-        {
-          key: "515232",
-          name: "PROBABILITY FOR COMPUTER SCIENTIST",
-          group: 21,
-          grade: 0,
-        },
-        {
-          key: "517211",
-          name: "DATA STRUCTURES",
-          group: 21,
-          grade: 0,
-        },
-        {
-          key: "517212",
-          name: " DIGITAL LOGIC DESIGN",
-          group: 21,
-          grade: 0,
-        },
-        {
-          key: "517213",
-          name: "DISCRETE COMPUTATIONAL STRUCTURES",
-          group: 21,
-          grade: 0,
-        },
-        {
-          key: "520215",
-          name: "PROGRAMMING STATISTICAL LEARNING FOR BIG DATA",
-          group: 21,
-          grade: 0,
-        },
-        /*------2 term 2 ------*/
-        {
-          key: "510202",
-          name: "COMMUNICATIVE ENGLISH",
-          group: 22,
-          grade: 0,
-        },
-        {
-          key: "511242",
-          name: "LINEAR ALGEBRA WITH APPLICATIONS",
-          group: 22,
-          grade: 0,
-        },
-        {
-          key: "517221",
-          name: "OBJECT-ORIENTED SOFTWARE DEVELOPMENT",
-          group: 22,
-          grade: 0,
-        },
-        {
-          key: "517222",
-          name: "COMPUTER ORGANIZATION AND ARCHITECTURE",
-          group: 22,
-          grade: 0,
-        },
-        {
-          key: "520221",
-          name: "DATABASE SYSTEMS",
-          group: 22,
-          grade: 0,
-        },
-        {
-          key: "517241",
-          name: "DATA COMMUNICATIONS AND COMPUTER NETWORKS",
-          group: 22,
-          grade: 0,
-        },
-        /*------3 term 1 ------*/
-        {
-          key: "081101",
-          name: "THAI FOR COMMUNICATION",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "517311",
-          name: "ALGORITHM ANALYSIS AND DESIGN",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "517312",
-          name: "OPERATING SYSTEMS",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "517321",
-          name: "PRINCIPLES OF PROGRAMMING LANGUAGES",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "520212",
-          name: "LAWS AND ETHICS IN INFORMATION TECHNOLOGY",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "520361",
-          name: "SYSTEM ANALYSIS AND DESIGN",
-          group: 31,
-          grade: 0,
-        },
-        {
-          key: "02",
-          name: "วิชาเลือกในหมวดวิชาเฉพาะ",
-          group: 31,
-          grade: 0,
-        },
-        /*------3 term 2 ------*/
-        {
-          key: "517313",
-          name: "THEORY OF COMPUTATION",
-          group: 32,
-          grade: 0,
-        },
-        {
-          key: "517391",
-          name: "RESEARCH METHODS",
-          group: 32,
-          grade: 0,
-        },
-        {
-          key: "520351",
-          name: "HUMAN COMPUTER INTERACTION AND INTERFACE DESIGN",
-          group: 32,
-          grade: 0,
-        },
-        {
-          key: "520362",
-          name: "SOFTWARE ENGINEERING",
-          group: 32,
-          grade: 0,
-        },
-        {
-          key: "02",
-          name: "วิชาเลือกในหมวดวิชาเฉพาะ",
-          group: 32,
-          grade: 0,
-        },
-        {
-          key: "03",
-          name: "วิชาเลือกในรายวิชาศึกษาทั่วไปที่กําหนดโดยคณะวิทยาศาสตร์",
-          group: 32,
-          grade: 0,
-        },
-        /*------4 term 1 ------*/
-        {
-          key: "517493",
-          name: " RESEARCH PROJECT I",
-          group: 41,
-          grade: 0,
-        },
-        {
-          key: "02",
-          name: "วิชาเลือกในหมวดวิชาเฉพาะ",
-          group: 41,
-          grade: 0,
-        },
-        {
-          key: "01",
-          name: "วิชาบังคับเลือกในหมวดวิชาศึกษาทั่วไป",
-          group: 41,
-          grade: 0,
-        },
-        {
-          key: "04",
-          name: "วิชาเลือกในหมวดวิชาเลือกเสรี",
-          group: 41,
-          grade: 0,
-        },
-        /*------4 term 2 ------*/
-        {
-          key: "517494",
-          name: "Project II",
-          group: 42,
-          grade: 0,
-        },
-        {
-          key: "04",
-          name: "วิชาเลือกในหมวดวิชาเลือกเสรี",
-          group: 42,
-          grade: 0,
-        },
-      ],
-      linkDataArray: [
-        { from: "511100", to: "511108" },
-        { from: "517121", to: "517122" },
-        { from: "517121", to: "517222" },
-        { from: "520101", to: "517212" },
-        { from: "081102", to: "081103" },
-        { from: "511108", to: "511109" },
-        { from: "511108", to: "511242" },
-        { from: "511109", to: "520213" },
-        { from: "511109", to: "515232" },
-        { from: "517122", to: "517211" },
-        { from: "517122", to: "520215" },
-        { from: "517122", to: "517241" },
-        { from: "081103", to: "510201" },
-        { from: "517213", to: "517311" },
-        { from: "517213", to: "517313" },
-        { from: "517211", to: "517221" },
-        { from: "517211", to: "520221" },
-        { from: "517211", to: "517311" },
-        { from: "517212", to: "517222" },
-        { from: "510201", to: "510202" },
-        { from: "517221", to: "517321" },
-        { from: "520221", to: "520361" },
-        { from: "517222", to: "517312" },
-        { from: "520361", to: "520362" },
-      ],
+      nodeDataArray: [],
+      linkDataArray: [],
     };
   },
   methods: {
@@ -393,27 +69,11 @@ export default {
         ChangedSelection: showLocalOnLocalClick,
       });
 
-      // var highlighter = $(
-      //   go.Part,
-      //   "Auto",
-      //   {
-      //     layerName: "Background",
-      //     selectable: false,
-      //     //isInDocumentBounds: false,
-      //     locationSpot: go.Spot.Center,
-      //   },
-      //   $(go.Shape, "Ellipse", {
-      //     fill: "white",
-      //     stroke: "lightgrey",
-      //     strokeWidth: 2,
-      //   })
-      // );
-
       myDiagram.model = new go.GraphLinksModel(
         this.nodeDataArray,
         this.linkDataArray
       );
-
+      console.log("sssssssssssssssssss" + this.nodeDataArray);
       myDiagram.undoManager.isEnabled = true;
 
       myDiagram.isReadOnly = true;
@@ -464,7 +124,7 @@ export default {
         $(
           go.Shape,
           "RoundedRectangle",
-          { strokeWidth: 0, },
+          { strokeWidth: 0 },
           new go.Binding("fill", "color")
         ),
         $(
@@ -718,14 +378,50 @@ export default {
       // }
     },
   },
-  mounted: function() {
-    this.getUnits();
+
+  async created() {
+    await fetch(this.$store.getters.getApi + "api/getcoursestudent/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ token: this.$store.getters.getToken }),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        this.nodeDataArray = json.nodeDataArray;
+        console.log(this.nodeDataArray);
+      });
+    // Axios.post(this.$store.getters.getApi + "api/getcoursestudent/", {
+    //   token: this.$store.getters.getToken,
+    // }).then((res1) => {
+    //   this.nodeDataArray = res1.data.nodeDataArray;
+    //   console.log("------------>" + this.nodeDataArray);
+    // });
+    await fetch(this.$store.getters.getApi + "api/getconditionsubject/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ token: this.$store.getters.getToken }),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        this.linkDataArray = json.linkDataArray;
+        console.log(this.linkDataArray);
+      });this.getUnits();
+    // Axios.post(this.$store.getters.getApi + "api/getconditionsubject/", {
+    //   token: this.$store.getters.getToken,
+    // }).then((res1) => {
+    //   this.linkDataArray = res1.data.linkDataArray;
+    // });
   },
 };
 </script>
 
 <style scoped>
-
 /* body {
   background: darkgrey;
 }
