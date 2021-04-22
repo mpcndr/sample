@@ -29,7 +29,7 @@ export default {
 
       var myDiagram = $(go.Diagram, "myDiagramDiv", {
         initialAutoScale: go.Diagram.UniformToFill,
-        //maxScale: 0.5,
+        // maxScale: 0.5,
         initialContentAlignment: go.Spot.Center,
         isReadOnly: false,
         "animationManager.isEnabled": false,
@@ -81,22 +81,18 @@ export default {
       myDiagram.groupTemplate = $(
         go.Group,
         "Vertical",
+        {
+          avoidable: false,
+        },
         $(go.GridLayout, {
           wrappingColumn: 20,
           alignment: go.GridLayout.Position,
           cellSize: new go.Size(50, 10),
         }),
-
-        // $(go.Shape, "RoundedRectangle", {
-        //   parameter1: 10,
-        //   fill: "#BFD5BF",
-        //   stroke: "#526552",
-        // }),
         $(
           go.Panel,
           "Horizontal",
           { margin: 2 },
-          // $(go.RowColumnDefinition, { row: 0, background: "#none" }),
           $(
             go.TextBlock,
             {
@@ -120,7 +116,7 @@ export default {
         {
           fromSpot: go.Spot.MiddleRight,
           toSpot: go.Spot.MiddleLeft,
-        } /*new go.Binding("location", "loc", go.Point.parse),*/,
+        },
         $(
           go.Shape,
           "RoundedRectangle",
@@ -130,9 +126,7 @@ export default {
         $(
           go.TextBlock,
           { margin: 5 },
-          // new go.Binding("stroke", "color", function(c) {
-          //   return go.Brush.isDark(c) ? "white" : "black";
-          // }),
+
           new go.Binding("text", "key")
         )
       );
@@ -163,12 +157,7 @@ export default {
             node.findNodesConnected().each(function(n) {
               n.isHighlighted = true;
             });
-            /*node.findNodesOutOf().each(function(n) {
-        n.isHighlighted = true;
-      });
-      node.findLinksOutOf().each(function(l) {
-        l.isHighlighted = true;
-      });*/
+
             diagram.commitTransaction("highlight");
           },
         },
@@ -235,6 +224,7 @@ export default {
           routing: go.Link.AvoidsNodes /*Normal*/,
           selectable: true,
           corner: 8,
+
           //relinkableFrom: true,
           //relinkableTo: true,
           curve: go.Link.JumpGap,
@@ -266,22 +256,6 @@ export default {
       myDiagram.linkTemplate = myLinkTemplate;
       myAsignatura.linkTemplate = myLinkTemplate;
 
-      // highlighter = $(
-      //   go.Part,
-      //   "Auto",
-      //   {
-      //     layerName: "Background",
-      //     selectable: false,
-      //     //isInDocumentBounds: false,
-      //     locationSpot: go.Spot.Center,
-      //   },
-      //   $(go.Shape, "Ellipse", {
-      //     fill: "white",
-      //     stroke: "lightgrey",
-      //     strokeWidth: 4,
-      //   })
-      // );
-      // myDiagram.add(highlighter);
       myDiagram.addDiagramListener("InitialLayoutCompleted", function() {
         var node0 = myDiagram.findPartForKey(0);
         if (node0 !== null) node0.isSelected = true;
@@ -344,38 +318,6 @@ export default {
           myDiagram.select(myDiagram.findPartForKey(selectedLocal.data.key));
         }
       }
-
-      // function loop() {
-      //   var diagram = myDiagram;
-      //   setTimeout(function() {
-      //     var oldskips = diagram.skipsUndoManager;
-      //     diagram.skipsUndoManager = true;
-      //     diagram.links.each(function(link) {
-      //       var shape = link.findObject("PIPE");
-      //       var off = shape.strokeDashOffset - 1;
-      //       shape.strokeDashOffset = off <= 0 ? 16 : off;
-      //     });
-      //     diagram.skipsUndoManager = oldskips;
-      //     loop();
-      //   }, 50);
-      // }
-      // function setupDiagram(total) {
-      //   if (total === undefined) total = 20;
-      //   var nodeDataArray = [];
-      //   for (var i = 0; i < total; i++) {
-      //     nodeDataArray.push({
-      //       key: nodeDataArray.length,
-      //       color: go.Brush.randomColor(),
-      //     });
-      //   }
-      //   var j = 0;
-      //   for (let i = 1; i < total; i++) {
-      //     var data = nodeDataArray[i];
-      //     data.parent = j;
-      //     if (Math.random() < 0.3) j++;
-      //   }
-      //   myDiagram.model = new go.TreeModel(nodeDataArray);
-      // }
     },
   },
 
@@ -411,7 +353,8 @@ export default {
       .then((json) => {
         this.linkDataArray = json.linkDataArray;
         console.log(this.linkDataArray);
-      });this.getUnits();
+      });
+    this.getUnits();
     // Axios.post(this.$store.getters.getApi + "api/getconditionsubject/", {
     //   token: this.$store.getters.getToken,
     // }).then((res1) => {

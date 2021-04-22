@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import ChartPie from "./Charts_study";
+import ChartPie from "./ChartStudy.vue";
 import Axios from "axios";
 export default {
   name: "profile_data",
