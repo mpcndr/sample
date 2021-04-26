@@ -365,29 +365,4 @@ export default {
 </script>
 
 <style scoped>
-/* body {
-  background: darkgrey;
-}
-.diagram {
-  height: 240px;
-  width: 100%;
-  border: 1px solid lightgrey;
-}
-.topDiagram {
-  margin-top: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: none;
-}
-.bottomDiagram {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-bottom: 10px;
-}
-#carreraDiagram {
-  background: lightgrey;
-}
-#asignaturaDiagram {
-  background: whitesmoke;
-} */
 </style>
