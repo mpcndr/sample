@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p {
   font-family: "Kanit";
   text-align: center;

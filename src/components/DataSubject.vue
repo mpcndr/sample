@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TutorAnimation2></TutorAnimation2>
+    <!-- <TutorAnimation2></TutorAnimation2> -->
     <div style="width: 100vw;"></div>
     <div id="myDiagramDiv" style="width: 100vw; height:62vh;"></div>
     <div id="myAsignatura" style="width: 100vw; height:29.5vh;"></div>
@@ -11,11 +11,11 @@
 // import Axios from "axios";
 //import queryString from "query-string";
 import go from "gojs";
-import TutorAnimation2 from "../components/TutorAnimation2.vue";
+// import TutorAnimation2 from "../components/TutorAnimation2.vue";
 export default {
   name: "diagram_dataSubject",
   components: {
-    TutorAnimation2,
+    // TutorAnimation2,
   },
   data: function() {
     return {
@@ -73,7 +73,6 @@ export default {
         this.nodeDataArray,
         this.linkDataArray
       );
-      console.log("sssssssssssssssssss" + this.nodeDataArray);
       myDiagram.undoManager.isEnabled = true;
 
       myDiagram.isReadOnly = true;
@@ -145,6 +144,7 @@ export default {
       var myNodeTemplate = $(
         go.Node,
         "Auto",
+        
         {
           locationSpot: go.Spot.Center,
           click: function(e, node) {
@@ -197,9 +197,8 @@ export default {
           "Default Text",
           {
             margin: 6,
-            font: "14px Kanit",
-            stroke: "white",
-            isMultiline: false,
+            font: "16px Kanit",
+            stroke: "#000",
             //editable: true
           },
           new go.Binding("text", "name").makeTwoWay()
@@ -231,15 +230,16 @@ export default {
           fromSpot: go.Spot.BottomCenter,
           toSpot: go.Spot.TopCenter,
         },
+        
         //link node
         $(
           go.Shape,
           new go.Binding("stroke", "isHighlighted", function(h) {
-            return h ? "#FF0000" : "#F1C40F";
+            return h ? "#FF0000" : "#C19A6B";
             // color with stroke
           }).ofObject(),
           new go.Binding("strokeWidth", "isHighlighted", function(h) {
-            return h ? 3 : 2;
+            return h ? 4 : 2;
             //link stroke highlight : not hightlight
           }).ofObject(),
           //{ stroke: "silver", strokeWidth: 2 }
@@ -249,6 +249,7 @@ export default {
           }).ofObject(),
           { name: "PIPE", strokeCap: "round" }
         ),
+        
         {
           selectionAdornmentTemplate: $(go.Adornment, "Auto"),
         }
@@ -264,11 +265,11 @@ export default {
 
       function checkSubject(grade) {
         if (grade == 1) {
-          return "#2B9E94";
+          return "#93C572";
         } else if (grade == -1) {
-          return "#DE526B";
+          return "#E3735E";
         } else {
-          return "#868686";
+          return "#E5E4E2";
         }
       }
 

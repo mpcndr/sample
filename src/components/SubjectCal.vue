@@ -47,7 +47,7 @@ export default {
         //   })
         // }
       });
-      myDiagram.isReadOnly = false;
+      myDiagram.isReadOnly = true;
 
       function makeLayout(horiz) {
         // a Binding conversion function
@@ -67,51 +67,42 @@ export default {
           });
         }
       }
+      // -----> color two Group
       function defaultColor(horiz) {
         // a Binding conversion function
-        return horiz ? "#da694b" : "#254361";
+        return horiz ? "#EADDCA" : "#C19A6B";
       }
-
+// ---------> 
       function defaultFont(horiz) {
         // a Binding conversion function
         return horiz ? "20px Kanit" : "18px Kanit";
       }
-
+// ---------> color subject in group <-----------
       function checkSubject(check) {
         if (check === 1) {
-          return "#47D930";
+          return "#93C572";
         } else if (check === -1) {
-          return "#F14646";
+          return "#E3735E";
         } else {
-          return "#BDC3C7"; //"#C39BD3";
+          return "#E5E4E2"; //"#C39BD3";
         }
       }
 
-      function highlightGroup(e, grp, show) {
-        if (!grp) return;
-        e.handled = true;
-        if (show) {
-          // cannot depend on the grp.diagram.selection in the case of external drag-and-drops;
-          // instead depend on the DraggingTool.draggedParts or .copiedParts
-          var tool = grp.diagram.toolManager.draggingTool;
-          var map = tool.draggedParts || tool.copiedParts; // this is a Map
-          // now we can check to see if the Group will accept membership of the dragged Parts
-          if (grp.canAddMembers(map.toKeySet())) {
-            grp.isHighlighted = true;
-            return;
-          }
-        }
-        grp.isHighlighted = false;
-      }
-
-      // function statusStudy(show) {
-      //   for(var i=1; i<=4; i++){
-      //     if(this.status===i){
-      //       return show;
-      //     }else{
-      //       return false;
+      // function highlightGroup(e, grp, show) {
+      //   if (!grp) return;
+      //   e.handled = true;
+      //   if (show) {
+      //     // cannot depend on the grp.diagram.selection in the case of external drag-and-drops;
+      //     // instead depend on the DraggingTool.draggedParts or .copiedParts
+      //     var tool = grp.diagram.toolManager.draggingTool;
+      //     var map = tool.draggedParts || tool.copiedParts; // this is a Map
+      //     // now we can check to see if the Group will accept membership of the dragged Parts
+      //     if (grp.canAddMembers(map.toKeySet())) {
+      //       grp.isHighlighted = true;
+      //       return;
       //     }
       //   }
+      //   grp.isHighlighted = false;
       // }
 
       myDiagram.groupTemplate = $(
@@ -121,12 +112,12 @@ export default {
           background: "transparent",
           ungroupable: true,
           // highlight when dragging into the Group
-          mouseDragEnter: function(e, grp) {
-            highlightGroup(e, grp, true);
-          },
-          mouseDragLeave: function(e, grp) {
-            highlightGroup(e, grp, false);
-          },
+          // mouseDragEnter: function(e, grp) {
+          //   highlightGroup(e, grp, true);
+          // },
+          // mouseDragLeave: function(e, grp) {
+          //   highlightGroup(e, grp, false);
+          // },
           computesBoundsAfterDrag: false,
           // when the selection is dropped into a Group, add the selected Parts into that Group;
           // if it fails, cancel the tool, rolling back any changes
@@ -142,8 +133,8 @@ export default {
         }).ofObject(),
         $(
           go.Shape,
-          "RoundedRectangle",
-          { fill: null, stroke: defaultColor(false), strokeWidth: 2 },
+          "Rectangle",
+          { fill: null, stroke: defaultColor(false), strokeWidth: 2.5 },
           new go.Binding("stroke", "horiz", defaultColor),
           new go.Binding("stroke", "color")
         ),
@@ -159,18 +150,15 @@ export default {
             },
             new go.Binding("background", "horiz", defaultColor),
             new go.Binding("background", "color"),
-            $("SubGraphExpanderButton", {
-              alignment: go.Spot.Right,
-              margin: 5,
-            }),
             $(
+              // -----> font in header group
               go.TextBlock,
               {
                 alignment: go.Spot.Left,
-                margin: 5,
+                margin: 10,
                 font: "18px Kanit",
-                opacity: 0.75, // allow some color to show through
-                stroke: "white",
+                opacity: 1, // allow some color to show through
+                stroke: "black",
               },
               new go.Binding("font", "horiz", defaultFont),
               new go.Binding("text", "text").makeTwoWay()
@@ -196,7 +184,7 @@ export default {
             margin: 5,
             editable: true,
             font: "14px Kanit",
-            opacity: 0.75,
+            opacity: 1,
             stroke: "#000",
           },
           new go.Binding("text", "text").makeTwoWay()

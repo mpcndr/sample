@@ -38,12 +38,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Profile_private.vue"),
   },
   {
-    path: "/subject_cal",
+    path: "/subject_selected/subject_cal",
     name: "subject_cal",
     component: () => import("../components/SubjectCal.vue"),
   },
   {
-    path: "/dataSubjectdiagram",
+    path: "/subject_selected/dataSubjectdiagram",
     name: "diagram_dataSubject",
     component: () => import("../components/DataSubject.vue"),
   },
@@ -55,6 +55,23 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/HelloWorld.vue"),
+  },
+  
+  {
+    path: "/newsAll",
+    name: "newsall",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../components/NewsAll.vue"),
+  },
+  {
+    path: "/tabletime",
+    name: "tabletime",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../components/TableStudent.vue"),
   },
 ];
 

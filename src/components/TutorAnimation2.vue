@@ -3,13 +3,8 @@
     <a class="close-popup" href="#" title="close"
       ><i class="fa fa-times"></i
     ></a>
-    <div class="puasa18">
-      <p>คำแนะนำ</p>
-    </div>
     <div class="Tutor">
-      <div class="box1"></div>
-      <div class="box2"></div>
-      <div class="box3"></div>
+      <img src="../assets/174029945_482615226323142_2683367480756744881_n.gif" alt="">
     </div>
   </div>
 </template>
@@ -165,14 +160,14 @@ export default {
 /* Pop Up Ramadhan */
 #popuppuasa18 {
   display: block;
-  background: #000;
+  background: #5a7391;
   position: fixed;
   top: 25%;
   right: 0;
   left: 0;
   margin: auto;
   text-align: center;
-  max-width: 660px;
+  max-width: 50%;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.12);
   z-index: 999;
   min-height: 350px;

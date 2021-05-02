@@ -7,13 +7,15 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active" style="background-image: url('https://scontent.fbkk8-4.fna.fbcdn.net/v/t1.0-9/145135410_3836410369749628_8658527597412279472_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=8bfeb9&_nc_eui2=AeEuy-i9WVlwNnKL9DAyOq8b6X1Ow41TUuvpfU7DjVNS64F3WIwRR6PSpGW-J56ADMwUQXJ1qRU4oyO-2GwLexnb&_nc_ohc=d9akv5q2NTEAX_YLShG&_nc_ht=scontent.fbkk8-4.fna&oh=ad3f088c98e3faef4ea2d90b5bff29e1&oe=6087E9D8')">
+          <div class="carousel-item active">
+            <img class="img-top" src="../assets/144140726_3836410093082989_3475210957440590045_o.jpg" >
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="display-4" style="color: #fff">ยินดีตอนรับ!</h2>
-              <p class="lead">ให้เราช่วยเหลือคุณในการลงทะเบียน</p>
+              <!-- <h2 class="display-4" style="color: #fff">ยินดีตอนรับ!</h2>
+              <p class="lead">ให้เราช่วยเหลือคุณในการลงทะเบียน</p> -->
             </div>
           </div>
-          <div class="carousel-item" style="background-image: url('https://scontent.fbkk8-4.fna.fbcdn.net/v/t1.0-9/144140726_3836410093082989_3475210957440590045_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=8bfeb9&_nc_eui2=AeHhdeiF6BJyUfH5AtiwPqbnMpwJkezySQMynAmR7PJJA64aaabtWfs_S1BCwXr9VYiBvdGjbhrj5dlf2Uw_KV5i&_nc_ohc=AdZX7J30DocAX9mgTBA&_nc_ht=scontent.fbkk8-4.fna&oh=446fcabd6e160121122afb1ca6ba1d9f&oe=6086EE34')">
+          <div class="carousel-item" >
+            <img src="../assets/144652278_3836410326416299_3751869829875082694_o (2).jpg" alt="">
             <div class="carousel-caption d-none d-md-block">
               <h2 class="display-4">Welcome!</h2>
               <p class="lead">Can I help you to Register.</p>
@@ -36,6 +38,7 @@
       <CalendarHome/>
       
       <NewsEvent/>
+      
     
   </div>
 </template>

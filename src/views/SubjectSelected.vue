@@ -5,7 +5,7 @@
       <ul class="nav-menu">
         <li>
           <a data-scroll="home" href="#home" class="dot active">
-            <span>คำนวณหลักสูตร</span>
+            <span>วางแผน</span>
           </a>
         </li>
         <li>
@@ -19,29 +19,36 @@
 
     <!-- Start Home Section -->
     <section id="home" class="section">
-      <div class="row align-items-center">
-        <div class="col-md-6">
+      <div class="container">
+        <div class="content-wrapper text-center">
           <div class="content">
-            <div class="text-center">
-              <h1>วางแผนการเรียน</h1>
-              <p>ด้วยการคำนวณหลักสูตรจาก</p>
-              <h1 class="logo-text">regGuide</h1>
-            </div>
-
-            <a href="/subject_cal"
-              ><button>
-                คำนวณหลักสูตร
-              </button></a
-            >
+            <h1 class="tag1">ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Inventore odit ipsam expedita dolorem.<br />
+              Distinctio, aliquid minima voluptatem saepe.
+            </p>
+            <a href="/subject_selected/subject_cal"><button>ไปเยย</button></a>
           </div>
         </div>
-        <div class="col-md-6">
-          <TutorAnimation class="content"></TutorAnimation>
+      </div>
+    </section>
+    <!-- End Home Section -->
+
+    <!-- Start About Me Section -->
+    <section id="about">
+      <div class="container">
+        <div class="content-wrapper text-left">
+          <div class="content">
+            <h1 class="tag2">รายวิชาก่อนหน้า <br />และวิชาถัดไป</h1>
+            <a href="/subject_selected/dataSubjectdiagram"><button>คลิกเยย</button></a>
+            
+          </div>
         </div>
       </div>
     </section>
     <!-- Start About Me Section -->
-    <section id="about">
+    <!-- <section id="about">
       <div class="container">
         <div>
           <div class="content" align="left">
@@ -50,7 +57,7 @@
               <span class="logo-text" style="font-size: 36px">regGuide</span>
               ทำแผนผังนี้เพื่อคุณ
             </p>
-            <a href="/dataSubjectdiagram"
+            <a href="/subject_cal"
               ><button>
                 รายวิชาและตัวต่อ
               </button></a
@@ -67,18 +74,18 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
-import TutorAnimation from "../components/TutorAnimation1.vue";
+// import TutorAnimation from "../components/TutorAnimation1.vue";
 var $ = require("jquery");
 
 export default {
   name: "subjec_selected",
   components: {
-    TutorAnimation,
+    // TutorAnimation,
   },
 };
 
@@ -170,9 +177,13 @@ body {
   font-weight: 400;
   color: #333;
 }
-h1 {
+.tag1{
   font-size: 56px;
-  color: #2d3142;
+  color: #000;
+}
+.tag2{
+  font-size: 56px;
+  color: #ffffff;
 }
 p {
   font-size: 32px;
@@ -299,7 +310,7 @@ p {
 
 /* Start Home Styles */
 #home {
-  background-color: #eee;
+  background-color: #f2f3f4;
 }
 #home button {
   border: 2px solid #4f5d75;
@@ -319,11 +330,11 @@ p {
 
 /* Start About Styles */
 #about {
-  background-color: #f6f6f6;
+  background-color: #000;
 }
 #about button {
-  color: #2d3142;
-  border: 2px solid #4f5d75;
+  color: #fff;
+  border: 2px solid #949699;
   background-color: transparent;
   outline: none;
   cursor: pointer;
@@ -333,7 +344,7 @@ p {
   margin-top: 20px;
 }
 #about button:hover {
-  background-color: #4f5d75;
+  background-color: #484849;
   color: #fff;
 }
 /* End About Styles */

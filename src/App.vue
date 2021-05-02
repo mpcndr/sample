@@ -18,24 +18,37 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul id="ul-underline" class="navbar-nav ml-auto">
-            <router-link to="/" id="text-underline" class="nav-link active"
+            <router-link
+              to="/"
+              id="text-underline"
+              class="nav-link"
+              active-class
               >หน้าแรก</router-link
             >
             <router-link
+              to="/newsAll"
+              id="text-underline"
+              class="nav-link"
+              active-class
+              >ข่าวสาร</router-link
+            >
+
+            <router-link
+              v-if="this.$store.getters.getLogin === 'true'"
               to="/about_subject"
               id="text-underline"
               class="nav-link"
+              active-class
               >วิชาเลือก</router-link
             >
             <router-link
+              v-if="this.$store.getters.getLogin === 'true'"
               to="/subject_selected"
               id="text-underline"
               class="nav-link"
-              >หลักสูตร</router-link
+              active-class
+              >วางแผนหลักสูตร</router-link
             >
-            <!-- <router-link to="/login" id="text-underline" class="nav-link">
-              เข้าสู่ระบบ
-            </router-link> -->
             <div v-if="this.$store.getters.getLogin === 'true'">
               <div class="dropdown show">
                 <a
@@ -51,13 +64,15 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item"
-                    ><router-link
+                  <div>
+                    <router-link
                       to="/profile"
-                      style="text-decoration: none; color: #000"
+                      id="text-underline"
+                      class="nav-link"
+                      active-class
                       >ข้อมูลส่วนตัว</router-link
-                    ></a
-                  >
+                    >
+                  </div>
 
                   <div
                     @click="logOut()"
@@ -80,20 +95,11 @@
                 เข้าสู่ระบบ
               </div>
             </div>
-
-            <!-- <button
-              type="button"
-              class="btn btn-danger"
-              data-mdb-toggle="modal"
-              data-mdb-target="#login_id"
-            >
-            <router-link to="/profile" style="text-decoration: none; color: #fff">เข้าสู่ระบบ</router-link>
-              
-            </button> -->
           </ul>
         </div>
       </div>
     </nav>
+
     <router-view />
   </div>
 </template>
@@ -106,7 +112,6 @@ export default {
     return {
       session_key: "",
       username: "",
-
     };
   },
   methods: {
@@ -133,8 +138,9 @@ export default {
     async Login() {
       this.session_key = this.sessionRandom();
       this.$store.dispatch("setSession", this.session_key);
-      await Axios.get(this.$store.getters.getApi +
-        "api/ssoapi/?url=https://127.0.0.1:8080/&session=" +
+      await Axios.get(
+        this.$store.getters.getApi +
+          "api/ssoapi/?url=https://127.0.0.1:8080/&session=" +
           this.session_key
       ).then((r) => {
         console.log(r + "dddd");
@@ -142,7 +148,6 @@ export default {
       });
     },
     ValidateToken() {
-      
       if (this.$store.getters.getToken != "") {
         //console.log(this.$store.getters.getToken);
         //alert("1")
@@ -150,7 +155,7 @@ export default {
           token: this.$store.getters.getToken,
         }).then((res) => {
           if (res.data.state == "200") {
-            this.$store.dispatch("setLogin", 'true');
+            this.$store.dispatch("setLogin", "true");
             //alert("-----> " + this.$store.getters.getLogin);
             Axios.post(this.$store.getters.getApi + "api/getuser/", {
               token: this.$store.getters.getToken,
@@ -165,29 +170,26 @@ export default {
       this.$store.dispatch("setToken", "");
       this.$store.dispatch("setLogin", "");
       this.$store.dispatch("setSession", "");
-      //alert(this.$store.getters.getSession)
       this.$router.push({ path: "/" });
       location.reload();
     },
   },
   async created() {
-    //
-    //alert("--------------------------------------------->" +this.$store.getters.getLogin)
     await this.ValidateToken();
-    // alert(this.$store.getters.getSession )
     if (this.$store.getters.getSession != "") {
-   //   alert("2")
+      //   alert("2")
       console.log("-->" + this.$store.getters.getSession);
       Axios.post(this.$store.getters.getApi + "api/sessiontotoken/", {
         session: this.$store.getters.getSession,
       }).then((res) => {
-       // alert("3")
+        // alert("3")
         this.$store.dispatch("setToken", res.data.token);
         console.log("********************" + res.data.token);
         this.ValidateToken();
       });
     }
   },
+  mounted() {},
 };
 </script>
 
@@ -197,7 +199,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 #logo-text {
   font-size: 26px;
@@ -208,7 +209,7 @@ export default {
   padding-left: 0px;
 }
 
-#text-underline {
+.nav-link {
   font-size: 16px;
   color: rgb(133, 133, 133);
   margin: 0 15px;
@@ -218,23 +219,6 @@ export default {
 
   display: inline-block;
   position: relative;
-  /* font-weight: bold; */
-}
-#text-underline:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: -2;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
-  position: absolute;
-  background: #da694b;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-#text-underline:hover:after {
-  width: 60%;
-  left: 18%;
 }
 @media screen and (max-height: 300px) {
   ul {
@@ -242,10 +226,7 @@ export default {
   }
 }
 
-li > a#text-underline:hover {
-  color: #da694b;
-}
-a#text-underline.text-icon {
+a.nav-link.text-icon {
   font-size: 20px;
 }
 
@@ -280,4 +261,17 @@ a#icon-menu:hover {
   right: 25px;
   display: none;
 }
+.router-link-exact-active:hover,
+.router-link-active:hover,
+.nav-link:hover {
+  color: #d42e00;
+}
+.router-link-exact-active {
+  color: #da694b;
+}
+.router-link-active {
+  color: #da694b;
+}
+
+/* ---------------footer ----------------- */
 </style>

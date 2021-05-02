@@ -28,14 +28,12 @@ export default {
     return {
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin, listPlugin],
-        initialView: "listWeek",
+        initialView: "dayGridMonth",
         dateClick: this.handleDateClick,
         events: [
           {
             title: "event 1",
             date: "2021-04-19",
-            editable: true,
-            startEditable: true,
             url:
               "https://www.youtube.com/watch?v=WHXv40JFYmA&ab_channel=LOVEiS%2B",
             extendedProps: {
