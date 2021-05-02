@@ -45,7 +45,7 @@
           cellspacing="0"
           width="100%"
         >
-          <thead class="thead-light">
+          <thead class="thead">
             <tr>
               <th class="th-sm1">รายการ</th>
               <th class="th-sm1">วันที่</th>
@@ -156,7 +156,7 @@ export default {
         break;
       } else {
         document.getElementById("date" + this.dates[i].id).style =
-          "pointer-events: none; text-decoration: line-through;";
+          "pointer-events: none; color: #979A9A";
       }
     }
   },
@@ -189,6 +189,12 @@ h2 {
 #clockdiv > div {
   padding: 5px;
   display: inline-block;
+}
+
+.thead {
+  background: #d3d3d3;
+  color: rgb(59, 57, 57);
+  letter-spacing: 3px;
 }
 
 #clockdiv div > span {
