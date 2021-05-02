@@ -61,7 +61,7 @@
               <td id="chk">
                 {{ date.title }}
               </td>
-              <td>{{ date.start_date }} - {{ date.end_date }}</td>
+              <td>{{ formatDatetime(date.start_date) }} - {{ formatDatetime(date.end_date) }}</td>
             </tr>
           </tbody>
         </table>
@@ -83,6 +83,15 @@ export default {
   },
 
   methods: {
+    formatDatetime(x) {
+      const date = new Date(x);
+      const result = date.toLocaleDateString("th-TH", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      return result
+    },
     getTimeRemaining(endtime) {
       const total = Date.parse(endtime) - Date.parse(new Date());
       const seconds = Math.floor((total / 1000) % 60);
@@ -126,8 +135,7 @@ export default {
       this.timeinterval = setInterval(this.initializeClock, 100);
     },
   },
-  mounted: function() {
-  },
+  mounted: function() {},
   destroyed() {
     clearInterval(this.timeinterval);
   },
@@ -144,7 +152,7 @@ export default {
       if (Date.parse(day) < Date.parse(new Date(this.dates[i].start_date))) {
         this.end_dates = this.dates[i].start_date;
         this.event_data = this.dates[i].title;
-        
+
         break;
       } else {
         document.getElementById("date" + this.dates[i].id).style =
