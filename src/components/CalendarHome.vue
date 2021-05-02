@@ -45,7 +45,7 @@
           cellspacing="0"
           width="100%"
         >
-          <thead class="thead">
+          <thead class="thead-light">
             <tr>
               <th class="th-sm1">รายการ</th>
               <th class="th-sm1">วันที่</th>
@@ -191,11 +191,11 @@ h2 {
   display: inline-block;
 }
 
-.thead {
+/* .thead {
   background: #d3d3d3;
   color: rgb(59, 57, 57);
   letter-spacing: 3px;
-}
+} */
 
 #clockdiv div > span {
   padding: 20px;
