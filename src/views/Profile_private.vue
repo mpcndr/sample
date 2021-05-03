@@ -125,7 +125,6 @@ import TableStudent from "../components/TableStudent.vue";
 import Axios from "axios";
 
 export default {
-  name: "profile_user",
   data() {
     return {
       data_student: {}

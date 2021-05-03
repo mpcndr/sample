@@ -97,7 +97,7 @@
                   </tr>
                 </thead>
                 <tbody id="myTable" v-if="this.select == 'general'">
-                  <tr v-for="subj in subject['general']" :key="subj">
+                  <tr v-for="subj in subject['general']" :key="subj.id">
                     <td class="th-sm1">
                       {{ subj.id }}
                     </td>
@@ -110,7 +110,7 @@
                   </tr>
                 </tbody>
                 <tbody id="myTable" v-if="this.select == 'free'">
-                  <tr v-for="subj in subject['free']" :key="subj">
+                  <tr v-for="subj in subject['free']" :key="subj.id">
                     <td class="th-sm1">
                       {{ subj.id }}
                     </td>
@@ -123,7 +123,7 @@
                   </tr>
                 </tbody>
                 <tbody id="myTable" v-if="this.select == 'sci'">
-                  <tr v-for="subj in subject['sci']" :key="subj">
+                  <tr v-for="subj in subject['sci']" :key="subj.id">
                     <td class="th-sm1">
                       {{ subj.id }}
                     </td>
@@ -136,7 +136,7 @@
                   </tr>
                 </tbody>
                 <tbody id="myTable" v-if="this.select == 'maj'">
-                  <tr v-for="subj in subject['maj']" :key="subj">
+                  <tr v-for="subj in subject['maj']" :key="subj.id">
                     <td class="th-sm1">
                       {{ subj.id }}
                     </td>
@@ -159,11 +159,11 @@
 <script>
 import Axios from "axios";
 export default {
-  name: "subject",
   data() {
     return {
       select: "general",
       subject: [],
+      subj:[],
     };
   },
   async created() {

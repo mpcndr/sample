@@ -8,7 +8,6 @@
 import subject from "@/components/Subject.vue";
 
 export default {
-  name: "about_subject",
   components: {
     subject,
   },

@@ -1,8 +1,16 @@
 <template>
   <div class="study-result">
-    <div v-for="subject in Subject.subject_items" :key="subject">
+    <div>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="pills-ta"></a>
+        </li>
+      </ul>
+    </div>
+    
+    <div v-for="subject in Subject.subject_items" :key="subject.term">
       <h1>{{ subject.term }}</h1>
-      <table class="table table-striped table-dark">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th scope="col">รหัสวิชา</th>
@@ -12,11 +20,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in subject.id_subject" :key="item">
+          <tr v-for="item in subject.id_subject" :key="item.id">
             <td>
               {{ item.id }}
             </td>
-            <td>{{ item.name }}</td>
+            <td class="nameSubj">{{ item.name }}</td>
             <td>{{ item.credit }}</td>
             <td>{{ item.grade }}</td>
           </tr>
@@ -34,7 +42,7 @@ export default {
       Subject: {
         subject_items: [
           {
-            term: "1/2560",
+            term: "2560",
             id_subject: [
               {
                 id: "081102",
@@ -124,5 +132,8 @@ export default {
 }
 .head-table {
   text-align: center;
+}
+.nameSubj {
+  text-align: left;
 }
 </style>

@@ -77,7 +77,6 @@
 import ChartPie from "./ChartStudy.vue";
 import Axios from "axios";
 export default {
-  name: "profile_data",
   components: {
     ChartPie,
   },
