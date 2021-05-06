@@ -97,13 +97,13 @@
             aria-labelledby="v-pills-profile-tab"
           >
           </StudyResult>
-          <!-- <MidtermFinal
+          <MidtermFinal
             class="tab-pane fade"
             id="v-pills-messages"
             role="tabpanel"
             aria-labelledby="v-pills-messages-tab"
           >
-          </MidtermFinal> -->
+          </MidtermFinal>
           <TableStudent
             class="tab-pane fade"
             id="v-pills-settings"
@@ -120,7 +120,7 @@
 <script>
 import ProfileData from "../components/Profile_data.vue";
 import StudyResult from "../components/StudyResult.vue";
-// import MidtermFinal from "../components/CalendarEvents.vue"
+import MidtermFinal from "../components/CalendarEvents.vue"
 import TableStudent from "../components/TableStudent.vue";
 import Axios from "axios";
 
@@ -134,7 +134,7 @@ export default {
   components: {
     ProfileData,
     StudyResult,
-    // MidtermFinal,
+    MidtermFinal,
     TableStudent,
   },
   methods: {},

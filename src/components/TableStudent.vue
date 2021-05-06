@@ -1,53 +1,80 @@
 <template>
-  <div>
-    <table>
-      <tr>
-        <th>วัน/เวลา</th>
-        <td class="time" v-for="t in 10" :key="t">{{ t }}</td>
-      </tr>
-      <tr v-for="day in days" :key="day">
-        <td>{{ day }}</td>
-      </tr>
-    </table>
+  <div class="hello container" style="width: 100%; display : inline-block;">
+    <FullCalendar ref="fullCalendar" :options="calendarOptions" />
   </div>
 </template>
 
 <script>
+import FullCalendar from "@fullcalendar/vue";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import listPlugin from "@fullcalendar/list";
 export default {
+  components: {
+    FullCalendar,
+  },
+  props: {
+    options: {
+      type: Object,
+    },
+    preloader: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
-      days: [
-        "วันจันทร์",
-        "วันอังคาร",
-        "วันพุธ",
-        "วันพฤหัสบดี",
-        "วันศุกร์",
-        "วันเสาร์",
-        "วันอาทิตย์",
-      ],
-      times: [
-          "05:45-06:35",
-          "06:40-07:30",
-          "07:35-08:30",
-          "08:35-09:20",
-          "09:25-10:15",
-          "10:20-11:10",
-          "11:15-12:05",
-          "--",
-          "13:00-13:50",
-          "13:55-14:45",
-          "14:50-15:40",
-          "15:45-16:35",
-          "16:40-17:30",
-          "17:35-18:25",
-          "18:30-19:20",
-          "19:25-20:15",
-      ]
+      calendarOptions: {
+        plugins: [dayGridPlugin, interactionPlugin, listPlugin, timeGridPlugin],
+        initialView: "listWeek",
+        dateClick: this.handleDateClick,
+        events: [
+          {
+            title: "event 1",
+            start: "2021-05-07T13:30:00",
+            end: "2021-05-07T15:30:00",
+            url:
+              "https://www.youtube.com/watch?v=WHXv40JFYmA&ab_channel=LOVEiS%2B",
+            extendedProps: {
+              department: "BioChemistry",
+            },
+            description: "Lecture",
+          },
+          { title: "event 2", date: "2021-04-20" },
+          {
+            title: "Long Event",
+            start: "2021-05-07",
+            end: "2021-05-10",
+          },
+          {
+            title: "Meeting",
+            start: "2021-05-07T10:30:00",
+            end: "2021-05-07T12:30:00",
+            description: "123456",
+          },
+        ],
+        eventClick: function(info) {
+          info.jsEvent.preventDefault(); // don't let the browser navigate
+          console.log("=========> " + info.event.extendedProps);
+          if (info.event.url) {
+            window.open(info.event.url);
+          }
+        },
+        // eventDidMount: function (info) {
+        //   console.log(info.event.extendedProps);
+        //   // {description: "Lecture", department: "BioChemistry"}
+        // },
+      },
     };
-  },methods: {
-      
+  },
+  methods: {
+    handleDateClick: function(arg) {
+      alert("date click! " + arg.dateStr);
+    },
   },
 };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
