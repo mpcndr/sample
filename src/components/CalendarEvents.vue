@@ -39,14 +39,14 @@ export default {
           center: "title",
           right: "dayGridMonth,timeGridWeek,listWeek",
         },
-        eventRender: function(info) {
-          var tooltip = new Tooltip(info.el, {
-            title: info.event.extendedProps.description,
-            placement: "top",
-            trigger: "hover",
-            container: "body",
-          });
-        },
+        // eventRender: function(info) {
+        //   var tooltip = new Tooltip(info.el, {
+        //     title: info.event.extendedProps.description,
+        //     placement: "top",
+        //     trigger: "hover",
+        //     container: "body",
+        //   });
+        // },
         events: [
           {
             title: "event 1",
