@@ -29,7 +29,7 @@ export default {
 
       var myDiagram = $(go.Diagram, "myDiagramDiv", {
         initialAutoScale: go.Diagram.UniformToFill,
-        // maxScale: 0.5,
+        maxScale: 0.8,
         initialContentAlignment: go.Spot.Center,
         isReadOnly: false,
         "animationManager.isEnabled": false,
@@ -137,14 +137,12 @@ export default {
           fromSpot: go.Spot.BottomCenter,
           toSpot: go.Spot.MiddleTop,
         },
-        $(go.Shape),
-        $(go.Shape, { toArrow: "Standard" })
       );
 
       var myNodeTemplate = $(
         go.Node,
         "Auto",
-        
+
         {
           locationSpot: go.Spot.Center,
           click: function(e, node) {
@@ -230,7 +228,7 @@ export default {
           fromSpot: go.Spot.BottomCenter,
           toSpot: go.Spot.TopCenter,
         },
-        
+
         //link node
         $(
           go.Shape,
@@ -249,7 +247,8 @@ export default {
           }).ofObject(),
           { name: "PIPE", strokeCap: "round" }
         ),
-        
+        $(go.Shape, { toArrow: "Standard", strokeWidth: 4, stroke: "#C19A6B"}),
+
         {
           selectionAdornmentTemplate: $(go.Adornment, "Auto"),
         }
@@ -365,5 +364,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
