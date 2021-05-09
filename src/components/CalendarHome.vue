@@ -12,6 +12,25 @@
       </div>
     </div>
 
+    <div>
+      <label class="text-selectCal">เลือกรายการปฏิทิน : </label>
+
+      <select
+        id="selectDate"
+        aria-label="Defualt select example"
+        v-on:change="selectCalendar2()"
+      >
+        <option
+          v-for="date in dates"
+          :key="date.id"
+          :id="'date' + date.id"
+          :value="date.id"
+          :selected="date == d"
+          >{{ date.title }}</option
+        >
+      </select>
+    </div>
+
     <div class="col2">
       <div id="clockdiv">
         <h2>เหลือเวลา</h2>
@@ -32,12 +51,15 @@
           <div class="smalltext">Seconds</div>
         </div>
         <h4 class="text-cal">
-          ถึง <span class="text-span">{{ this.event_data }}</span>
+          ถึง <span class="text-span">{{ event_data }}</span>
         </h4>
+        <h5 class="text-cal2">
+          วันที่ <span class="text-span2">{{ time_now }}</span>
+        </h5>
       </div>
     </div>
     <!-- sdfdsf -->
-    <div class="col1">
+    <!-- <div class="col1">
       <div class="table-responsive">
         <table
           id="dtBasicExample"
@@ -61,12 +83,15 @@
               <td id="chk">
                 {{ date.title }}
               </td>
-              <td>{{ formatDatetime(date.start_date) }} - {{ formatDatetime(date.end_date) }}</td>
+              <td>
+                {{ formatDatetime(date.start_date) }} -
+                {{ formatDatetime(date.end_date) }}
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -79,6 +104,8 @@ export default {
       totals: 0,
       event_data: "",
       dates: [],
+      d: null,
+      time_now: "",
     };
   },
 
@@ -90,7 +117,7 @@ export default {
         month: "long",
         day: "numeric",
       });
-      return result
+      return result;
     },
     getTimeRemaining(endtime) {
       const total = Date.parse(endtime) - Date.parse(new Date());
@@ -127,12 +154,30 @@ export default {
         this.timeinterval = null;
       }
     },
-    selectCalendar(event) {
-      clearInterval(this.timeinterval);
-      this.event_data = event.title;
-      this.end_dates = event.start_date;
-      this.timeinterval = null;
-      this.timeinterval = setInterval(this.initializeClock, 100);
+    // selectCalendar(event) {
+    //   console.log(event);
+    //   clearInterval(this.timeinterval);
+    //   this.event_data = event.title;
+    //   this.end_dates = event.start_date;
+    //   this.timeinterval = null;
+    //   this.timeinterval = setInterval(this.initializeClock, 100);
+    // },
+    selectCalendar2() {
+      var d = document.getElementById("selectDate").value;
+      console.log();
+      for (var i = 0; i < this.dates.length; i++) {
+        if (this.dates[i].id == d) {
+          this.event_data = this.dates[i].title;
+          this.end_dates = this.dates[i].start_date;
+          this.timeinterval = null;
+          this.timeinterval = setInterval(this.initializeClock, 100);
+        }
+      }
+      // clearInterval(this.timeinterval)
+      // this.event_data = d
+      // this.end_dates = d.
+      // this.timeinterval = null
+      // this.timeinterval = setInterval(this.initializeClock, 100)
     },
   },
   mounted: function() {},
@@ -148,15 +193,22 @@ export default {
     this.timeinterval = setInterval(this.initializeClock, 100);
     const day = new Date();
 
-    for (var i = 0; i < this.dates.length; i++) {
+    for (let i = 0; i < this.dates.length; i++) {
+      // console.log("--> " + Date.parse(day) + " < " + Date.parse(new Date(this.dates[i].start_date)));
       if (Date.parse(day) < Date.parse(new Date(this.dates[i].start_date))) {
+        this.d = this.dates[i];
+        console.log("3333");
         this.end_dates = this.dates[i].start_date;
         this.event_data = this.dates[i].title;
-
+        this.time_now =
+          this.formatDatetime(this.dates[i].start_date) +
+          " - " +
+          this.formatDatetime(this.dates[i].end_date);
+        console.log(this.event_data);
+        // document.getElementsByTagName("option")[0].setAttribute("selected", "selected")
         break;
       } else {
-        document.getElementById("date" + this.dates[i].id).style =
-          "pointer-events: none; color: #979A9A";
+        document.getElementById("selectDate").options[i].disabled = true;
       }
     }
   },
@@ -172,11 +224,22 @@ h2 {
   color: #3b3b3b;
   font-weight: bold;
 }
+.text-cal2 {
+  color: #3b3b3b;
+  font-size: 18px;
+}
 .text-span {
   color: #da694b;
   font-size: 28px;
   font-weight: initial;
 }
+
+.text-span2 {
+  color: #000;
+  font-size: 20px;
+  font-weight: initial;
+}
+
 #clockdiv {
   font-family: "Kanit";
   color: #fff;
@@ -247,5 +310,10 @@ i {
   margin-right: 12px;
   font-size: 24px;
   font-weight: normal;
+}
+
+.text-selectCal {
+  margin-right: 8px;
+  font-size: 22px;
 }
 </style>
