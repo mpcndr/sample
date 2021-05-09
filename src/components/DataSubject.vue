@@ -53,8 +53,8 @@ export default {
         layout: $(go.TreeLayout, {
           angle: 0,
           //sorting: go.TreeLayout.SortingAscending
-          layerSpacing: 40,
-          nodeSpacing: 20,
+          layerSpacing: 60,
+          nodeSpacing: 40,
           layerStyle: go.TreeLayout.LayerUniform,
           //treeStyle: go.TreeLayout.StyleLayered,
           //alignment: go.TreeLayout.AlignmentEnd,
@@ -97,7 +97,7 @@ export default {
             {
               row: 0,
               column: 1,
-              font: "20px Kanit",
+              font: "22px Kanit",
               textAlign: "center",
               stretch: go.GraphObject.Horizontal,
             },
@@ -162,15 +162,15 @@ export default {
         new go.Binding("text", "key", go.Binding.toString),
         $(
           go.Shape,
-          "RoundedRectangle",
+          "RoundedRectangle", 
           new go.Binding("fill", "grade", checkSubject),
           new go.Binding("stroke", "isHighlighted", function(h) {
             return h ? "black" : "grey";
           }).ofObject(),
           //new go.Binding("strokeWidth", "isHighlighted", function(h) { return h ? 2 : 2; }).ofObject(),
           {
-            stroke: "grey",
-            strokeWidth: 0,
+            stroke: "black",
+            strokeWidth: 1,
           }
         ),
         {
@@ -195,7 +195,7 @@ export default {
           "Default Text",
           {
             margin: 6,
-            font: "16px Kanit",
+            font: "20px Kanit",
             stroke: "#000",
             //editable: true
           },
