@@ -38,7 +38,7 @@ export default {
         headerToolbar: {
           left: "prev,next today",
           center: "title",
-          right: "dayGridMonth,timeGridWeek,listWeek",
+          right: "dayGridMonth,timeGridWeek,listYear",
         },
         // eventMouseEnter: function(info) {
         //   console.log("hi");
@@ -122,6 +122,7 @@ export default {
         eventMouseLeave: (info) => {
           document.getElementById(info.event.title + info.event.start).remove()
         },
+        
         // eventDidMount: function(info) {
         //   console.log("asdfnkasdf");
         //   // console.log(info.event.extendedProps.department);
