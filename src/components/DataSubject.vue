@@ -267,6 +267,8 @@ export default {
           return "#93C572";
         } else if (grade == -1) {
           return "#E3735E";
+        } else if( grade == -2) {
+          return "#F8DE7E"
         } else {
           return "#E5E4E2";
         }

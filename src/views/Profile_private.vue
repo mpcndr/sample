@@ -36,10 +36,11 @@
               class="menu-item active"
               id="v-pills-home-tab"
               data-toggle="pill"
-              href="#v-pills-home"
+              href="#profiledata"
               role="tab"
-              aria-controls="v-pills-home"
+              aria-controls="profiledata"
               aria-selected="true"
+              v-on:click="soloveDisplay(1)"
             >
               <i class="fa fa-address-card-o" aria-hidden="true"></i>
               <span>ประวัตินักศึกษา</span></a
@@ -48,10 +49,11 @@
               class="menu-item"
               id="v-pills-profile-tab"
               data-toggle="pill"
-              href="#v-pills-profile"
+              href="#studyresult"
               role="tab"
-              aria-controls="v-pills-profile"
+              aria-controls="studyresult"
               aria-selected="false"
+              v-on:click="soloveDisplay(2)"
               ><i class="fa fa-graduation-cap" aria-hidden="true"></i
               ><span>ผลการเรียน</span></a
             >
@@ -59,10 +61,11 @@
               class="menu-item"
               id="v-pills-messages-tab"
               data-toggle="pill"
-              href="#v-pills-messages"
+              href="#midtermfinal"
               role="tab"
-              aria-controls="v-pills-messages"
+              aria-controls="midtermfinal"
               aria-selected="false"
+              v-on:click="soloveDisplay(3)"
               ><i class="fa fa-table" aria-hidden="true"></i
               ><span>ตารางเรียน</span></a
             >
@@ -70,10 +73,11 @@
               class="menu-item"
               id="v-pills-settings-tab"
               data-toggle="pill"
-              href="#v-pills-settings"
+              href="#tablestudent"
               role="tab"
-              aria-controls="v-pills-settings"
+              aria-controls="tablestudent"
               aria-selected="false"
+              v-on:click="soloveDisplay(4)"
               ><i class="fa fa-file-text-o" aria-hidden="true"></i
               ><span>ตารางสอบ</span></a
             >
@@ -85,28 +89,29 @@
         <div class="tab-content" id="v-pills-tabContent">
           <ProfileData
             class="tab-pane fade show active"
-            id="v-pills-home"
+            id="profiledata"
             role="tabpanel"
             aria-labelledby="v-pills-home-tab"
           >
           </ProfileData>
           <StudyResult
             class="tab-pane fade"
-            id="v-pills-profile"
+            id="studyresult"
             role="tabpanel"
             aria-labelledby="v-pills-profile-tab"
           >
           </StudyResult>
           <MidtermFinal
             class="tab-pane fade"
-            id="v-pills-messages"
+            id="midtermfinal"
             role="tabpanel"
             aria-labelledby="v-pills-messages-tab"
           >
           </MidtermFinal>
           <TableStudent
+          style="display: block"
             class="tab-pane fade"
-            id="v-pills-settings"
+            id="tablestudent"
             role="tabpanel"
             aria-labelledby="v-pills-settings-tab"
           >
@@ -137,7 +142,39 @@ export default {
     MidtermFinal,
     TableStudent,
   },
-  methods: {},
+  methods: {
+    soloveDisplay(el){
+      if(el == 1) {
+        document.getElementById('profiledata').style.display = "block"
+        document.getElementById('studyresult').style.display = "none"
+        document.getElementById('midtermfinal').style.display = "none"
+        document.getElementById('tablestudent').style.display = "none"
+      }
+      else if(el == 2) {
+        document.getElementById('studyresult').style.display = "block"
+        document.getElementById('profiledata').style.display = "none"
+        document.getElementById('midtermfinal').style.display = "none"
+        document.getElementById('tablestudent').style.display = "none"
+      }
+      else if(el == 3) {
+        // document.getElementById('midtermfinal').style.display = "block"
+        // document.getElementById('profiledata').style.display = "none"
+        // document.getElementById('tablestudent').style.display = "none"
+        document.getElementById('profiledata').style.display = "none"
+        document.getElementById('studyresult').style.display = "none"
+        document.getElementById('midtermfinal').style.display = "block"
+        document.getElementById('tablestudent').style.display = "none"
+      }
+      else {
+        // document.getElementById('tablestudent').style.display = "block"
+        // document.getElementById('midtermfinal').style.display = "none"
+        document.getElementById('profiledata').style.display = "none"
+        document.getElementById('studyresult').style.display = "none"
+        document.getElementById('midtermfinal').style.display = "none"
+        document.getElementById('tablestudent').style.display = "block"
+      }
+    }
+  },
   created() {
     Axios.post(this.$store.getters.getApi + "api/getinfostudent/", {
       token: this.$store.getters.getToken,

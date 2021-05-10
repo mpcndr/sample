@@ -72,7 +72,7 @@ export default {
         // a Binding conversion function
         return horiz ? "#EADDCA" : "#C19A6B";
       }
-// ---------> 
+// --------->
       function defaultFont(horiz) {
         // a Binding conversion function
         return horiz ? "20px Kanit" : "18px Kanit";
@@ -83,7 +83,11 @@ export default {
           return "#93C572";
         } else if (check === -1) {
           return "#E3735E";
-        } else {
+        }
+        else if( check == -2) {
+          return "#F8DE7E"
+          }
+          else {
           return "#E5E4E2"; //"#C39BD3";
         }
       }
