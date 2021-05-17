@@ -10,6 +10,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
+import Tooltip from 'tooltip.js'
 export default {
   components: {
     FullCalendar,
@@ -27,15 +28,13 @@ export default {
     return {
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin, listPlugin, timeGridPlugin],
-        initialView: "listWeek",
+        initialView: "dayGridMonth",
         dateClick: this.handleDateClick,
         events: [
           {
             title: "event 1",
             start: "2021-05-07T13:30:00",
             end: "2021-05-07T15:30:00",
-            url:
-              "https://www.youtube.com/watch?v=WHXv40JFYmA&ab_channel=LOVEiS%2B",
             extendedProps: {
               department: "BioChemistry",
             },
@@ -56,15 +55,46 @@ export default {
         ],
         eventClick: function(info) {
           info.jsEvent.preventDefault(); // don't let the browser navigate
-          console.log("=========> " + info.event.extendedProps);
-          if (info.event.url) {
-            window.open(info.event.url);
-          }
+          console.log("1=========> " + info.event.extendedProps.description);
+          // if (info.event.url) {
+          //   window.open(info.event.url);
+          // }
+          let tooltip = new Tooltip(info.el, {
+            title: info.event.extendedProps.description,
+            placement: "top",
+            trigger: "hover",
+            container: 'body',
+            html: true
+          });
+          console.log(tooltip);
         },
-        // eventDidMount: function (info) {
-        //   console.log(info.event.extendedProps);
-        //   // {description: "Lecture", department: "BioChemistry"}
+
+        eventMouseEnter: function(info){
+          console.log("2=========> " + info.event.extendedProps.description);
+          let tooltip = new Tooltip(info.el, {
+            title: info.event.extendedProps.description,
+            placement: "top",
+            trigger: "hover",
+            container: 'body',
+            html: true
+          });
+          console.log(tooltip);
+        },
+        // eventRender: function(info, element) {
+        //   info.jsEvent.preventDefault();
+        //   console.log("hover");
+        //   element.popover({
+        //     title: info.title,
+        //     content: info.event.extendedProps.description,
+        //     trigger: "hover",
+        //     placement: "top",
+        //     container: "body",
+        //   });
         // },
+        eventDidMount: function (info) {
+          console.log(info.event.extendedProps.description);
+          // {description: "Lecture", department: "BioChemistry"}
+        },
       },
     };
   },
@@ -77,4 +107,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.fc-event-title {
+  font-size: 22px;
+}
+</style>
