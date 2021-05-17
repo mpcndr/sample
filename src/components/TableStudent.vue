@@ -36,6 +36,7 @@ export default {
         ],
         eventMouseEnter: function(info) {
           tippy(info.el, {
+            title: "ห้องสอบ",
             content: info.event.extendedProps.description
           })
         },

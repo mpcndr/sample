@@ -10,7 +10,7 @@ export default new Vuex.Store({
     session_status : localStorage.getItem('session')||"",
     token : localStorage.getItem('token')||"",
     chooose : 1,
-    department : localStorage.getDepartment('department') || ""
+    department : localStorage.getItem('department') || ""
   },
   mutations: {
     setLogin(state, value) {

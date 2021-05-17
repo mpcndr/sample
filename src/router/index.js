@@ -79,6 +79,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../components/TableStudent.vue"),
   },
+  {
+    path: "/studyplan",
+    name: "StudyPlan",
+    component: () => import("../components/SubjDatasci.vue")
+  }
 ];
 
 const router = new VueRouter({

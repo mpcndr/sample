@@ -41,10 +41,10 @@
               active-class
               >วิชาเลือก</router-link
             >
-            <div v-if="this.$store.getters.getDepartment == 'วิทยาการข้อมูล'">
+            <div v-if="this.$store.getters.getDepartment === 'วิทยาการข้อมูล'">
               <router-link
                 v-if="this.$store.getters.getLogin === 'true'"
-                to="/subject_selected"
+                to="/studyplan"
                 id="text-underline"
                 class="nav-link"
                 active-class
@@ -174,6 +174,8 @@ export default {
               token: this.$store.getters.getToken,
             }).then((res1) => {
               this.username = res1.data.name;
+              this.$store.dispatch("setDepartment", res1.data.choose)
+              console.log(this.$store.getters.getDepartment);
             });
           }
         });
