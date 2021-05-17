@@ -41,14 +41,27 @@
               active-class
               >วิชาเลือก</router-link
             >
-            <router-link
-              v-if="this.$store.getters.getLogin === 'true'"
-              to="/subject_selected"
-              id="text-underline"
-              class="nav-link"
-              active-class
-              >วางแผนหลักสูตร</router-link
-            >
+            <div v-if="this.$store.getters.getDepartment == 'วิทยาการข้อมูล'">
+              <router-link
+                v-if="this.$store.getters.getLogin === 'true'"
+                to="/subject_selected"
+                id="text-underline"
+                class="nav-link"
+                active-class
+                >วางแผนหลักสูตร</router-link
+              >
+            </div>
+            <div v-else>
+              <router-link
+                v-if="this.$store.getters.getLogin === 'true'"
+                to="/subject_selected"
+                id="text-underline"
+                class="nav-link"
+                active-class
+                >วางแผนหลักสูตร</router-link
+              >
+            </div>
+
             <div v-if="this.$store.getters.getLogin === 'true'">
               <div class="dropdown show">
                 <a

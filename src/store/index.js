@@ -8,7 +8,9 @@ export default new Vuex.Store({
     api : "http://127.0.0.1:8000/",
     login : localStorage.getItem('login')||"",
     session_status : localStorage.getItem('session')||"",
-    token : localStorage.getItem('token')||""
+    token : localStorage.getItem('token')||"",
+    chooose : 1,
+    department : localStorage.getDepartment('department') || ""
   },
   mutations: {
     setLogin(state, value) {
@@ -22,6 +24,13 @@ export default new Vuex.Store({
     setToken(state, value) {
       state.token = value
       localStorage.setItem('token', state.token)
+    },
+    setChoose(state, value) {
+      state.choose = value
+    },
+    setDepartment(state, value) {
+      state.department = value
+      localStorage.setItem('department', state.department)
     }
   },
   actions: {
@@ -33,6 +42,12 @@ export default new Vuex.Store({
     },
     setToken(context, value) {
       context.commit("setToken", value);
+    },
+    setChoose(context, value) {
+      context.commit("setChoose", value);
+    },
+    setDepartment(context, value) {
+      context.commit("setDepartment", value);
     }
   },
   modules: {
@@ -49,6 +64,12 @@ export default new Vuex.Store({
     },
     getApi(state) {
       return state.api
+    },
+    getChoose(state) {
+      return state.choose
+    },
+    getDepartment(state) {
+      return state.department
     }
   },
 

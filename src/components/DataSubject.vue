@@ -337,19 +337,13 @@ export default {
         this.nodeDataArray = json.nodeDataArray;
         console.log(this.nodeDataArray);
       });
-    // Axios.post(this.$store.getters.getApi + "api/getcoursestudent/", {
-    //   token: this.$store.getters.getToken,
-    // }).then((res1) => {
-    //   this.nodeDataArray = res1.data.nodeDataArray;
-    //   console.log("------------>" + this.nodeDataArray);
-    // });
     await fetch(this.$store.getters.getApi + "api/getconditionsubject/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ token: this.$store.getters.getToken }),
+      body: JSON.stringify({ token: this.$store.getters.getToken, choose: this.$store.getters.getChoose }),
     })
       .then((response) => response.json())
       .then((json) => {
