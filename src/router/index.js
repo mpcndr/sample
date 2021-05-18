@@ -45,12 +45,12 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/Profile_private.vue"),
   },
   {
-    path: "/subject_selected/subject_cal",
+    path: "/subject_cal",
     name: "subject_cal",
     component: () => import("../components/SubjectCal.vue"),
   },
   {
-    path: "/subject_selected/dataSubjectdiagram",
+    path: "/dataSubjectdiagram",
     name: "diagram_dataSubject",
     component: () => import("../components/DataSubject.vue"),
   },

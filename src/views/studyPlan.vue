@@ -30,7 +30,7 @@
               <div class="text-centered-left col-12">
                 <h2 style="color: #fff">ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h2>
                 <p></p>
-                <a href="/subject_selected/subject_cal">
+                <a href="/subject_cal">
                   <button type="button" class="btn btn-dark" v-on:click="sendCheck(1)">
                     วางแผนการเรียน
                   </button></a
@@ -54,7 +54,7 @@
                   และวิชาถัดไป
                 </h2>
                 <p></p>
-                <a href="/subject_selected/subject_cal">
+                <a href="/dataSubjectdiagram">
                   <button type="button" class="btn btn-dark" v-on:click="sendCheck(1)">
                     ดูรายวิชาและตัวถัดไป
                   </button></a
@@ -106,7 +106,7 @@
               <div class="text-centered-left col-12">
                 <h2>ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h2>
                 <p></p>
-                <a href="/subject_selected/subject_cal" >
+                <a href="/subject_cal" >
                   <button type="button" class="btn btn-light" v-on:click="sendCheck(2)">
                     วางแผนการเรียน
                   </button></a
@@ -130,7 +130,7 @@
                   และวิชาถัดไป
                 </h2>
                 <p></p>
-                <a href="/subject_selected/subject_cal">
+                <a href="/dataSubjectdiagram">
                   <button type="button" class="btn btn-light" v-on:click="sendCheck(2)">
                     ดูรายวิชาและตัวถัดไป
                   </button></a

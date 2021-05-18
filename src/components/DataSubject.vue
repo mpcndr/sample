@@ -127,17 +127,44 @@ export default {
           { margin: 5 },
 
           new go.Binding("text", "key")
+        ),
+        {
+          toolTip: $(
+            "ToolTip",
+            $(
+              go.TextBlock,
+              { margin: 4 },
+              new go.Binding("text", "")
+            )
+          ),
+        }
+      );
+      myDiagram.linkTemplate = $(go.Link, {
+        routing: go.Link.AvoidsNodes,
+        curve: go.Link.JumpOver,
+        fromSpot: go.Spot.BottomCenter,
+        toSpot: go.Spot.MiddleTop,
+      });
+
+      myDiagram.toolTip = $(
+        "ToolTip",
+        $(
+          go.TextBlock,
+          { margin: 4 },
+          // use a converter to display information about the diagram model
+          new go.Binding("text", "", diagramInfo)
         )
       );
-      myDiagram.linkTemplate = $(
-        go.Link,
-        {
-          routing: go.Link.AvoidsNodes,
-          curve: go.Link.JumpOver,
-          fromSpot: go.Spot.BottomCenter,
-          toSpot: go.Spot.MiddleTop,
-        },
-      );
+
+      function diagramInfo(model) {
+        return (
+          "Model:\n" +
+          model.nodeDataArray.length +
+          " nodes, " +
+          model.linkDataArray.length +
+          " links"
+        );
+      }
 
       var myNodeTemplate = $(
         go.Node,
@@ -162,7 +189,7 @@ export default {
         new go.Binding("text", "key", go.Binding.toString),
         $(
           go.Shape,
-          "RoundedRectangle", 
+          "RoundedRectangle",
           new go.Binding("fill", "grade", checkSubject),
           new go.Binding("stroke", "isHighlighted", function(h) {
             return h ? "black" : "grey";
@@ -247,7 +274,7 @@ export default {
           }).ofObject(),
           { name: "PIPE", strokeCap: "round" }
         ),
-        $(go.Shape, { toArrow: "Standard", strokeWidth: 4, stroke: "#C19A6B"}),
+        $(go.Shape, { toArrow: "Standard", strokeWidth: 4, stroke: "#C19A6B" }),
 
         {
           selectionAdornmentTemplate: $(go.Adornment, "Auto"),
@@ -267,8 +294,8 @@ export default {
           return "#93C572";
         } else if (grade == -1) {
           return "#E3735E";
-        } else if( grade == -2) {
-          return "#F8DE7E"
+        } else if (grade == -2) {
+          return "#F8DE7E";
         } else {
           return "#E5E4E2";
         }
@@ -331,7 +358,10 @@ export default {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ token: this.$store.getters.getToken, choose: this.$store.getters.getChoose }),
+      body: JSON.stringify({
+        token: this.$store.getters.getToken,
+        choose: this.$store.getters.getChoose,
+      }),
     })
       .then((response) => response.json())
       .then((json) => {
@@ -344,7 +374,10 @@ export default {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ token: this.$store.getters.getToken, choose: this.$store.getters.getChoose }),
+      body: JSON.stringify({
+        token: this.$store.getters.getToken,
+        choose: this.$store.getters.getChoose,
+      }),
     })
       .then((response) => response.json())
       .then((json) => {
