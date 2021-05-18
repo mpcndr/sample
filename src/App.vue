@@ -185,6 +185,7 @@ export default {
       this.$store.dispatch("setToken", "");
       this.$store.dispatch("setLogin", "");
       this.$store.dispatch("setSession", "");
+      this.$store.dispatch("setChoose", 1);
       this.$router.push({ path: "/" });
       location.reload();
     },

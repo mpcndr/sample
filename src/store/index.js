@@ -9,7 +9,7 @@ export default new Vuex.Store({
     login : localStorage.getItem('login')||"",
     session_status : localStorage.getItem('session')||"",
     token : localStorage.getItem('token')||"",
-    chooose : 1,
+    choose : localStorage.getItem('choose') || 1,
     department : localStorage.getItem('department') || ""
   },
   mutations: {
@@ -27,6 +27,8 @@ export default new Vuex.Store({
     },
     setChoose(state, value) {
       state.choose = value
+      localStorage.setItem('choose', state.choose)
+
     },
     setDepartment(state, value) {
       state.department = value

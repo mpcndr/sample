@@ -204,13 +204,14 @@ export default {
     },
   },
   async created() {
+    console.log("sjc ==> " + this.$store.getters.getChoose);
     await fetch(this.$store.getters.getApi + "api/getguide/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ token: this.$store.getters.getToken }),
+      body: JSON.stringify({ token: this.$store.getters.getToken, choose: this.$store.getters.getChoose }),
     })
       .then((response) => response.json())
       .then((json) => {

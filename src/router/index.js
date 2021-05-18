@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Subjecselected from "../views/SubjectSelected.vue"
 import AboutSubject from "../views/AboutSubject.vue"
 import ProfileUser from "../views/Profile_private.vue"
+import StudyPlan from "../views/studyPlan.vue"
 
 Vue.use(VueRouter);
 
@@ -82,8 +83,8 @@ const routes = [
   {
     path: "/studyplan",
     name: "StudyPlan",
-    component: () => import("../components/SubjDatasci.vue")
-  }
+    component: StudyPlan
+  },
 ];
 
 const router = new VueRouter({
