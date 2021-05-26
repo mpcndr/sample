@@ -1,6 +1,70 @@
 <template>
   <div>
-    <div id="mySubcal" style="width: 100vw; height: 91.5vh"></div>
+    <div id="mySubcal" style="width: 100%; height: 100vh"></div>
+    <transition>
+      <div class="ac-wrapper">
+        <div id="popup" v-if="show">
+          <div
+            class="carousel slide"
+            id="carouselExampleIndicators"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="1"
+              ></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img src="../assets/Untitled-3.jpg" style="width: 80vw" />
+              </div>
+              <div class="carousel-item">
+                <img src="../assets/Untitled-3.jpg" style="width: 80vw" />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="panel-footer button-right">
+            <button
+              id="close"
+              class="btn btn-lg btn-primary"
+              v-on:click="show = !show"
+              @click="CloseButton()"
+            >
+              เข้าใจเเล้ว
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -14,9 +78,16 @@ export default {
       status: 2,
       nodeSubject: [],
       subjects: [],
+      show: true,
+      Image: [
+        {id: 1, img: "../assets/Untitled-3.jpg"}
+      ]
     };
   },
   methods: {
+    CloseButton() {
+
+    },
     Diagram: function() {
       var $ = go.GraphObject.make;
       var myDiagram = $(go.Diagram, "mySubcal", {
@@ -72,22 +143,20 @@ export default {
         // a Binding conversion function
         return horiz ? "#EADDCA" : "#C19A6B";
       }
-// --------->
+      // --------->
       function defaultFont(horiz) {
         // a Binding conversion function
         return horiz ? "20px Kanit" : "18px Kanit";
       }
-// ---------> color subject in group <-----------
+      // ---------> color subject in group <-----------
       function checkSubject(check) {
         if (check === 1) {
           return "#93C572";
         } else if (check === -1) {
           return "#E3735E";
-        }
-        else if( check == -2) {
-          return "#F8DE7E"
-          }
-          else {
+        } else if (check == -2) {
+          return "#F8DE7E";
+        } else {
           return "#E5E4E2"; //"#C39BD3";
         }
       }
@@ -211,7 +280,10 @@ export default {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ token: this.$store.getters.getToken, choose: this.$store.getters.getChoose }),
+      body: JSON.stringify({
+        token: this.$store.getters.getToken,
+        choose: this.$store.getters.getChoose,
+      }),
     })
       .then((response) => response.json())
       .then((json) => {
@@ -224,7 +296,36 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  padding-top: 20%;
+#mySubcal {
+  position: fixed;
+  z-index: -1;
+}
+#ac-wrapper {
+  position: fixed;
+
+  z-index: 1;
+}
+.button-right {
+  position: absolute;
+  bottom: 2%;
+  right: 3%;
+}
+#popup {
+  position: fixed;
+  margin: 4.5% 10%;
+}
+a.carousel-control-prev {
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+  margin-top: 20%;
+  margin-left: -4%;
+}
+a.carousel-control-next {
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+  margin-top: 20%;
+  margin-right: -4%;
 }
 </style>

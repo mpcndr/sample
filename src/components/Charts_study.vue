@@ -31,22 +31,6 @@
           <p>หน่วยกิตที่ผ่าน</p>
         </div>
       </div>
-      <div class="column">
-        <div class="donut-size bigger">
-          <div class="pie-wrapper">
-            <span class="label">
-              <span class="num">{{ percent_3 }}</span>
-              <span class="smaller">%</span>
-            </span>
-            <div class="pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-            <div class="shadow"></div>
-          </div>
-          <p>เรียนคิดเป็นเปอร์เซ็น</p>
-        </div>
-      </div>
     </div>
   </div>
 </template>

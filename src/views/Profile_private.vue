@@ -1,7 +1,8 @@
 <template>
-  <div class="container">
-    <div class="row profile">
-      <div class="col-md-3">
+<div class="body">
+<div class="container">
+    <div class="row">
+      <div class="col-md-3 profile">
         <div class="profile-sidebar">
           <!-- SIDEBAR USERPIC -->
           <div class="profile-userpic">
@@ -120,6 +121,8 @@
       </div>
     </div>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -196,7 +199,8 @@ Licensed under MIT
 
 /* Profile container */
 .profile {
-  margin: 20px 0;
+  margin: 50px 0;
+  background-color: #F0F3F4;
 }
 .profile-name {
   font-size: 24px;
@@ -204,7 +208,7 @@ Licensed under MIT
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-  background: #fff;
+  background: #F0F3F4;
 }
 
 .profile-userpic img {
@@ -259,5 +263,8 @@ i.fa {
 }
 div.menu {
   padding-bottom: 8px;
+}
+.body {
+  background-color: #F0F3F4;
 }
 </style>

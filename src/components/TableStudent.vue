@@ -11,7 +11,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import tippy from "tippy.js";
-import 'tippy.js/dist/tippy.css';
+// import 'tippy.js/dist/tippy.css';
 export default {
   components: {
     FullCalendar,
@@ -31,13 +31,14 @@ export default {
         plugins: [dayGridPlugin, interactionPlugin, listPlugin, timeGridPlugin],
         initialView: "listWeek",
         dateClick: this.handleDateClick,
+        // navLinks: true,
         events: [
          
         ],
         eventMouseEnter: function(info) {
           tippy(info.el, {
-            title: "ห้องสอบ",
-            content: info.event.extendedProps.description
+            theme: "tomato",
+            content: "ห้องสอบ: " + info.event.extendedProps.description
           })
         },
         eventDidMount: function(info) {
@@ -72,7 +73,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.fc-event-title {
-  font-size: 22px;
-}
 </style>

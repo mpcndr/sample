@@ -131,20 +131,20 @@ export default {
         {
           toolTip: $(
             "ToolTip",
-            $(
-              go.TextBlock,
-              { margin: 4 },
-              new go.Binding("text", "")
-            )
+            $(go.TextBlock, { margin: 4 }, new go.Binding("text", "color"))
           ),
         }
       );
-      myDiagram.linkTemplate = $(go.Link, {
-        routing: go.Link.AvoidsNodes,
-        curve: go.Link.JumpOver,
-        fromSpot: go.Spot.BottomCenter,
-        toSpot: go.Spot.MiddleTop,
-      });
+      function diagramInfo(model) {
+        console.log("sfds;lfk");
+        return (
+          "Model:\n" +
+          model.nodeDataArray.length +
+          " nodes, " +
+          model.linkDataArray.length +
+          " links"
+        );
+      }
 
       myDiagram.toolTip = $(
         "ToolTip",
@@ -155,16 +155,12 @@ export default {
           new go.Binding("text", "", diagramInfo)
         )
       );
-
-      function diagramInfo(model) {
-        return (
-          "Model:\n" +
-          model.nodeDataArray.length +
-          " nodes, " +
-          model.linkDataArray.length +
-          " links"
-        );
-      }
+      myDiagram.linkTemplate = $(go.Link, {
+        routing: go.Link.AvoidsNodes,
+        curve: go.Link.JumpOver,
+        fromSpot: go.Spot.BottomCenter,
+        toSpot: go.Spot.MiddleTop,
+      });
 
       var myNodeTemplate = $(
         go.Node,

@@ -7,7 +7,7 @@
       <div class="text-centered-left">
         <h2>ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h2>
         <p></p>
-        <a href="/subject_selected/subject_cal"
+        <a href="/subject_cal"
           ><button
             type="button"
             class="btn btn-dark"
@@ -29,7 +29,7 @@
           และวิชาถัดไป
         </h2>
         <p></p>
-        <a href="/subject_selected/dataSubjectdiagram"
+        <a href="/dataSubjectdiagram"
           ><button type="button" class="btn btn-light"
             data-mdb-ripple-color="dark">
             ดูรายวิชาและตัวถัดไป

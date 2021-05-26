@@ -37,7 +37,7 @@ export default {
         headerToolbar: {
           left: "prev,next today",
           center: "title",
-          right: "dayGridMonth,timeGridWeek,listWeek",
+          right: "timeGridWeek,listWeek",
         },
         events: [
         ],
@@ -49,7 +49,7 @@ export default {
         },
         eventMouseEnter: function (info) {
           tippy(info.el, {
-            content: info.event.extendedProps.description
+            content: "ห้องเรียน: "+info.event.extendedProps.description
           })
         //   let hover_item = document.createElement("div");
         //   hover_item.setAttribute("id", info.event.title + info.event.start);

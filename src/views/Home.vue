@@ -1,63 +1,79 @@
 <template>
   <div class="home">
     <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img class="img-top" src="../assets/144140726_3836410093082989_3475210957440590045_o.jpg" >
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h2 class="display-4" style="color: #fff">ยินดีตอนรับ!</h2>
-              <p class="lead">ให้เราช่วยเหลือคุณในการลงทะเบียน</p> -->
-            </div>
+            <img class="img-top img-fluid" src="../assets/Untitled-3.jpg" />
+            <!-- <div class="carousel-caption d-none d-md-block">
+              <h2 class="display-4" style="color: #fff">ยินดีตอนรับ!</h2>
+              <p class="lead">ให้เราช่วยเหลือคุณในการลงทะเบียน</p> 
+            </div> -->
           </div>
-          <div class="carousel-item" >
-            <img src="../assets/144652278_3836410326416299_3751869829875082694_o (2).jpg" alt="">
-            <div class="carousel-caption d-none d-md-block">
-              <h2 class="display-4">Welcome!</h2>
-              <p class="lead">Can I help you to Register.</p>
-            </div>
+          <div class="carousel-item">
+            <img
+            class="img-top"
+              src="../assets/Untitled-3.jpg"
+              alt=""
+            />
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </header>
     <!-- <aboutReg/>
     <themePublic/> -->
-      
-      <CalendarHome/>
-      
-      <NewsEvent/>
-      
-    
+
+    <CalendarHome />
+
+    <NewsEvent />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import CalendarHome from '../components/CalendarHome.vue'
-import NewsEvent from '../components/NewsEvent.vue'
+import CalendarHome from "../components/CalendarHome.vue";
+import NewsEvent from "../components/NewsEvent.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     CalendarHome,
-    NewsEvent
-  }
-}
+    NewsEvent,
+  },
+};
 </script>
 <style scoped>
-  
+
 .carousel-item {
   height: 93vh;
   min-height: 350px;

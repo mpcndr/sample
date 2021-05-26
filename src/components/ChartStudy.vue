@@ -28,24 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="total">
-      <p class="text-total">เรียนคิดเป็นเปอร์เซ็น</p>
-      <div class="progress">
-        <div
-          class="progress-bar"
-          role="progressbar"
-          style="width: 25%;"
-          aria-valuenow="25"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        >
-          25%
-        </div>
-      </div>
-    </div>
-    <div id="info" style="display:none;">
-      {{ this.content }}
-    </div>
+    
   </div>
 </template>
 
@@ -56,10 +39,10 @@ export default {
   data() {
     return {
       studyCase: [],
-      Grade: 2.38,
-      Credit: 139,
+      Grade: "",
+      Credit: "",
       Total: "",
-      credit_total: 137,
+      credit_total: "137",
       content: "",
     };
   },

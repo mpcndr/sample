@@ -115,7 +115,7 @@ p {
   padding-left: 0px;
   margin: 0.5%;
   font-weight: bold;
-  color: #da694b;
+  color: #E35335;
 }
 ul {
   list-style-type: none;
@@ -153,8 +153,8 @@ ul {
   margin-top: 0;
 }
 .func h3 i {
-  color: #26384e;
-  background: #fff;
+  color: #ffffff;
+  background: #FA5F55	;
   width: 42px;
   height: 42px;
   font-size: 20px;
@@ -249,13 +249,13 @@ ul {
 .func .data-study,
 .func .process {
   width: 48%;
-  background: #fff;
+  background: #FBFCFC;
   padding: 15px;
   margin: 0 4% 15px 0;
 }
 .func .edu {
   width: 48%;
-  background: #fff;
+  background: #FBFCFC;
   padding: 15px;
 }
 </style>
