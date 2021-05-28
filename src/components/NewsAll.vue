@@ -172,4 +172,14 @@ p.card-text {
 .text-more:hover {
   color: #707070;
 }
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    height: 25vw;
+  }
+  @media screen and (max-width: 540px) {
+    .card-img-top {
+      height: 40vh;
+    }
+  }
+}
 </style>

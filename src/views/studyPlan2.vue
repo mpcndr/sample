@@ -154,7 +154,7 @@
 </template>
 <script>
 export default {
-  name: 'StudyPlan',
+  name: 'StudyPlan2',
   methods: {
     sendCheck(choose) {
       console.log(choose);

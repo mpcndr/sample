@@ -44,7 +44,7 @@
             <div v-if="this.$store.getters.getDepartment === 'วิทยาการข้อมูล'">
               <router-link
                 v-if="this.$store.getters.getLogin === 'true'"
-                to="/studyplan"
+                to="/studyplandatasci"
                 id="text-underline"
                 class="nav-link"
                 active-class
@@ -54,7 +54,7 @@
             <div v-else>
               <router-link
                 v-if="this.$store.getters.getLogin === 'true'"
-                to="/subject_selected"
+                to="/studyplancomit"
                 id="text-underline"
                 class="nav-link"
                 active-class

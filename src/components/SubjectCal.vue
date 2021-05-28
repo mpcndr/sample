@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="mySubcal" style="width: 100%; height: 100vh"></div>
+    <div id="mySubcal" style="width: 100%; height: 100%"></div>
     <transition>
       <div class="ac-wrapper">
         <div id="popup" v-if="show">
@@ -91,6 +91,8 @@ export default {
     Diagram: function() {
       var $ = go.GraphObject.make;
       var myDiagram = $(go.Diagram, "mySubcal", {
+        maxScale: 1,
+        minScale: 0.5,
         // when a drag-drop occurs in the Diagram's background, make it a top-level node
         // Diagram has simple horizontal layout
         layout: $(go.GridLayout, {

@@ -58,40 +58,6 @@
         </h5>
       </div>
     </div>
-    <!-- sdfdsf -->
-    <!-- <div class="col1">
-      <div class="table-responsive">
-        <table
-          id="dtBasicExample"
-          class="table table-default table-bordered table-sm table-hover"
-          cellspacing="0"
-          width="100%"
-        >
-          <thead class="thead-light">
-            <tr>
-              <th class="th-sm1">รายการ</th>
-              <th class="th-sm1">วันที่</th>
-            </tr>
-          </thead>
-          <tbody id="tableList">
-            <tr
-              v-for="date in dates"
-              :key="date.id"
-              :id="'date' + date.id"
-              v-on:click="selectCalendar(date)"
-            >
-              <td id="chk">
-                {{ date.title }}
-              </td>
-              <td>
-                {{ formatDatetime(date.start_date) }} -
-                {{ formatDatetime(date.end_date) }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -313,7 +279,86 @@ i {
 }
 
 .text-selectCal {
-  margin-right: 8px;
+  margin-right: 12px;
   font-size: 22px;
+}
+
+@media screen and (max-width: 375px) {
+  .index-panel-header .line {
+    margin-top: 46px;
+    float: left;
+    width: 150px;
+    border-top: 2px solid #da694b;
+  }
+  .index-panel-header > h3 {
+    margin-top: 35px;
+    float: left;
+    margin-right: 20px;
+    font-size: 18px;
+    color: #3b3b3b;
+    font-weight: normal;
+  }
+  i {
+    margin-top: 36px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .text-selectCal {
+    /* margin-right: 4px; */
+    font-size: 22px;
+  }
+  #selectDate {
+    margin-bottom: 3%;
+  }
+  .text-cal2 {
+    color: #3b3b3b;
+    font-size: 14px;
+  }
+  .text-span2 {
+    color: #000;
+    font-size: 16px;
+    font-weight: initial;
+  }
+  #clockdiv div > span {
+    padding: 15px;
+    border-radius: 12px;
+    background: #000;
+    width: 85px;
+    display: inline-block;
+  }
+  @media screen and (max-width: 320px) {
+    .index-panel-header .line {
+      margin-top: 46px;
+      float: left;
+      width: 120px;
+      border-top: 2px solid #da694b;
+    }
+    .index-panel-header > h3 {
+      margin-top: 35px;
+      float: left;
+      margin-right: 20px;
+      font-size: 18px;
+      color: #3b3b3b;
+      font-weight: normal;
+    }
+    i {
+      margin-top: 36px;
+      float: left;
+      margin-left: 10px;
+      margin-right: 12px;
+      font-size: 22px;
+      font-weight: normal;
+    }
+    #clockdiv div > span {
+      padding: 10px;
+      border-radius: 12px;
+      background: #000;
+      width: 65px;
+      display: inline-block;
+    }
+  }
 }
 </style>

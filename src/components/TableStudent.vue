@@ -10,7 +10,8 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
-import tippy from "tippy.js";
+import allLocales from "@fullcalendar/core/locales-all";
+// import tippy from "tippy.js";
 // import 'tippy.js/dist/tippy.css';
 export default {
   components: {
@@ -29,18 +30,20 @@ export default {
     return {
       calendarOptions: {
         plugins: [dayGridPlugin, interactionPlugin, listPlugin, timeGridPlugin],
-        initialView: "listWeek",
+        initialView: "listYear",
         dateClick: this.handleDateClick,
+         locales: allLocales,
+        locale: "th",
         // navLinks: true,
         events: [
          
         ],
-        eventMouseEnter: function(info) {
-          tippy(info.el, {
-            theme: "tomato",
-            content: "ห้องสอบ: " + info.event.extendedProps.description
-          })
-        },
+        // eventMouseEnter: function(info) {
+        //   tippy(info.el, {
+        //     theme: "tomato",
+        //     content: "ห้องสอบ: " + info.event.extendedProps.description
+        //   })
+        // },
         eventDidMount: function(info) {
           console.log(info.event.extendedProps.description);
           // {description: "Lecture", department: "BioChemistry"}
@@ -73,4 +76,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
 </style>

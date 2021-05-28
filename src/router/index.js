@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Subjecselected from "../views/SubjectSelected.vue"
+import studyPlan1 from "../views/studyPlan1.vue"
 import AboutSubject from "../views/AboutSubject.vue"
 import ProfileUser from "../views/Profile_private.vue"
-import StudyPlan from "../views/studyPlan.vue"
+import studyPlan2 from "../views/studyPlan2.vue"
 
 Vue.use(VueRouter);
 
@@ -15,14 +15,14 @@ const routes = [
     component: Home,
   },
   {
-    path: "/subject_selected",
-    name: "subject_selected",
+    path: "/studyplancomit",
+    name: "studyPlan1",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () =>
     //   import(/* webpackChunkName: "about" */ "../views/SubjectSelected.vue"),
-    component: Subjecselected
+    component: studyPlan1
   },
   {
     path: "/about_subject",
@@ -81,9 +81,9 @@ const routes = [
     component: () => import("../components/TableStudent.vue"),
   },
   {
-    path: "/studyplan",
-    name: "StudyPlan",
-    component: StudyPlan
+    path: "/studyplandatasci",
+    name: "StudyPlan2",
+    component: studyPlan2
   },
 ];
 

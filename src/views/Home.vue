@@ -14,7 +14,7 @@
           ></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox" >
           <div class="carousel-item active">
             <img class="img-top img-fluid" src="../assets/Untitled-3.jpg" />
             <!-- <div class="carousel-caption d-none d-md-block">
@@ -24,8 +24,8 @@
           </div>
           <div class="carousel-item">
             <img
-            class="img-top"
-              src="../assets/Untitled-3.jpg"
+            class="img-top img-fluid"
+              src="../assets/cal.jpg"
               alt=""
             />
           </div>
@@ -75,6 +75,7 @@ export default {
 <style scoped>
 
 .carousel-item {
+  /* width: 100%; */
   height: 93vh;
   min-height: 350px;
   background: no-repeat center center scroll;
@@ -93,5 +94,29 @@ export default {
   display: flex;
   align-items: flex-end;
   padding: 15px;
+}
+
+.carousel img {
+  width: auto;
+  height: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  .carousel-item {
+    height: 40vh;
+    min-height: 30vh;
+  }
+}
+@media screen and (max-width: 320px) {
+  .carousel-item {
+    height: 30vh;
+    min-height: 30vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  .carousel-item {
+    height: 35vh;
+    min-height: 30vh;
+  }
 }
 </style>

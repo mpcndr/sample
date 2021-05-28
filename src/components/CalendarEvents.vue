@@ -10,8 +10,9 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
-import tippy from "tippy.js";
-import 'tippy.js/dist/tippy.css';
+import allLocales from "@fullcalendar/core/locales-all";
+// import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
 export default {
   name: "calendar-event",
   components: {
@@ -34,23 +35,24 @@ export default {
         dateClick: this.handleDateClick,
         nowIndicator: true,
         navLinks: true,
+        locales: allLocales,
+        locale: "th",
         headerToolbar: {
           left: "prev,next today",
           center: "title",
           right: "timeGridWeek,listWeek",
         },
-        events: [
-        ],
+        events: [],
         eventClick: function(info) {
           info.jsEvent.preventDefault(); // don't let the browser navigate
           if (info.event.url) {
             window.open(info.event.url);
           }
         },
-        eventMouseEnter: function (info) {
-          tippy(info.el, {
-            content: "ห้องเรียน: "+info.event.extendedProps.description
-          })
+        // eventMouseEnter: function (info) {
+        //   tippy(info.el, {
+        //     content: "ห้องเรียน: "+info.event.extendedProps.description
+        //   })
         //   let hover_item = document.createElement("div");
         //   hover_item.setAttribute("id", info.event.title + info.event.start);
         //   hover_item.setAttribute("class", "hover_event_item");
@@ -76,15 +78,15 @@ export default {
         //   let parentEl = info.el.parentNode
 
         //   parentEl.insertBefore(hover_item, info.el)
-        },
+        //},
         eventMouseLeave: (info) => {
-          document.getElementById(info.event.title + info.event.start).remove()
+          document.getElementById(info.event.title + info.event.start).remove();
         },
-        
+
         // eventDidMount: function(info) {
         //   console.log("asdfnkasdf");
         //   // console.log(info.event.extendedProps.department);
-          
+
         //   // {description: "Lecture", department: "BioChemistry"}
         // },
       },
@@ -120,4 +122,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.hello {
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+</style>

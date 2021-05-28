@@ -163,7 +163,8 @@ export default {
     return {
       select: "general",
       subject: [],
-      subj:[],
+      subj: [],
+      result: true,
     };
   },
   async created() {
@@ -191,6 +192,8 @@ export default {
           tr[i].style.display = "";
         } else {
           tr[i].style.display = "none";
+          
+          // return "No"
         }
       }
     },
@@ -212,6 +215,7 @@ export default {
 
 .index-panel {
   margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 .index-panel-header .line {
