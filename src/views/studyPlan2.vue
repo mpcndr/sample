@@ -4,7 +4,7 @@
       <div class="additional">
         <div class="user-card">
           <div class="level-center">
-            แผนการเรียน ก.
+            <p class="text-p">แผนการเรียน ก.</p>
           </div>
           <div>
             <img
@@ -21,6 +21,7 @@
             <div class="split left">
               <div class="col-12">
                 <img
+                  class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/moodboard (1).png"
@@ -28,10 +29,16 @@
                 />
               </div>
               <div class="text-centered-left col-12">
-                <h2 style="color: #fff">ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h2>
+                <h2 style="color: #fff" class="header-plan">
+                  ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                </h2>
                 <p></p>
                 <a href="/subject_cal">
-                  <button type="button" class="btn btn-dark" v-on:click="sendCheck(1)">
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    v-on:click="sendCheck(1)"
+                  >
                     วางแผนการเรียน
                   </button></a
                 >
@@ -42,6 +49,7 @@
             <div class="split right">
               <div class="col-12">
                 <img
+                  class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/moodboard.png"
@@ -49,13 +57,17 @@
                 />
               </div>
               <div class="text-centered-left col-12">
-                <h2 style="color: #fff">
+                <h2 style="color: #fff" class="header-plan">
                   รายวิชาก่อนหน้า <br />
                   และวิชาถัดไป
                 </h2>
                 <p></p>
                 <a href="/dataSubjectdiagram">
-                  <button type="button" class="btn btn-dark" v-on:click="sendCheck(1)">
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    v-on:click="sendCheck(1)"
+                  >
                     ดูรายวิชาและตัวถัดไป
                   </button></a
                 >
@@ -68,7 +80,7 @@
         <h1>
           เลือกจบแบบทำสหกิจศึกษา
         </h1>
-        <p>
+        <p class="text-more">
           <span class="text-span">สหกิจศึกษา</span> คือ
           การปฏิบัติงานเป็นเวลาไม่น้อยกว่า 1 ภาคการศึกษาในสถานประกอบการในลักษณะ
           พนักงานชั่วคราวเพื่อให้ได้ประสบการณ์จากการไปปฏิบัติงานที่ได้รับมอบหมายที่เกี่ยวกับสาขา
@@ -81,7 +93,7 @@
       <div class="additional">
         <div class="user-card">
           <div class="level-center">
-            แผนการเรียน ข.
+            <p class="text-p">แผนการเรียน ข.</p>
           </div>
           <div>
             <img
@@ -97,6 +109,7 @@
             <div class="split left">
               <div class="col-12">
                 <img
+                  class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/think.png"
@@ -104,10 +117,16 @@
                 />
               </div>
               <div class="text-centered-left col-12">
-                <h2>ให้เราวางแผน <br />การลงทะเบียนให้สิ!</h2>
+                <h2 class="header-plan">
+                  ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                </h2>
                 <p></p>
-                <a href="/subject_cal" >
-                  <button type="button" class="btn btn-light" v-on:click="sendCheck(2)">
+                <a href="/subject_cal">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    v-on:click="sendCheck(2)"
+                  >
                     วางแผนการเรียน
                   </button></a
                 >
@@ -118,6 +137,7 @@
             <div class="split right">
               <div class="col-12">
                 <img
+                  class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/project-plan.png"
@@ -125,13 +145,17 @@
                 />
               </div>
               <div class="text-centered-left col-12">
-                <h2>
+                <h2 class="header-plan">
                   รายวิชาก่อนหน้า <br />
                   และวิชาถัดไป
                 </h2>
                 <p></p>
                 <a href="/dataSubjectdiagram">
-                  <button type="button" class="btn btn-light" v-on:click="sendCheck(2)">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    v-on:click="sendCheck(2)"
+                  >
                     ดูรายวิชาและตัวถัดไป
                   </button></a
                 >
@@ -142,7 +166,7 @@
       </div>
       <div class="general">
         <h1>เลือกจบแบบโครงงานวิจัย</h1>
-        <p>
+        <p class="text-more">
           <span class="text-span2">โครงงานวิจัย</span> คือ
           หัวข้อทางวิทยาการข้อมูลที่ได้รับการอนุมัติจากคณะกรรมการภายใต้การแนะนำของ
           อาจารย์ที่ปรึกษาในหลักสูตรจัดทำรายงานและการนำเสนอผลงานวิจัย
@@ -154,17 +178,17 @@
 </template>
 <script>
 export default {
-  name: 'StudyPlan2',
+  name: "StudyPlan2",
   methods: {
     sendCheck(choose) {
       console.log(choose);
-      this.$store.dispatch("setChoose", choose)
+      this.$store.dispatch("setChoose", choose);
       console.log(this.$store.getters.getChoose);
-    }
+    },
   },
   created() {
-    console.log("===> "+this.$store.getters.getChoose);
-  }
+    console.log("===> " + this.$store.getters.getChoose);
+  },
 };
 </script>
 <style scoped>
@@ -344,5 +368,248 @@ p {
   left: 50%; */
   /* transform: translate(-50%, -50%); */
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .card .additional {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(#de685e, #ee786e);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card .additional .user-card {
+    width: 260px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  .img-center {
+    margin-top: 0%;
+    width: 150px;
+    height: 150px;
+  }
+  .text-p {
+    font-size: 24px;
+    margin-top: 15%;
+  }
+  .png-plan {
+    margin-top: 10%;
+    width: 150px;
+    height: 150px;
+  }
+  .btn {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 540px) {
+  .card .additional {
+    position: absolute;
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(#de685e, #ee786e);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card .additional .user-card {
+    width: 170px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  .img-center {
+    margin-top: 10%;
+    width: 110px;
+    height: 110px;
+  }
+  .text-p {
+    font-size: 22px;
+    margin-top: 40%;
+  }
+  .png-plan {
+    margin-top: 50%;
+    width: 110px;
+    height: 110px;
+  }
+  .btn {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 414px) {
+  .card {
+    margin: 1.5% 5% 1.5% 5%;
+    width: 90%;
+    height: 400px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+  }
+  .text-span,
+  .text-span2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .card .additional {
+    position: absolute;
+    width: 140px;
+    height: 100%;
+    background: linear-gradient(#de685e, #ee786e);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card .additional .user-card {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+
+  .card .additional .user-card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -2px;
+    height: 80%;
+    border-left: 2px solid #dbd2d2;
+  }
+  .img-center {
+    margin-top: 10%;
+    width: 95px;
+    height: 95px;
+  }
+  div .level-center {
+    justify-content: center;
+  }
+  .text-p {
+    font-size: 18px;
+    margin-top: 55%;
+  }
+  .general > h1 {
+    font-size: 18px;
+    letter-spacing: 0px;
+  }
+  .text-more {
+    font-size: 14px;
+  }
+  .card .general {
+    justify-content: center;
+    /* width: 50%; */
+    height: 100%;
+    margin-top: 20%;
+    margin-left: 25%;
+    margin-right: 0%;
+    /* box-sizing: border-box; */
+    padding-top: 5%;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 7.5rem;
+    right: 1.5rem;
+    font-size: 0.9em;
+  }
+  .header-plan {
+    font-size: 14px;
+    margin-top: 10%;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .png-plan {
+    margin-top: 70%;
+    width: 90px;
+    height: 90px;
+  }
+  @media screen and (max-width: 375px) {
+    .card {
+      margin: 1.5% 5% 1.5% 5%;
+      width: 90%;
+      height: 350px;
+      background-color: #fff;
+      background: linear-gradient(#f8f8f8, #fff);
+      box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+    }
+    .text-span,
+    .text-span2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .card .additional {
+      position: absolute;
+      width: 110px;
+      height: 100%;
+      background: linear-gradient(#de685e, #ee786e);
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .card .additional .user-card {
+      width: 120px;
+      height: 100%;
+      position: relative;
+      float: left;
+    }
+
+    .card .additional .user-card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10%;
+      right: -2px;
+      height: 80%;
+      border-left: 2px solid #dbd2d2;
+    }
+    .img-center {
+      margin-top: 25%;
+      width: 75px;
+      height: 75px;
+    }
+    div .level-center {
+      justify-content: center;
+    }
+    .text-p {
+      font-size: 18px;
+      margin-top: 50%;
+    }
+    .general > h1 {
+      font-size: 20px;
+      letter-spacing: 0px;
+    }
+    .text-more {
+      font-size: 14px;
+    }
+    .card .general {
+      justify-content: center;
+      /* width: 50%; */
+      height: 100%;
+      margin-left: 15%;
+      margin-right: 0%;
+      /* box-sizing: border-box; */
+      padding-top: 5%;
+    }
+    .card .general .more {
+      position: absolute;
+      bottom: 6.5rem;
+      right: 1.5rem;
+      font-size: 0.9em;
+    }
+    .header-plan {
+      font-size: 14px;
+      margin-top: 10%;
+    }
+    .btn {
+      font-size: 14px;
+    }
+    .png-plan {
+      margin-top: 80%;
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+}
 }
 </style>

@@ -242,6 +242,12 @@ export default {
   }
 }
 
+@media (max-width: 1200px) {
+  *{
+    zoom: 0.95;
+  }
+}
+
 a.nav-link.text-icon {
   font-size: 20px;
 }
