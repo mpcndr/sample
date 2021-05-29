@@ -1,9 +1,38 @@
 <template>
   <div>
     <!-- <TutorAnimation2></TutorAnimation2> -->
-    <div style="width: 100vw;"></div>
-    <div id="myDiagramDiv" style="width: 100vw; height:62vh;"></div>
+    <div class="dataSub">
+      <div id="myDiagramDiv" style="width: 100vw; height:62vh;"></div>
     <div id="myAsignatura" style="width: 100vw; height:29.5vh;"></div>
+    </div>
+    
+    <transition>
+      <div class="ac-wrapper">
+        <div id="popup" v-if="show">
+          <div
+            class="carousel slide"
+            id="carouselExampleIndicators"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img src="../assets/รายวิชา.jpg" style="width: 80vw" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer button-right">
+            <button
+              id="close"
+              class="btn btn-lg btn-primary"
+              v-on:click="show = !show"
+              @click="CloseButton()"
+            >
+              เข้าใจเเล้ว
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -21,6 +50,7 @@ export default {
     return {
       nodeDataArray: [],
       linkDataArray: [],
+      show: true,
     };
   },
   methods: {
@@ -390,4 +420,23 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.dataSub {
+  position: fixed;
+  z-index: -1;
+}
+#ac-wrapper {
+  position: fixed;
+  z-index: 1001;
+}
+.button-right {
+  position: absolute;
+  bottom: 2%;
+  right: 3%;
+}
+#popup {
+  position: fixed;
+  margin: 4% 10%;
+  
+}
+</style>

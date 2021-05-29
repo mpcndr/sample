@@ -9,26 +9,12 @@
             id="carouselExampleIndicators"
             data-ride="carousel"
           >
-            <ol class="carousel-indicators">
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="1"
-              ></li>
-            </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img src="../assets/Untitled-3.jpg" style="width: 80vw" />
-              </div>
-              <div class="carousel-item">
-                <img src="../assets/Untitled-3.jpg" style="width: 80vw" />
+                <img src="../assets/วางแผน.jpg" style="width: 80vw" />
               </div>
             </div>
-            <a
+            <!-- <a
               class="carousel-control-prev"
               href="#carouselExampleIndicators"
               role="button"
@@ -50,14 +36,13 @@
                 aria-hidden="true"
               ></span>
               <span class="sr-only">Next</span>
-            </a>
+            </a> -->
           </div>
           <div class="panel-footer button-right">
             <button
               id="close"
               class="btn btn-lg btn-primary"
               v-on:click="show = !show"
-              @click="CloseButton()"
             >
               เข้าใจเเล้ว
             </button>
@@ -85,9 +70,6 @@ export default {
     };
   },
   methods: {
-    CloseButton() {
-
-    },
     Diagram: function() {
       var $ = go.GraphObject.make;
       var myDiagram = $(go.Diagram, "mySubcal", {
@@ -314,20 +296,20 @@ export default {
 }
 #popup {
   position: fixed;
-  margin: 4.5% 10%;
+  margin: 4% 10%;
 }
-a.carousel-control-prev {
+/* a.carousel-control-prev {
   height: 50px;
   width: 50px;
   background-color: #000;
   margin-top: 20%;
   margin-left: -4%;
-}
-a.carousel-control-next {
+} */
+/* a.carousel-control-next {
   height: 50px;
   width: 50px;
   background-color: #000;
   margin-top: 20%;
   margin-right: -4%;
-}
+} */
 </style>
