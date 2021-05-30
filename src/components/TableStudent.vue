@@ -77,7 +77,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
-  margin-top: 8%;
-  margin-bottom: 8%;
+  margin-top: 6%;
+  padding: 20px 20px;
+  background-color: #fff;
 }
 </style>

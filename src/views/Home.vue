@@ -5,6 +5,7 @@
         id="carouselExampleIndicators"
         class="carousel slide"
         data-ride="carousel"
+        data-interval="2000"
       >
         <ol class="carousel-indicators">
           <li

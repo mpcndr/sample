@@ -96,8 +96,12 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid {
+  margin-top: 6%;
+  background-color: #ffffff;
+}
 .row {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 .head-profile,
 h3 {
@@ -115,7 +119,7 @@ p {
   padding-left: 0px;
   margin: 0.5%;
   font-weight: bold;
-  color: #E35335;
+  color: #e35335;
 }
 ul {
   list-style-type: none;
@@ -154,7 +158,7 @@ ul {
 }
 .func h3 i {
   color: #ffffff;
-  background: #FA5F55	;
+  background: #fa5f55;
   width: 42px;
   height: 42px;
   font-size: 20px;
@@ -249,13 +253,23 @@ ul {
 .func .data-study,
 .func .process {
   width: 48%;
-  background: #FBFCFC;
+  background: #fbfcfc;
   padding: 15px;
   margin: 0 4% 15px 0;
 }
 .func .edu {
   width: 48%;
-  background: #FBFCFC;
+  background: #fbfcfc;
   padding: 15px;
+}
+
+@media screen and (max-width: 320px) {
+  h3 {
+    padding-bottom: 20px;
+    color: #26384e;
+    font-size: 22px;
+    text-align: left;
+    font-weight: bold;
+  }
 }
 </style>

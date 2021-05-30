@@ -41,7 +41,7 @@
           <div class="panel-footer button-right">
             <button
               id="close"
-              class="btn btn-lg btn-primary"
+              class="btn btn-danger btn-lg"
               v-on:click="show = !show"
             >
               เข้าใจเเล้ว

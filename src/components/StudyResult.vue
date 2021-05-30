@@ -8,7 +8,7 @@
       </ul>
     </div>
 
-    <div v-for="subject in Subject" :key="subject.year">
+    <div class="tb" v-for="subject in Subject" :key="subject.year">
       <h1>{{ subject.year + "/" + subject.term }}</h1>
       <table class="table table-bordered">
         <thead>
@@ -69,8 +69,11 @@ export default {
 
 <style scoped>
 .study-result {
-  padding-top: 30px;
+  margin-top: 6%;
   padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
 }
 .head-table {
   text-align: center;

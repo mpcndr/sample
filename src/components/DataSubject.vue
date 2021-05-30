@@ -23,7 +23,7 @@
           <div class="panel-footer button-right">
             <button
               id="close"
-              class="btn btn-lg btn-primary"
+              class="btn btn-danger btn-lg"
               v-on:click="show = !show"
               @click="CloseButton()"
             >
@@ -198,6 +198,7 @@ export default {
 
         {
           locationSpot: go.Spot.Center,
+          cursor: "pointer",
           click: function(e, node) {
             var diagram = node.diagram;
             diagram.startTransaction("highlight");
