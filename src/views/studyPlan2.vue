@@ -369,6 +369,76 @@ p {
   /* transform: translate(-50%, -50%); */
   text-align: center;
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .card .additional {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(#de685e, #ee786e);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card .additional .user-card {
+    width: 260px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  .img-center {
+    margin-top: 0%;
+    width: 150px;
+    height: 150px;
+  }
+  .text-p {
+    font-size: 24px;
+    margin-top: 15%;
+  }
+  .png-plan {
+    margin-top: 10%;
+    width: 150px;
+    height: 150px;
+  }
+  .btn {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 540px) {
+  .card .additional {
+    position: absolute;
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(#de685e, #ee786e);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card .additional .user-card {
+    width: 170px;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  .img-center {
+    margin-top: 10%;
+    width: 110px;
+    height: 110px;
+  }
+  .text-p {
+    font-size: 22px;
+    margin-top: 40%;
+  }
+  .png-plan {
+    margin-top: 50%;
+    width: 110px;
+    height: 110px;
+  }
+  .btn {
+    font-size: 18px;
+  }
+}
+}
+
 @media screen and (max-width: 1024px) {
   .card .additional {
     position: absolute;
