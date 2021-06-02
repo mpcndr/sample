@@ -374,93 +374,7 @@ p {
   
 } */
 /* iphone 6, 6s, 7, 8 */
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .card {
-    margin: 1.5% 5% 1.5% 5%;
-    width: 90%;
-    height: 350px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    border-radius: 6px;
-  }
-  .text-span,
-  .text-span2 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .card .additional {
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(#de685e, #ee786e);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  .card .additional .user-card {
-    width: 120px;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
 
-  .card .additional .user-card::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10%;
-    right: -2px;
-    height: 80%;
-    border-left: 2px solid #dbd2d2;
-  }
-  .img-center {
-    margin-top: 25%;
-    width: 75px;
-    height: 75px;
-  }
-  div .level-center {
-    justify-content: center;
-  }
-  .text-p {
-    font-size: 18px;
-    margin-top: 50%;
-  }
-  .general > h1 {
-    font-size: 20px;
-    letter-spacing: 0px;
-  }
-  .text-more {
-    font-size: 14px;
-  }
-  .card .general {
-    justify-content: center;
-    /* width: 50%; */
-    height: 100%;
-    margin-left: 15%;
-    margin-right: 0%;
-    /* box-sizing: border-box; */
-    padding-top: 5%;
-  }
-  .card .general .more {
-    position: absolute;
-    bottom: 6.5rem;
-    right: 1.5rem;
-    font-size: 0.9em;
-  }
-  .header-plan {
-    font-size: 14px;
-    margin-top: 10%;
-  }
-  .btn {
-    font-size: 14px;
-  }
-  .png-plan {
-    margin-top: 80%;
-    width: 80px;
-    height: 80px;
-  }
-}
 /* iphone 6+, 6s+, 7+, 8+ */
 @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
   .card {
@@ -549,86 +463,172 @@ p {
     width: 90px;
     height: 90px;
   }
-}
+  /* iphone X , XS, 11 Pro, 12 Mini */
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .card {
+      margin: 1.5% 5% 1.5% 5%;
+      width: 90%;
+      height: 350px;
+      background-color: #fff;
+      background: linear-gradient(#f8f8f8, #fff);
+      box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+    }
+    .text-span,
+    .text-span2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .card .additional {
+      position: absolute;
+      width: 110px;
+      height: 100%;
+      background: linear-gradient(#de685e, #ee786e);
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .card .additional .user-card {
+      width: 120px;
+      height: 100%;
+      position: relative;
+      float: left;
+    }
 
-/* iphone X , XS, 11 Pro, 12 Mini */
-@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-  .card {
-    margin: 1.5% 5% 1.5% 5%;
-    width: 90%;
-    height: 350px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    border-radius: 6px;
-  }
-  .text-span,
-  .text-span2 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .card .additional {
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(#de685e, #ee786e);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  .card .additional .user-card {
-    width: 120px;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
+    .card .additional .user-card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10%;
+      right: -2px;
+      height: 80%;
+      border-left: 2px solid #dbd2d2;
+    }
+    .img-center {
+      margin-top: 25%;
+      width: 75px;
+      height: 75px;
+    }
+    div .level-center {
+      justify-content: center;
+    }
+    .text-p {
+      font-size: 18px;
+      margin-top: 50%;
+    }
+    .general > h1 {
+      font-size: 20px;
+      letter-spacing: 0px;
+    }
+    .text-more {
+      font-size: 14px;
+    }
+    .card .general {
+      justify-content: center;
+      /* width: 50%; */
+      height: 100%;
+      margin-left: 15%;
+      margin-right: 0%;
+      /* box-sizing: border-box; */
+      padding-top: 5%;
+    }
+    .card .general .more {
+      position: absolute;
+      bottom: 6.5rem;
+      right: 1.5rem;
+      font-size: 0.9em;
+    }
+    .header-plan {
+      font-size: 14px;
+      margin-top: 10%;
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+      .card {
+        margin: 1.5% 5% 1.5% 5%;
+        width: 90%;
+        height: 350px;
+        background-color: #fff;
+        background: linear-gradient(#f8f8f8, #fff);
+        box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+        border-radius: 6px;
+      }
+      .text-span,
+      .text-span2 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .card .additional {
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(#de685e, #ee786e);
+        transition: width 0.4s;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .card .additional .user-card {
+        width: 120px;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
 
-  .card .additional .user-card::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10%;
-    right: -2px;
-    height: 80%;
-    border-left: 2px solid #dbd2d2;
-  }
-  .img-center {
-    margin-top: 25%;
-    width: 75px;
-    height: 75px;
-  }
-  div .level-center {
-    justify-content: center;
-  }
-  .text-p {
-    font-size: 18px;
-    margin-top: 50%;
-  }
-  .general > h1 {
-    font-size: 20px;
-    letter-spacing: 0px;
-  }
-  .text-more {
-    font-size: 14px;
-  }
-  .card .general {
-    justify-content: center;
-    /* width: 50%; */
-    height: 100%;
-    margin-left: 15%;
-    margin-right: 0%;
-    /* box-sizing: border-box; */
-    padding-top: 5%;
-  }
-  .card .general .more {
-    position: absolute;
-    bottom: 6.5rem;
-    right: 1.5rem;
-    font-size: 0.9em;
-  }
-  .header-plan {
-    font-size: 14px;
-    margin-top: 10%;
+      .card .additional .user-card::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 10%;
+        right: -2px;
+        height: 80%;
+        border-left: 2px solid #dbd2d2;
+      }
+      .img-center {
+        margin-top: 25%;
+        width: 75px;
+        height: 75px;
+      }
+      div .level-center {
+        justify-content: center;
+      }
+      .text-p {
+        font-size: 18px;
+        margin-top: 50%;
+      }
+      .general > h1 {
+        font-size: 20px;
+        letter-spacing: 0px;
+      }
+      .text-more {
+        font-size: 14px;
+      }
+      .card .general {
+        justify-content: center;
+        /* width: 50%; */
+        height: 100%;
+        margin-left: 15%;
+        margin-right: 0%;
+        /* box-sizing: border-box; */
+        padding-top: 5%;
+      }
+      .card .general .more {
+        position: absolute;
+        bottom: 6.5rem;
+        right: 1.5rem;
+        font-size: 0.9em;
+      }
+      .header-plan {
+        font-size: 14px;
+        margin-top: 10%;
+      }
+      .btn {
+        font-size: 14px;
+      }
+      .png-plan {
+        margin-top: 80%;
+        width: 80px;
+        height: 80px;
+      }
+    }
   }
 }
 
