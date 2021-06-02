@@ -542,6 +542,11 @@ p {
       font-size: 14px;
       margin-top: 10%;
     }
+    .png-plan {
+      margin-top: 20%;
+      width: 80px;
+      height: 80px;
+    }
     @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
       .card {
         margin: 1.5% 5% 1.5% 5%;
@@ -743,9 +748,6 @@ p {
         width: 95px;
         height: 95px;
       }
-      div .level-center {
-        justify-content: center;
-      }
       .text-p {
         font-size: 18px;
         margin-top: 55%;
@@ -780,6 +782,7 @@ p {
       .btn {
         font-size: 14px;
       }
+      /* img select paln */
       .png-plan {
         margin-top: 70%;
         width: 90px;
@@ -815,7 +818,7 @@ p {
           position: relative;
           float: left;
         }
-
+        /* line between plan and select plan */
         .card .additional .user-card::after {
           content: "";
           display: block;
@@ -825,6 +828,7 @@ p {
           height: 80%;
           border-left: 2px solid #dbd2d2;
         }
+        /* แผนการเรียน ก./ข. img */
         .img-center {
           margin-top: 25%;
           width: 75px;
@@ -833,6 +837,7 @@ p {
         div .level-center {
           justify-content: center;
         }
+        /* text plan a./b. */
         .text-p {
           font-size: 18px;
           margin-top: 50%;
