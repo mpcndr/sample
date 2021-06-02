@@ -141,7 +141,6 @@
                   height="100px"
                   width="100px"
                   src="../assets/project-plan.png"
-                  alt="Avatar woman"
                 />
               </div>
               <div class="text-centered-left col-12">
@@ -282,10 +281,6 @@ export default {
 }
 
 .card .additional .more-info {
-  /* width: 50%; */
-  /* justify-content: center; */
-  /* position: absolute; */
-  /* left: 50%; */
   height: 100%;
 }
 
@@ -363,112 +358,24 @@ p {
   margin-left: 5%;
 }
 .centered {
-  /* position: absolute; */
-  /* top: 35%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
   text-align: center;
 }
-
+.png-plan {
+  position: absolute;
+}
 /* @media only screen and (min-device-width : 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   
 } */
 /* iphone 6, 6s, 7, 8 */
 
 /* iphone 6+, 6s+, 7+, 8+ */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
-  .card {
-    margin: 1.5% 5% 1.5% 5%;
-    width: 90%;
-    height: 400px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    border-radius: 6px;
-  }
-  .text-span,
-  .text-span2 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .card .additional {
-    position: absolute;
-    width: 140px;
-    height: 100%;
-    background: linear-gradient(#de685e, #ee786e);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  .card .additional .user-card {
-    width: 150px;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
-
-  .card .additional .user-card::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10%;
-    right: -2px;
-    height: 80%;
-    border-left: 2px solid #dbd2d2;
-  }
-  .img-center {
-    margin-top: 10%;
-    width: 95px;
-    height: 95px;
-  }
-  div .level-center {
-    justify-content: center;
-  }
-  .text-p {
-    font-size: 18px;
-    margin-top: 55%;
-  }
-  .general > h1 {
-    font-size: 18px;
-    letter-spacing: 0px;
-  }
-  .text-more {
-    font-size: 14px;
-  }
-  .card .general {
-    justify-content: center;
-    /* width: 50%; */
-    height: 100%;
-    margin-top: 20%;
-    margin-left: 25%;
-    margin-right: 0%;
-    /* box-sizing: border-box; */
-    padding-top: 5%;
-  }
-  .card .general .more {
-    position: absolute;
-    bottom: 7.5rem;
-    right: 1.5rem;
-    font-size: 0.9em;
-  }
-  .header-plan {
-    font-size: 14px;
-    margin-top: 10%;
-  }
-  .btn {
-    font-size: 14px;
-  }
-  .png-plan {
-    margin-top: 70%;
-    width: 90px;
-    height: 90px;
-  }
-  /* iphone X , XS, 11 Pro, 12 Mini */
-  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
     .card {
       margin: 1.5% 5% 1.5% 5%;
       width: 90%;
-      height: 350px;
+      height: 400px;
       background-color: #fff;
       background: linear-gradient(#f8f8f8, #fff);
       box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
@@ -481,7 +388,7 @@ p {
     }
     .card .additional {
       position: absolute;
-      width: 110px;
+      width: 140px;
       height: 100%;
       background: linear-gradient(#de685e, #ee786e);
       transition: width 0.4s;
@@ -489,7 +396,7 @@ p {
       z-index: 2;
     }
     .card .additional .user-card {
-      width: 120px;
+      width: 150px;
       height: 100%;
       position: relative;
       float: left;
@@ -505,19 +412,19 @@ p {
       border-left: 2px solid #dbd2d2;
     }
     .img-center {
-      margin-top: 25%;
-      width: 75px;
-      height: 75px;
+      margin-top: 10%;
+      width: 95px;
+      height: 95px;
     }
     div .level-center {
       justify-content: center;
     }
     .text-p {
       font-size: 18px;
-      margin-top: 50%;
+      margin-top: 55%;
     }
     .general > h1 {
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: 0px;
     }
     .text-more {
@@ -527,14 +434,15 @@ p {
       justify-content: center;
       /* width: 50%; */
       height: 100%;
-      margin-left: 15%;
+      margin-top: 20%;
+      margin-left: 25%;
       margin-right: 0%;
       /* box-sizing: border-box; */
       padding-top: 5%;
     }
     .card .general .more {
       position: absolute;
-      bottom: 6.5rem;
+      bottom: 7.5rem;
       right: 1.5rem;
       font-size: 0.9em;
     }
@@ -542,12 +450,16 @@ p {
       font-size: 14px;
       margin-top: 10%;
     }
-    .png-plan {
-      margin-top: 20%;
-      width: 80px;
-      height: 80px;
+    .btn {
+      font-size: 14px;
     }
-    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    .png-plan {
+      margin-top: 70%;
+      width: 90px;
+      height: 90px;
+    }
+    /* iphone X , XS, 11 Pro, 12 Mini */
+    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
       .card {
         margin: 1.5% 5% 1.5% 5%;
         width: 90%;
@@ -625,170 +537,7 @@ p {
         font-size: 14px;
         margin-top: 10%;
       }
-      .btn {
-        font-size: 14px;
-      }
-      .png-plan {
-        margin-top: 80%;
-        width: 80px;
-        height: 80px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .card .additional {
-    position: absolute;
-    width: 250px;
-    height: 100%;
-    background: linear-gradient(#de685e, #ee786e);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  .card .additional .user-card {
-    width: 260px;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
-  .img-center {
-    margin-top: 0%;
-    width: 150px;
-    height: 150px;
-  }
-  .text-p {
-    font-size: 24px;
-    margin-top: 15%;
-  }
-  .png-plan {
-    margin-top: 10%;
-    width: 150px;
-    height: 150px;
-  }
-  .btn {
-    font-size: 20px;
-  }
-  @media screen and (max-width: 540px) {
-    .card .additional {
-      position: absolute;
-      width: 160px;
-      height: 100%;
-      background: linear-gradient(#de685e, #ee786e);
-      transition: width 0.4s;
-      overflow: hidden;
-      z-index: 2;
-    }
-    .card .additional .user-card {
-      width: 170px;
-      height: 100%;
-      position: relative;
-      float: left;
-    }
-    .img-center {
-      margin-top: 10%;
-      width: 110px;
-      height: 110px;
-    }
-    .text-p {
-      font-size: 22px;
-      margin-top: 40%;
-    }
-    .png-plan {
-      margin-top: 50%;
-      width: 110px;
-      height: 110px;
-    }
-    .btn {
-      font-size: 18px;
-    }
-    @media screen and (max-width: 414px) {
-      .card {
-        margin: 1.5% 5% 1.5% 5%;
-        width: 90%;
-        height: 400px;
-        background-color: #fff;
-        background: linear-gradient(#f8f8f8, #fff);
-        box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-        border-radius: 6px;
-      }
-      .text-span,
-      .text-span2 {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .card .additional {
-        position: absolute;
-        width: 140px;
-        height: 100%;
-        background: linear-gradient(#de685e, #ee786e);
-        transition: width 0.4s;
-        overflow: hidden;
-        z-index: 2;
-      }
-      .card .additional .user-card {
-        width: 150px;
-        height: 100%;
-        position: relative;
-        float: left;
-      }
-
-      .card .additional .user-card::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 10%;
-        right: -2px;
-        height: 80%;
-        border-left: 2px solid #dbd2d2;
-      }
-      .img-center {
-        margin-top: 10%;
-        width: 95px;
-        height: 95px;
-      }
-      .text-p {
-        font-size: 18px;
-        margin-top: 55%;
-      }
-      .general > h1 {
-        font-size: 18px;
-        letter-spacing: 0px;
-      }
-      .text-more {
-        font-size: 14px;
-      }
-      .card .general {
-        justify-content: center;
-        /* width: 50%; */
-        height: 100%;
-        margin-top: 20%;
-        margin-left: 25%;
-        margin-right: 0%;
-        /* box-sizing: border-box; */
-        padding-top: 5%;
-      }
-      .card .general .more {
-        position: absolute;
-        bottom: 7.5rem;
-        right: 1.5rem;
-        font-size: 0.9em;
-      }
-      .header-plan {
-        font-size: 14px;
-        margin-top: 10%;
-      }
-      .btn {
-        font-size: 14px;
-      }
-      /* img select paln */
-      .png-plan {
-        margin-top: 70%;
-        width: 90px;
-        height: 90px;
-      }
-      @media screen and (max-width: 375px) {
+      @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
         .card {
           margin: 1.5% 5% 1.5% 5%;
           width: 90%;
@@ -818,7 +567,7 @@ p {
           position: relative;
           float: left;
         }
-        /* line between plan and select plan */
+
         .card .additional .user-card::after {
           content: "";
           display: block;
@@ -828,7 +577,6 @@ p {
           height: 80%;
           border-left: 2px solid #dbd2d2;
         }
-        /* แผนการเรียน ก./ข. img */
         .img-center {
           margin-top: 25%;
           width: 75px;
@@ -837,7 +585,6 @@ p {
         div .level-center {
           justify-content: center;
         }
-        /* text plan a./b. */
         .text-p {
           font-size: 18px;
           margin-top: 50%;
@@ -867,6 +614,253 @@ p {
         .header-plan {
           font-size: 14px;
           margin-top: 10%;
+        }
+        .btn {
+          font-size: 14px;
+        }
+        .png-plan {
+          margin-top: 80%;
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
+
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */
+  @media screen and (max-width: 1024px) {
+    .card .additional {
+      position: absolute;
+      width: 250px;
+      height: 100%;
+      background: linear-gradient(#de685e, #ee786e);
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .card .additional .user-card {
+      width: 260px;
+      height: 100%;
+      position: relative;
+      float: left;
+    }
+    .img-center {
+      margin-top: 0%;
+      width: 150px;
+      height: 150px;
+    }
+    .text-p {
+      font-size: 24px;
+      margin-top: 15%;
+    }
+    .png-plan {
+      margin-top: 10%;
+      width: 150px;
+      height: 150px;
+    }
+    .btn {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 540px) {
+      .card .additional {
+        position: absolute;
+        width: 160px;
+        height: 100%;
+        background: linear-gradient(#de685e, #ee786e);
+        transition: width 0.4s;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .card .additional .user-card {
+        width: 170px;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+      .img-center {
+        margin-top: 10%;
+        width: 110px;
+        height: 110px;
+      }
+      .text-p {
+        font-size: 22px;
+        margin-top: 40%;
+      }
+      .png-plan {
+        margin-top: 50%;
+        width: 110px;
+        height: 110px;
+      }
+      .btn {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 414px) {
+        .card {
+          margin: 1.5% 5% 1.5% 5%;
+          width: 90%;
+          height: 400px;
+          background-color: #fff;
+          background: linear-gradient(#f8f8f8, #fff);
+          box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+          border-radius: 6px;
+        }
+        .text-span,
+        .text-span2 {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .card .additional {
+          position: absolute;
+          width: 140px;
+          height: 100%;
+          background: linear-gradient(#de685e, #ee786e);
+          transition: width 0.4s;
+          overflow: hidden;
+          z-index: 2;
+        }
+        .card .additional .user-card {
+          width: 150px;
+          height: 100%;
+          position: relative;
+          float: left;
+        }
+
+        .card .additional .user-card::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 10%;
+          right: -2px;
+          height: 80%;
+          border-left: 2px solid #dbd2d2;
+        }
+        .img-center {
+          margin-top: 10%;
+          width: 95px;
+          height: 95px;
+        }
+        .text-p {
+          font-size: 18px;
+          margin-top: 55%;
+        }
+        .general > h1 {
+          font-size: 18px;
+          letter-spacing: 0px;
+        }
+        .text-more {
+          font-size: 14px;
+        }
+        .card .general {
+          justify-content: center;
+          /* width: 50%; */
+          height: 100%;
+          margin-top: 20%;
+          margin-left: 25%;
+          margin-right: 0%;
+          /* box-sizing: border-box; */
+          padding-top: 5%;
+        }
+        .card .general .more {
+          position: absolute;
+          bottom: 7.5rem;
+          right: 1.5rem;
+          font-size: 0.9em;
+        }
+        .header-plan {
+          font-size: 14px;
+          margin-top: 10%;
+        }
+        .btn {
+          font-size: 14px;
+        }
+        /* img select paln */
+        .png-plan {
+          margin-top: 70%;
+          width: 90px;
+          height: 90px;
+        }
+        @media screen and (max-width: 375px) {
+          .card {
+            margin: 1.5% 5% 1.5% 5%;
+            width: 90%;
+            height: 350px;
+            background-color: #fff;
+            background: linear-gradient(#f8f8f8, #fff);
+            box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+          }
+          .text-span,
+          .text-span2 {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .card .additional {
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(#de685e, #ee786e);
+            transition: width 0.4s;
+            overflow: hidden;
+            z-index: 2;
+          }
+          .card .additional .user-card {
+            width: 120px;
+            height: 100%;
+            position: relative;
+            float: left;
+          }
+          /* line between plan and select plan */
+          .card .additional .user-card::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 10%;
+            right: -2px;
+            height: 80%;
+            border-left: 2px solid #dbd2d2;
+          }
+          /* แผนการเรียน ก./ข. img */
+          .img-center {
+            margin-top: 25%;
+            width: 75px;
+            height: 75px;
+          }
+          div .level-center {
+            justify-content: center;
+          }
+          /* text plan a./b. */
+          .text-p {
+            font-size: 18px;
+            margin-top: 50%;
+          }
+          .general > h1 {
+            font-size: 20px;
+            letter-spacing: 0px;
+          }
+          .text-more {
+            font-size: 14px;
+          }
+          .card .general {
+            justify-content: center;
+            /* width: 50%; */
+            height: 100%;
+            margin-left: 15%;
+            margin-right: 0%;
+            /* box-sizing: border-box; */
+            padding-top: 5%;
+          }
+          .card .general .more {
+            position: absolute;
+            bottom: 6.5rem;
+            right: 1.5rem;
+            font-size: 0.9em;
+          }
+          .header-plan {
+            font-size: 14px;
+            margin-top: 10%;
+          }
         }
       }
     }
