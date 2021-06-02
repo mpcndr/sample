@@ -194,6 +194,7 @@ export default {
 <style scoped>
 .center {
   justify-content: center;
+  -webkit-appearance: none;
   /* position: absolute; */
   /* top: 50%;
   left: 50%; */
