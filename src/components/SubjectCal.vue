@@ -72,7 +72,8 @@ export default {
   methods: {
     Diagram: function() {
       var $ = go.GraphObject.make;
-      var myDiagram = $(go.Diagram, "mySubcal", {
+      var myDiagram = $(go.Diagram, "mySubcal"                        , {
+
         maxScale: 1,
         minScale: 0.5,
         // when a drag-drop occurs in the Diagram's background, make it a top-level node

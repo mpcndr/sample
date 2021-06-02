@@ -85,6 +85,11 @@ const routes = [
     name: "StudyPlan2",
     component: studyPlan2
   },
+  {
+    path: "/test1",
+    name: "popup",
+    component: () => import("../components/PopUp.vue")
+  },
 ];
 
 const router = new VueRouter({

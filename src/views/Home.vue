@@ -16,7 +16,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner" role="listbox" >
+        <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <img class="img-top img-fluid" src="../assets/Untitled-3.jpg" />
             <!-- <div class="carousel-caption d-none d-md-block">
@@ -25,18 +25,10 @@
             </div> -->
           </div>
           <div class="carousel-item">
-            <img
-            class="img-top img-fluid"
-              src="../assets/cal.jpg"
-              alt=""
-            />
+            <img class="img-top img-fluid" src="../assets/cal.jpg" alt="" />
           </div>
           <div class="carousel-item">
-            <img
-            class="img-top img-fluid"
-              src="../assets/comit.jpg"
-              alt=""
-            />
+            <img class="img-top img-fluid" src="../assets/comit.jpg" alt="" />
           </div>
         </div>
         <a
@@ -65,6 +57,8 @@
     <CalendarHome />
 
     <NewsEvent />
+    ------------------
+    <a href="/test1">click</a>
   </div>
 </template>
 
@@ -82,7 +76,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .carousel-item {
   /* width: 100%; */
   height: 93vh;
