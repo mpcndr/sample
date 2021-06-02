@@ -460,7 +460,7 @@ p {
     font-size: 14px;
   }
   .png-plan {
-    margin-top: 70%;
+    margin-top: -70%;
     width: 90px;
     height: 90px;
   }
