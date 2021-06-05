@@ -507,6 +507,7 @@ p {
         /* box-sizing: border-box; */
         padding-top: 5%;
       }
+      /* more learn */
       .card .general .more {
         position: absolute;
         bottom: 7.5rem;
@@ -610,11 +611,35 @@ p {
             font-size: 14px;
             margin-top: 50%;
           }
+          .general > h1 {
+            margin-top: -15%;
+            font-size: 18px;
+            letter-spacing: 0px;
+          }
           /* แผนการเรียน ก./ข. img */
           .img-center {
             margin-top: 25%;
             width: 25px;
             height: 25px;
+          }
+          .png-plan {
+            margin-top: 0%;
+            width: 90px;
+            height: 90px;
+          }
+          .card .general .more {
+            position: absolute;
+            bottom: 6.5rem;
+            right: 1.5rem;
+            font-size: 0.5em;
+          }
+          .text-span,
+          .text-span2 {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .text-more {
+            font-size: 12px;
           }
         }
       }
