@@ -19,16 +19,15 @@
         <div class="more-info row">
           <div class="col-6">
             <div class="split left">
-              <div class="col-12">
+              <div>
                 <img
                   class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/moodboard (1).png"
-                  alt="Avatar woman"
                 />
               </div>
-              <div class="text-centered-left col-12">
+              <div class="text-centered-left">
                 <h2 style="color: #fff" class="header-plan">
                   ให้เราวางแผน <br />การลงทะเบียนให้สิ!
                 </h2>
@@ -47,16 +46,15 @@
           </div>
           <div class="col-6">
             <div class="split right">
-              <div class="col-12">
+              <div >
                 <img
                   class="png-plan"
                   height="100px"
                   width="100px"
                   src="../assets/moodboard.png"
-                  alt="Avatar woman"
                 />
               </div>
-              <div class="text-centered-left col-12">
+              <div class="text-centered-left">
                 <h2 style="color: #fff" class="header-plan">
                   รายวิชาก่อนหน้า <br />
                   และวิชาถัดไป
