@@ -375,7 +375,6 @@ p {
   
 } */
 
-
 @media screen and (max-width: 1024px) {
   .card .additional {
     position: absolute;
@@ -559,7 +558,6 @@ p {
         }
         /* line between plan and select plan */
         .card .additional .user-card::after {
-          content: "";
           display: block;
           position: absolute;
           top: 10%;
@@ -578,7 +576,7 @@ p {
         }
         /* text plan a./b. */
         .text-p {
-          font-size: 22px;
+          font-size: 18px;
           margin-top: 50%;
         }
         .general > h1 {
@@ -606,6 +604,12 @@ p {
         .header-plan {
           font-size: 14px;
           margin-top: 10%;
+        }
+        @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+          .text-p {
+            font-size: 14px;
+            margin-top: 50%;
+          }
         }
       }
     }
