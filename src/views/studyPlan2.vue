@@ -1,5 +1,5 @@
 <template>
-  <div class="center">
+  <div class="center" v-if="checkDesktop()">
     <div class="card">
       <div class="additional">
         <div class="user-card">
@@ -46,7 +46,7 @@
           </div>
           <div class="col-6">
             <div class="split right">
-              <div >
+              <div>
                 <img
                   class="png-plan"
                   height="100px"
@@ -182,6 +182,30 @@ export default {
       console.log(choose);
       this.$store.dispatch("setChoose", choose);
       console.log(this.$store.getters.getChoose);
+    },
+    checkDesktop() {
+      if (
+        (navigator.vendor != null &&
+          navigator.vendor.match(/Apple Computer, Inc./) &&
+          navigator.userAgent.match(/iPhone/i)) ||
+        navigator.userAgent.match(/iPod/i)
+      ) {
+        alert("Ipod or Iphone");
+      } else if (
+        navigator.vendor != null &&
+        navigator.vendor.match(/Apple Computer, Inc./) &&
+        navigator.userAgent.match(/iPad/i)
+      ) {
+        alert("Ipad");
+      } else if (
+        navigator.vendor != null &&
+        navigator.vendor.match(/Apple Computer, Inc./) &&
+        navigator.userAgent.indexOf("Safari") != -1
+      ) {
+        alert("Safari");
+      } else if (navigator.vendor == null || navigator.vendor != null) {
+        alert("Not Apple Based Browser");
+      }
     },
   },
   created() {
@@ -362,10 +386,10 @@ p {
   margin-left: 5%;
 }
 .centered {
-  /* position: absolute; */
+  position: absolute;
   /* top: 35%;
   left: 50%; */
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -621,10 +645,11 @@ p {
             height: 25px;
           }
           .png-plan {
-            margin-top: 100%;
+            margin-top: 0%;
             width: 90px;
             height: 90px;
             z-index: 1001;
+            background-color: #fff;
           }
           .card .general .more {
             position: absolute;
