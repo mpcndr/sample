@@ -1,65 +1,169 @@
 <template>
-  <div>
-    <div v-if="checkDesktop() == true">
-      <!-- <h1>Hello IOS</h1> -->
-      <studyplan2IOS></studyplan2IOS>
+  <div class="center">
+    <div class="card">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level-center">
+            <p>
+              เลือกจบแบบทำสหกิจศึกษา
+            </p>
+          </div>
+          <div>
+            <img class="img-center" src="../assets/promotion.png" />
+          </div>
+          <div class="text-learn">
+            <p class="text-more">
+              <span class="text-span">สหกิจศึกษา</span> คือ
+              การปฏิบัติงานเป็นเวลาไม่น้อยกว่า 1
+              ภาคการศึกษาในสถานประกอบการในลักษณะ
+              พนักงานชั่วคราวเพื่อให้ได้ประสบการณ์จากการไปปฏิบัติงานที่ได้รับมอบหมายที่เกี่ยวกับสาขา
+              วิทยาการข้อมูล การจัดทำรายงานสหกิจ และการนำเสนอ
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+          <div class="more-info row">
+        <div class="col-6">
+          <div class="split left">
+            <div>
+              <img
+                class="png-plan"
+                height="100px"
+                width="100px"
+                src="../assets/moodboard (1).png"
+              />
+            </div>
+            <div class="text-centered-left">
+              <h2 style="color: #fff" class="header-plan">
+                ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+              </h2>
+              <p></p>
+              <a href="/subject_cal">
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  v-on:click="sendCheck(1)"
+                >
+                  วางแผนการเรียน
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="split right">
+            <div>
+              <img
+                class="png-plan"
+                height="100px"
+                width="100px"
+                src="../assets/moodboard.png"
+              />
+            </div>
+            <div class="text-centered-left">
+              <h2 style="color: #fff" class="header-plan">
+                รายวิชาก่อนหน้า <br />
+                และวิชาถัดไป
+              </h2>
+              <p></p>
+              <a href="/dataSubjectdiagram">
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  v-on:click="sendCheck(1)"
+                >
+                  ดูรายวิชาและตัวถัดไป
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
     </div>
-    <div v-else>
-      <!-- <h1>Hello Computer</h1> -->
-      <studyplan2IOS></studyplan2IOS>
+    <div class="card green">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level-center">
+            <p>เลือกจบแบบโครงงานวิจัย</p>
+          </div>
+          <div>
+            <img class="img-center" src="../assets/responsive.png" />
+          </div>
+          <div class="text-learn">
+            <p class="text-more">
+              <span class="text-span2">โครงงานวิจัย</span> คือ
+              หัวข้อทางวิทยาการข้อมูลที่ได้รับการอนุมัติจากคณะกรรมการภายใต้การแนะนำของ
+              อาจารย์ที่ปรึกษาในหลักสูตรจัดทำรายงานและการนำเสนอผลงานวิจัย
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+        <div class="more-info row">
+          <div class="col-6">
+            <div class="split left">
+              <div class="col-12">
+                <img
+                  class="png-plan"
+                  height="100px"
+                  width="100px"
+                  src="../assets/think.png"
+                />
+              </div>
+              <div class="text-centered-left col-12">
+                <h2 class="header-plan">
+                  ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                </h2>
+                <p></p>
+                <a href="/subject_cal">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    v-on:click="sendCheck(2)"
+                  >
+                    วางแผนการเรียน
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="split right">
+              <div class="col-12">
+                <img
+                  class="png-plan"
+                  height="100px"
+                  width="100px"
+                  src="../assets/project-plan.png"
+                  alt="Avatar woman"
+                />
+              </div>
+              <div class="text-centered-left col-12">
+                <h2 class="header-plan">
+                  รายวิชาก่อนหน้า <br />
+                  และวิชาถัดไป
+                </h2>
+                <p></p>
+                <a href="/dataSubjectdiagram">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    v-on:click="sendCheck(2)"
+                  >
+                    ดูรายวิชาและตัวถัดไป
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<script>
-import studyplan2IOS from "../components/studyPlan2forIOS";
-export default {
-  name: "StudyPlan2",
-  components: {
-    studyplan2IOS,
-  },
-  data() {
-    return {
-      ios: true,
-    };
-  },
-  methods: {
-    sendCheck(choose) {
-      console.log(choose);
-      this.$store.dispatch("setChoose", choose);
-      console.log(this.$store.getters.getChoose);
-    },
-    checkDesktop() {
-      if (
-        (navigator.vendor != null &&
-          navigator.vendor.match(/Apple Computer, Inc./) &&
-          navigator.userAgent.match(/iPhone/i)) ||
-        navigator.userAgent.match(/iPod/i)
-      ) {
-        console.log("iphone");
-      } else if (
-        navigator.vendor != null &&
-        navigator.vendor.match(/Apple Computer, Inc./) &&
-        navigator.userAgent.match(/iPad/i)
-      ) {
-        console.log("ipad");
-      } else if (
-        navigator.vendor != null &&
-        navigator.vendor.match(/Apple Computer, Inc./) &&
-        navigator.userAgent.indexOf("Safari") != -1
-      ) {
-        console.log("safari");
-      } else if (navigator.vendor == null || navigator.vendor != null) {
-        console.log("com");
-        this.ios = false
-      }
-    },
-  },
-  created() {
-    console.log("===> " + this.$store.getters.getChoose);
-    this.checkDesktop();
-  },
-};
-</script>
 <style scoped>
 .center {
   justify-content: center;
@@ -88,15 +192,13 @@ export default {
 }
 
 .text-span {
-  color: #de685e;
+  color: #fff;
   font-size: 24px;
-  font-weight: bold;
 }
 
 .text-span2 {
-  color: #92bca6;
+  color: #fff;
   font-size: 24px;
-  font-weight: bold;
 }
 
 .card .additional {
@@ -113,10 +215,10 @@ export default {
   background: linear-gradient(#92bca6, #a2ccb6);
 }
 
-.card:hover .additional {
+/* .card:hover .additional {
   width: 100%;
   border-radius: 0 5px 5px 0;
-}
+} */
 
 .card .additional .user-card {
   width: 250px;
@@ -144,9 +246,9 @@ export default {
   /* top: 15%; */
   color: #fff;
   /* text-transform: uppercase; */
-  font-size: 24px;
+  font-size: 22px;
   /* background: rgba(0, 0, 0, 0.15); */
-  padding: 0.2rem 0rem;
+  padding: 5px;
   border-radius: 100px;
   /* white-space: nowrap; */
 }
@@ -323,7 +425,6 @@ p {
       .text-span,
       .text-span2 {
         font-size: 18px;
-        font-weight: bold;
       }
       .card .additional {
         position: absolute;
@@ -406,14 +507,13 @@ p {
           box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
           border-radius: 6px;
         }
-        .text-span,
+        /* .text-span, */
         .text-span2 {
           font-size: 18px;
-          font-weight: bold;
         }
         .card .additional {
           position: absolute;
-          width: 110px;
+          width: 150px;
           height: 100%;
           background: linear-gradient(#de685e, #ee786e);
           transition: width 0.4s;
@@ -421,7 +521,7 @@ p {
           z-index: 2;
         }
         .card .additional .user-card {
-          width: 120px;
+          width: 160px;
           height: 100%;
           position: relative;
           float: left;
@@ -487,9 +587,9 @@ p {
           }
           /* แผนการเรียน ก./ข. img */
           .img-center {
-            margin-top: 25%;
-            width: 25px;
-            height: 25px;
+            margin-top: 0%;
+            width: 75px;
+            height: 75px;
           }
           .png-plan {
             margin-top: 0%;
@@ -498,16 +598,9 @@ p {
             z-index: 1001;
             background-color: #fff;
           }
-          .card .general .more {
-            position: absolute;
-            bottom: 6.5rem;
-            right: 1.5rem;
-            font-size: 0.5em;
-          }
           .text-span,
           .text-span2 {
             font-size: 14px;
-            font-weight: bold;
           }
           .text-more {
             font-size: 12px;
@@ -518,6 +611,9 @@ p {
             /* margin-left: 15%; */
             margin-right: 0%;
             padding: 0% auto;
+          }
+          .text-learn {
+            padding: 5px;
           }
         }
       }
