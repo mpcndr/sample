@@ -623,7 +623,7 @@ p {
             height: 25px;
           }
           .png-plan {
-            margin-top: 0%;
+            margin-top: -100%;
             width: 90px;
             height: 90px;
           }
