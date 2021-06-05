@@ -623,9 +623,10 @@ p {
             height: 25px;
           }
           .png-plan {
-            margin-top: -100%;
+            margin-top: 100%;
             width: 90px;
             height: 90px;
+            z-index: 1001;
           }
           .card .general .more {
             position: absolute;
@@ -640,6 +641,13 @@ p {
           }
           .text-more {
             font-size: 12px;
+          }
+          .card .general {
+            justify-content: center;
+            height: 100%;
+            /* margin-left: 15%; */
+            margin-right: 0%;
+            padding: 0% auto;
           }
         }
       }
