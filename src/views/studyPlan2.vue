@@ -610,6 +610,12 @@ p {
             font-size: 14px;
             margin-top: 50%;
           }
+          /* แผนการเรียน ก./ข. img */
+          .img-center {
+            margin-top: 25%;
+            width: 25px;
+            height: 25px;
+          }
         }
       }
     }
