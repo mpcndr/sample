@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="checkDesktop() == true">
+    <div v-if="checkDesktop()">
       <!-- <h1>Hello IOS</h1> -->
       <studyplan2IOS></studyplan2IOS>
     </div>
