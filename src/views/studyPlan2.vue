@@ -6,7 +6,181 @@
     </div>
     <div v-else>
       <!-- <h1>Hello Computer</h1> -->
-      <studyplan2IOS></studyplan2IOS>
+      <div class="center">
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">
+              <div class="level-center">
+                <p class="text-p">แผนการเรียน ก.</p>
+              </div>
+              <div>
+                <img
+                  class="img-center"
+                  width="150"
+                  height="150"
+                  src="../assets/promotion.png"
+                />
+              </div>
+              <div></div>
+            </div>
+            <div class="more-info row">
+              <div class="col-6">
+                <div class="split left">
+                  <div>
+                    <img
+                      class="png-plan"
+                      height="100px"
+                      width="100px"
+                      src="../assets/moodboard (1).png"
+                    />
+                  </div>
+                  <div class="text-centered-left">
+                    <h2 style="color: #fff" class="header-plan">
+                      ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                    </h2>
+                    <p></p>
+                    <a href="/subject_cal">
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        v-on:click="sendCheck(1)"
+                      >
+                        วางแผนการเรียน
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="split right">
+                  <div>
+                    <img
+                      class="png-plan"
+                      height="100px"
+                      width="100px"
+                      src="../assets/moodboard.png"
+                    />
+                  </div>
+                  <div class="text-centered-left">
+                    <h2 style="color: #fff" class="header-plan">
+                      รายวิชาก่อนหน้า <br />
+                      และวิชาถัดไป
+                    </h2>
+                    <p></p>
+                    <a href="/dataSubjectdiagram">
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        v-on:click="sendCheck(1)"
+                      >
+                        ดูรายวิชาและตัวถัดไป
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="general">
+            <h1>
+              เลือกจบแบบทำสหกิจศึกษา
+            </h1>
+            <p class="text-more">
+              <span class="text-span">สหกิจศึกษา</span> คือ
+              การปฏิบัติงานเป็นเวลาไม่น้อยกว่า 1
+              ภาคการศึกษาในสถานประกอบการในลักษณะ
+              พนักงานชั่วคราวเพื่อให้ได้ประสบการณ์จากการไปปฏิบัติงานที่ได้รับมอบหมายที่เกี่ยวกับสาขา
+              วิทยาการข้อมูล การจัดทำรายงานสหกิจ และการนำเสนอ
+            </p>
+            <span class="more">จิ้มตรงนี้เพื่อดูเพิ่มเติม</span>
+          </div>
+        </div>
+        <div class="card green">
+          <div class="additional">
+            <div class="user-card">
+              <div class="level-center">
+                <p class="text-p">แผนการเรียน ข.</p>
+              </div>
+              <div>
+                <img
+                  class="img-center"
+                  width="150"
+                  height="150"
+                  src="../assets/responsive.png"
+                />
+              </div>
+            </div>
+            <div class="more-info row">
+              <div class="col-6">
+                <div class="split left">
+                  <div class="col-12">
+                    <img
+                      class="png-plan"
+                      height="100px"
+                      width="100px"
+                      src="../assets/think.png"
+                      alt="Avatar woman"
+                    />
+                  </div>
+                  <div class="text-centered-left col-12">
+                    <h2 class="header-plan">
+                      ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                    </h2>
+                    <p></p>
+                    <a href="/subject_cal">
+                      <button
+                        type="button"
+                        class="btn btn-light"
+                        v-on:click="sendCheck(2)"
+                      >
+                        วางแผนการเรียน
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="split right">
+                  <div class="col-12">
+                    <img
+                      class="png-plan"
+                      height="100px"
+                      width="100px"
+                      src="../assets/project-plan.png"
+                      alt="Avatar woman"
+                    />
+                  </div>
+                  <div class="text-centered-left col-12">
+                    <h2 class="header-plan">
+                      รายวิชาก่อนหน้า <br />
+                      และวิชาถัดไป
+                    </h2>
+                    <p></p>
+                    <a href="/dataSubjectdiagram">
+                      <button
+                        type="button"
+                        class="btn btn-light"
+                        v-on:click="sendCheck(2)"
+                      >
+                        ดูรายวิชาและตัวถัดไป
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="general">
+            <h1>เลือกจบแบบโครงงานวิจัย</h1>
+            <p class="text-more">
+              <span class="text-span2">โครงงานวิจัย</span> คือ
+              หัวข้อทางวิทยาการข้อมูลที่ได้รับการอนุมัติจากคณะกรรมการภายใต้การแนะนำของ
+              อาจารย์ที่ปรึกษาในหลักสูตรจัดทำรายงานและการนำเสนอผลงานวิจัย
+            </p>
+            <span class="more">จิ้มตรงนี้เพื่อดูเพิ่มเติม</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -488,19 +662,17 @@ p {
           /* แผนการเรียน ก./ข. img */
           .img-center {
             margin-top: 25%;
-            width: 25px;
-            height: 25px;
+            width: 75px;
+            height: 75px;
           }
           .png-plan {
-            margin-top: 0%;
+            margin-top: 50%;
             width: 90px;
             height: 90px;
-            z-index: 1001;
-            background-color: #fff;
           }
           .card .general .more {
             position: absolute;
-            bottom: 6.5rem;
+            bottom: 7.5rem;
             right: 1.5rem;
             font-size: 0.5em;
           }

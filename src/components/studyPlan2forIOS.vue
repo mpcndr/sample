@@ -35,7 +35,7 @@
               />
             </div>
             <div class="text-centered-left">
-              <h2 style="color: #fff" class="header-plan">
+              <h2 style="color: #000" class="header-plan">
                 ให้เราวางแผน <br />การลงทะเบียนให้สิ!
               </h2>
               <p></p>
@@ -62,7 +62,7 @@
               />
             </div>
             <div class="text-centered-left">
-              <h2 style="color: #fff" class="header-plan">
+              <h2 style="color: #000" class="header-plan">
                 รายวิชาก่อนหน้า <br />
                 และวิชาถัดไป
               </h2>
@@ -108,8 +108,6 @@
               <div class="col-12">
                 <img
                   class="png-plan"
-                  height="100px"
-                  width="100px"
                   src="../assets/think.png"
                 />
               </div>
@@ -121,7 +119,7 @@
                 <a href="/subject_cal">
                   <button
                     type="button"
-                    class="btn btn-light"
+                    class="btn btn-dark"
                     v-on:click="sendCheck(2)"
                   >
                     วางแผนการเรียน
@@ -135,8 +133,6 @@
               <div class="col-12">
                 <img
                   class="png-plan"
-                  height="100px"
-                  width="100px"
                   src="../assets/project-plan.png"
                   alt="Avatar woman"
                 />
@@ -150,7 +146,7 @@
                 <a href="/dataSubjectdiagram">
                   <button
                     type="button"
-                    class="btn btn-light"
+                    class="btn btn-dark"
                     v-on:click="sendCheck(2)"
                   >
                     ดูรายวิชาและตัวถัดไป
@@ -172,9 +168,6 @@
   /* top: 50%;
   left: 50%; */
   /* -webkit-transform: translate(-50%, -50%); */
-}
-.img-center {
-  margin-top: 10%;
 }
 .card {
   margin: 1.5% 5% 1.5% 5%;
@@ -215,11 +208,6 @@
   background: linear-gradient(#92bca6, #a2ccb6);
 }
 
-/* .card:hover .additional {
-  width: 100%;
-  border-radius: 0 5px 5px 0;
-} */
-
 .card .additional .user-card {
   width: 250px;
   height: 100%;
@@ -239,7 +227,7 @@
 
 .level-center {
   justify-content: center;
-  margin-top: 30%;
+  margin-top: 25%;
 }
 
 .card .additional .user-card .level-center {
@@ -261,65 +249,14 @@
   height: 100%;
 }
 
-.card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.card.green .additional .coords {
-  color: #325c46;
-}
-
-.card .additional .coords span + span {
-  float: right;
-}
-
-.card.green .additional .stats {
-  color: #325c46;
-}
-
-.card .additional .stats > div {
-  flex: 1;
-  text-align: center;
-}
-
-.card .additional .stats i {
-  display: block;
-}
-
-.card .additional .stats div.title {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.card .additional .stats div.value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.5rem;
-}
-
-.card .additional .stats div.value.infinity {
-  font-size: 2.5rem;
-}
-
 .card .general {
   justify-content: center;
   /* width: 50%; */
   height: 100%;
   position: absolute;
-  margin-left: 30%;
+  /* margin-left: 40%; */
   /* box-sizing: border-box; */
-  padding: 5rem;
-  padding-top: 6%;
-}
-
-.card .general .more {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 0.9em;
+  padding: 3rem;
 }
 p {
   font-size: 20px;
@@ -329,7 +266,6 @@ p {
   /* width: 50%; */
   overflow-x: hidden;
   /* padding-top: 10px; */
-  margin-top: 10%;
 }
 .left {
   margin-left: 5%;
@@ -460,10 +396,6 @@ p {
         font-size: 18px;
         margin-top: 55%;
       }
-      .general > h1 {
-        font-size: 18px;
-        letter-spacing: 0px;
-      }
       .text-more {
         font-size: 14px;
       }
@@ -471,19 +403,11 @@ p {
         justify-content: center;
         /* width: 50%; */
         height: 100%;
-        margin-top: 20%;
-        margin-left: 25%;
-        margin-right: 0%;
+        margin-top: 10%;
         /* box-sizing: border-box; */
-        padding-top: 5%;
+        /* padding-top: 5%; */
       }
       /* more learn */
-      .card .general .more {
-        position: absolute;
-        bottom: 7.5rem;
-        right: 1.5rem;
-        font-size: 0.9em;
-      }
       .header-plan {
         font-size: 14px;
         margin-top: 10%;
@@ -549,10 +473,6 @@ p {
           font-size: 18px;
           margin-top: 50%;
         }
-        .general > h1 {
-          font-size: 20px;
-          letter-spacing: 0px;
-        }
         .text-more {
           font-size: 14px;
         }
@@ -576,10 +496,6 @@ p {
           margin-top: 10%;
         }
         @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-          .text-p {
-            font-size: 14px;
-            margin-top: 50%;
-          }
           .general > h1 {
             margin-top: -15%;
             font-size: 18px;
@@ -595,20 +511,18 @@ p {
             margin-top: 0%;
             width: 90px;
             height: 90px;
-            z-index: 1001;
-            background-color: #fff;
           }
           .text-span,
           .text-span2 {
-            font-size: 14px;
+            font-size: 12px;
           }
           .text-more {
-            font-size: 12px;
+            font-size: 10px;
           }
           .card .general {
             justify-content: center;
             height: 100%;
-            /* margin-left: 15%; */
+            margin-left: 150px;
             margin-right: 0%;
             padding: 0% auto;
           }
