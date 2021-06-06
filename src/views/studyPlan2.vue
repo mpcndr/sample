@@ -193,7 +193,6 @@ export default {
   },
   data() {
     return {
-      ios: true,
     };
   },
   methods: {
@@ -209,22 +208,29 @@ export default {
           navigator.userAgent.match(/iPhone/i)) ||
         navigator.userAgent.match(/iPod/i)
       ) {
-        console.log("iphone");
+        this.ios = true
+        alert("iphone " + this.ios);
+        return this.ios = true;
       } else if (
         navigator.vendor != null &&
         navigator.vendor.match(/Apple Computer, Inc./) &&
         navigator.userAgent.match(/iPad/i)
       ) {
-        console.log("ipad");
+        this.ios = true
+        alert("ipad " + this.ios);
+        return this.ios;
       } else if (
         navigator.vendor != null &&
         navigator.vendor.match(/Apple Computer, Inc./) &&
         navigator.userAgent.indexOf("Safari") != -1
       ) {
-        console.log("safari");
+        this.ios = true
+        alert("safari " +this.ios);
+        return this.ios;
       } else if (navigator.vendor == null || navigator.vendor != null) {
-        console.log("com");
         this.ios = false
+        console.log("com" + this.ios);
+        return this.ios;
       }
     },
   },
