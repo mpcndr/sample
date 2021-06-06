@@ -549,7 +549,7 @@ p {
           .card .general {
             justify-content: center;
             height: 100%;
-            margin-left: 20 0px;
+            margin-left: 200px;
             margin-right: 0%;
             padding: 0% auto;
           }
