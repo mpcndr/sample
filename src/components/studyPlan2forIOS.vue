@@ -23,65 +23,64 @@
         </div>
       </div>
       <div class="general">
-          <div class="more-info row">
-        <div class="col-6">
-          <div class="split left">
-            <div>
-              <img
-                class="png-plan"
-                height="100px"
-                width="100px"
-                src="../assets/moodboard (1).png"
-              />
-            </div>
-            <div class="text-centered-left">
-              <h2 style="color: #000" class="header-plan">
-                ให้เราวางแผน <br />การลงทะเบียนให้สิ!
-              </h2>
-              <p></p>
-              <a href="/subject_cal">
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  v-on:click="sendCheck(1)"
+        <div class="more-info row">
+          <div class="col-6">
+            <div class="split left">
+              <div>
+                <img
+                  class="png-plan"
+                  height="100px"
+                  width="100px"
+                  src="../assets/moodboard (1).png"
+                />
+              </div>
+              <div class="text-centered-left">
+                <h2 style="color: #000" class="header-plan">
+                  ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                </h2>
+                <p></p>
+                <a href="/subject_cal">
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    v-on:click="sendCheck(1)"
+                  >
+                    วางแผนการเรียน
+                  </button></a
                 >
-                  วางแผนการเรียน
-                </button></a
-              >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-6">
-          <div class="split right">
-            <div>
-              <img
-                class="png-plan"
-                height="100px"
-                width="100px"
-                src="../assets/moodboard.png"
-              />
-            </div>
-            <div class="text-centered-left">
-              <h2 style="color: #000" class="header-plan">
-                รายวิชาก่อนหน้า <br />
-                และวิชาถัดไป
-              </h2>
-              <p></p>
-              <a href="/dataSubjectdiagram">
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  v-on:click="sendCheck(1)"
+          <div class="col-6">
+            <div class="split right">
+              <div>
+                <img
+                  class="png-plan"
+                  height="100px"
+                  width="100px"
+                  src="../assets/moodboard.png"
+                />
+              </div>
+              <div class="text-centered-left">
+                <h2 style="color: #000" class="header-plan">
+                  รายวิชาก่อนหน้า <br />
+                  และวิชาถัดไป
+                </h2>
+                <p></p>
+                <a href="/dataSubjectdiagram">
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    v-on:click="sendCheck(1)"
+                  >
+                    ดูรายวิชาและตัวถัดไป
+                  </button></a
                 >
-                  ดูรายวิชาและตัวถัดไป
-                </button></a
-              >
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      
     </div>
     <div class="card green">
       <div class="additional">
@@ -106,10 +105,7 @@
           <div class="col-6">
             <div class="split left">
               <div class="col-12">
-                <img
-                  class="png-plan"
-                  src="../assets/think.png"
-                />
+                <img class="png-plan" src="../assets/think.png" />
               </div>
               <div class="text-centered-left col-12">
                 <h2 class="header-plan">
@@ -251,12 +247,12 @@
 
 .card .general {
   justify-content: center;
-  /* width: 50%; */
+  width: 50%;
   height: 100%;
   position: absolute;
-  /* margin-left: 40%; */
-  /* box-sizing: border-box; */
-  padding: 3rem;
+  margin-left: 40%;
+  box-sizing: border-box;
+  padding: 0;
 }
 p {
   font-size: 20px;
@@ -285,7 +281,7 @@ p {
 @media screen and (max-width: 1024px) {
   .card .additional {
     position: absolute;
-    width: 250px;
+    width: 280px;
     height: 100%;
     background: linear-gradient(#de685e, #ee786e);
     transition: width 0.4s;
@@ -293,19 +289,31 @@ p {
     z-index: 2;
   }
   .card .additional .user-card {
-    width: 260px;
+    width: 290px;
     height: 100%;
     position: relative;
     float: left;
   }
+  .card .additional .user-card::after {
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -8px;
+    height: 80%;
+    border-left: 2px solid #dbd2d2;
+  }
   .img-center {
     margin-top: 0%;
-    width: 150px;
-    height: 150px;
+    width: 95px;
+    height: 95px;
   }
   .text-p {
     font-size: 24px;
     margin-top: 15%;
+  }
+  .text-more {
+    font-size: 18px;
+    padding: 5px;
   }
   .png-plan {
     margin-top: 10%;
@@ -314,6 +322,10 @@ p {
   }
   .btn {
     font-size: 20px;
+  }
+  .general {
+    margin-left: 35%;
+    margin-top: 5%;
   }
   @media screen and (max-width: 540px) {
     .card .additional {
@@ -496,6 +508,21 @@ p {
           margin-top: 10%;
         }
         @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+          .card .additional {
+            position: absolute;
+            width: 160px;
+            height: 100%;
+            background: linear-gradient(#de685e, #ee786e);
+            transition: width 0.4s;
+            overflow: hidden;
+            z-index: 2;
+          }
+          .card .additional .user-card {
+            width: 170px;
+            height: 100%;
+            position: relative;
+            float: left;
+          }
           .general > h1 {
             margin-top: -15%;
             font-size: 18px;
@@ -517,12 +544,12 @@ p {
             font-size: 12px;
           }
           .text-more {
-            font-size: 10px;
+            font-size: 8px;
           }
           .card .general {
             justify-content: center;
             height: 100%;
-            margin-left: 150px;
+            margin-left: 20 0px;
             margin-right: 0%;
             padding: 0% auto;
           }

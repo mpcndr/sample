@@ -209,7 +209,7 @@ export default {
         navigator.userAgent.match(/iPod/i)
       ) {
         this.ios = true
-        alert("iphone " + this.ios);
+        // alert("iphone " + this.ios);
         return this.ios = true;
       } else if (
         navigator.vendor != null &&
@@ -217,7 +217,7 @@ export default {
         navigator.userAgent.match(/iPad/i)
       ) {
         this.ios = true
-        alert("ipad " + this.ios);
+        // alert("ipad " + this.ios);
         return this.ios;
       } else if (
         navigator.vendor != null &&
@@ -225,7 +225,7 @@ export default {
         navigator.userAgent.indexOf("Safari") != -1
       ) {
         this.ios = true
-        alert("safari " +this.ios);
+        // alert("safari " +this.ios);
         return this.ios;
       } else if (navigator.vendor == null || navigator.vendor != null) {
         this.ios = false
