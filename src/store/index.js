@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    api : "https://api.regguide.me",
+    api : "https://api.regguide.me/",
     login : localStorage.getItem('login')||"",
     session_status : localStorage.getItem('session')||"",
     token : localStorage.getItem('token')||"",

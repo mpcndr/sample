@@ -6,12 +6,19 @@
 
 <script>
 // @ is an alias to /src
-import Calendar from '@/components/HelloWorld.vue'
+import Calendar from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    Calendar
+    Calendar,
+  },
+};
+</script>
+<style scoped>
+@media (max-width: 1200px) {
+  * {
+    zoom: 0.95;
   }
 }
-</script>
+</style>

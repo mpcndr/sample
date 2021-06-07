@@ -193,6 +193,11 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 1200px) {
+  *{
+    zoom: 0.95;
+  }
+}
 .profile {
   margin: 50px 0;
   background-color: #e6e6fa;

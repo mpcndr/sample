@@ -281,13 +281,8 @@ export default {
 </script>
 
 <style scoped>
-#mySubcal {
-  position: fixed;
-  z-index: -1;
-}
 #ac-wrapper {
   position: fixed;
-
   z-index: 1;
 }
 .button-right {
@@ -299,18 +294,4 @@ export default {
   position: fixed;
   margin: 4% 10%;
 }
-/* a.carousel-control-prev {
-  height: 50px;
-  width: 50px;
-  background-color: #000;
-  margin-top: 20%;
-  margin-left: -4%;
-} */
-/* a.carousel-control-next {
-  height: 50px;
-  width: 50px;
-  background-color: #000;
-  margin-top: 20%;
-  margin-right: -4%;
-} */
 </style>
