@@ -1,102 +1,149 @@
 <template>
-  <div class="center">
-    <div class="card">
-      <div class="additional">
-        <div class="user-card">
-          <div>
-            <img
-              class="img-center"
-              width="200"
-              height="200"
-              src="../assets/online-education.png"
-            />
-          </div>
-          <div></div>
-        </div>
-        <div class="more-info row">
-          <div class="col-6">
-            <div class="split left">
-              <div class="col-12">
+  <div>
+    <div v-if="checkDesktop()">
+      <studyPlan1ios/>
+    </div>
+    <div v-else>
+      <div class="center">
+        <div class="card">
+          <div class="additional">
+            <div class="user-card">
+              <div>
                 <img
-                  class="img-plan"
-                  height="200px"
-                  width="200px"
-                  src="../assets/think.png"
+                  class="img-center"
+                  width="200"
+                  height="200"
+                  src="../assets/online-education.png"
                 />
               </div>
-              <div class="text-centered-left col-12">
-                <h2 class="text-head" style="color: #6F4E37">
-                  ให้เราวางแผน <br />การลงทะเบียนให้สิ!
-                </h2>
-                <p></p>
-                <a href="/subject_cal">
-                  <button
-                    type="button"
-                    class="btn btn-dark"
-                    v-on:click="sendCheck(1)"
-                  >
-                    วางแผนการเรียน
-                  </button></a
-                >
+              <div></div>
+            </div>
+            <div class="more-info row">
+              <div class="col-6">
+                <div class="split left">
+                  <div class="col-12">
+                    <img
+                      class="img-plan"
+                      height="200px"
+                      width="200px"
+                      src="../assets/think.png"
+                    />
+                  </div>
+                  <div class="text-centered-left col-12">
+                    <h2 class="text-head" style="color: #6F4E37">
+                      ให้เราวางแผน <br />การลงทะเบียนให้สิ!
+                    </h2>
+                    <p></p>
+                    <a href="/subject_cal">
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        v-on:click="sendCheck(1)"
+                      >
+                        วางแผนการเรียน
+                      </button></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="split right">
+                  <div class="col-12">
+                    <img
+                      class="img-plan"
+                      height="200px"
+                      width="200px"
+                      src="../assets/project-plan.png"
+                    />
+                  </div>
+                  <div class="text-centered-left col-12">
+                    <h2 class="text-head" style="color: #6F4E37">
+                      รายวิชาก่อนหน้า <br />
+                      และวิชาถัดไป
+                    </h2>
+                    <p></p>
+                    <a href="/dataSubjectdiagram">
+                      <button
+                        type="button"
+                        class="btn btn-dark"
+                        v-on:click="sendCheck(1)"
+                      >
+                        ดูรายวิชาและตัวถัดไป
+                      </button></a
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="split right">
-              <div class="col-12">
-                <img
-                  class="img-plan"
-                  height="200px"
-                  width="200px"
-                  src="../assets/project-plan.png"
-                />
-              </div>
-              <div class="text-centered-left col-12">
-                <h2 class="text-head" style="color: #6F4E37">
-                  รายวิชาก่อนหน้า <br />
-                  และวิชาถัดไป
-                </h2>
-                <p></p>
-                <a href="/dataSubjectdiagram">
-                  <button
-                    type="button"
-                    class="btn btn-dark"
-                    v-on:click="sendCheck(1)"
-                  >
-                    ดูรายวิชาและตัวถัดไป
-                  </button></a
-                >
-              </div>
-            </div>
+          <div class="general">
+            <h1>การวางแผนการลงทะเบียน<br />กับรายวิชาก่อนหน้าและวิชาถัดไป</h1>
+            <h4 class="text-span">"ช่วยอะไรได้บ้าง?"</h4>
+            <p class="text-more">
+              ในส่วนนี้จะนำรายวิชาที่นักศึกษาได้ลงทะเบียนมาก่อนแล้ว
+              มาช่วยวางแผนและแนะนำในการลงทะเบียนในเทอมปัจจุบันจนจบหลักสูตร
+            </p>
+            <p class="text-more">
+              <span class="text-danger">ข้อชี้แนะ!</span>
+              จะแสดงเฉพาะรายวิชาหลักทั้งหมดเท่านั้น
+              ยังไม่รวมรายวิชาเลือกในหมวดต่างๆ
+              นักศึกษาต้องตัดสินใจเลือกลงทะเบียนเองในแต่ละเทอม
+              โดยดูรายวิชาเลือกได้ในเมนู วิชาเลือก
+              นอกจากนี้การวางแผนการลงทะเบียนยังไม่นำเกรดเฉลี่ยของนักศึกษามาคิดร่วมด้วยการแนะนำแผนการเรียนนี้เป็นการประกอบการตัดสินใจในการลงทะเบียนเท่านั้น
+              นักศึกษาควรพิจารณาก่อนลงทะเบียน
+            </p>
+            <span class="more">นำลูกศรมาวางไว้บนนี้สิ</span>
           </div>
         </div>
-      </div>
-      <div class="general">
-        <h1>การวางแผนการลงทะเบียน<br />กับรายวิชาก่อนหน้าและวิชาถัดไป</h1>
-        <h4 class="text-span">"ช่วยอะไรได้บ้าง?"</h4>
-        <p class="text-more">
-          ในส่วนนี้จะนำรายวิชาที่นักศึกษาได้ลงทะเบียนมาก่อนแล้ว
-          มาช่วยวางแผนและแนะนำในการลงทะเบียนในเทอมปัจจุบันจนจบหลักสูตร
-        </p>
-        <p class="text-more">
-          <span class="text-danger">ข้อชี้แนะ!</span>
-          จะแสดงเฉพาะรายวิชาหลักทั้งหมดเท่านั้น ยังไม่รวมรายวิชาเลือกในหมวดต่างๆ
-          นักศึกษาต้องตัดสินใจเลือกลงทะเบียนเองในแต่ละเทอม
-          โดยดูรายวิชาเลือกได้ในเมนู วิชาเลือก
-          นอกจากนี้การวางแผนการลงทะเบียนยังไม่นำเกรดเฉลี่ยของนักศึกษามาคิดร่วมด้วยการแนะนำแผนการเรียนนี้เป็นการประกอบการตัดสินใจในการลงทะเบียนเท่านั้น
-          นักศึกษาควรพิจารณาก่อนลงทะเบียน
-        </p>
-        <span class="more">นำลูกศรมาวางไว้บนนี้สิ</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import studyPlan1ios from '../components/studyPlan1forIOS'
 export default {
   name: "studyPlan1",
   components: {
+    studyPlan1ios
     // TutorAnimation,
+  },
+  methods: {
+    checkDesktop() {
+      if (
+        (navigator.vendor != null &&
+          navigator.vendor.match(/Apple Computer, Inc./) &&
+          navigator.userAgent.match(/iPhone/i)) ||
+        navigator.userAgent.match(/iPod/i)
+      ) {
+        this.ios = true;
+        // alert("iphone " + this.ios);
+        return (this.ios = true);
+      } else if (
+        navigator.vendor != null &&
+        navigator.vendor.match(/Apple Computer, Inc./) &&
+        navigator.userAgent.match(/iPad/i)
+      ) {
+        this.ios = true;
+        // alert("ipad " + this.ios);
+        return this.ios;
+      } else if (
+        navigator.vendor != null &&
+        navigator.vendor.match(/Apple Computer, Inc./) &&
+        navigator.userAgent.indexOf("Safari") != -1
+      ) {
+        this.ios = true;
+        // alert("safari " +this.ios);
+        return this.ios;
+      } else if (navigator.vendor == null || navigator.vendor != null) {
+        this.ios = false;
+        console.log("com" + this.ios);
+        return this.ios;
+      }
+    },
+  },
+  created() {
+    this.checkDesktop();
   },
 };
 </script>
@@ -104,10 +151,6 @@ export default {
 <style scoped>
 .center {
   justify-content: center;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%; */
-  /* -webkit-transform: translate(-50%, -50%); */
 }
 .img-center {
   margin-top: 55%;
@@ -241,219 +284,5 @@ p {
 }
 p {
   text-indent: 50px;
-}
-
-@media screen and (max-width: 1024px) {
-  .card .additional {
-    /* position: absolute; */
-    width: 350px;
-    height: 100%;
-    background: linear-gradient(#b6d0e2, #c1dcf0);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  .card .additional > div.user-card {
-    width: 370px;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
-  .img-center {
-    width: 180px;
-    height: 180px;
-    margin-top: 150%;
-  }
-  .card .general {
-    justify-content: center;
-    /* width: 50%; */
-    height: 100%;
-    position: absolute;
-    margin-left: 25%;
-    /* box-sizing: border-box; */
-    padding: 5rem;
-    padding-top: 5%;
-  }
-  .text-danger {
-    color: #c41e3a;
-    font-weight: bold;
-    font-size: 18px;
-    text-decoration: underline;
-  }
-  .text-span {
-    color: #e97451;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0px;
-    text-align: left;
-    margin-top: 5%;
-  }
-  .general > h1 {
-    margin-top: 20%;
-    font-size: 24px;
-  }
-  .text-more {
-    font-size: 18px;
-  }
-  p {
-    text-indent: 0px;
-  }
-  .img-plan {
-    margin-top: 80%;
-    width: 200px;
-    height: 200px;
-  }
-  .text-head {
-    margin-top: 5%;
-    font-size: 32px;
-  }
-  .btn {
-    font-size: 24px;
-  }
-  p {
-    text-indent: 50px;
-  }
-  @media screen and (max-width: 548px) {
-    .card .additional {
-      /* position: absolute; */
-      width: 150px;
-      height: 100%;
-      background: linear-gradient(#b6d0e2, #c1dcf0);
-      transition: width 0.4s;
-      overflow: hidden;
-      z-index: 2;
-    }
-    .card .additional > div.user-card {
-      width: 160px;
-      height: 100%;
-      position: relative;
-      float: left;
-    }
-    .img-center {
-      width: 120px;
-      height: 120px;
-      margin-top: 180%;
-    }
-    .card .general {
-      justify-content: center;
-      /* width: 50%; */
-      height: 100%;
-      position: absolute;
-      margin-left: 25%;
-      /* box-sizing: border-box; */
-      padding: 5rem;
-      padding-top: 5%;
-    }
-    .text-danger {
-      color: #c41e3a;
-      font-weight: bold;
-      font-size: 16px;
-      text-decoration: underline;
-    }
-    .text-span {
-      color: #e97451;
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 0px;
-      text-align: left;
-      margin-top: 5%;
-    }
-    .general > h1 {
-      margin-top: 20%;
-      font-size: 18px;
-    }
-    .text-more {
-      font-size: 14px;
-    }
-    p {
-      text-indent: 0px;
-    }
-    .img-plan {
-      margin-top: 150%;
-      width: 120px;
-      height: 120px;
-    }
-    .text-head {
-      margin-top: 10%;
-      font-size: 18px;
-    }
-    .btn {
-      font-size: 14px;
-    }
-    @media screen and (max-width: 375px) {
-      .card .additional {
-        /* position: absolute; */
-        width: 150px;
-        height: 100%;
-        background: linear-gradient(#b6d0e2, #c1dcf0);
-        transition: width 0.4s;
-        overflow: hidden;
-        z-index: 2;
-      }
-      .card .additional > div.user-card {
-        width: 160px;
-        height: 100%;
-        position: relative;
-        float: left;
-      }
-      .img-center {
-        width: 90px;
-        height: 90px;
-        margin-top: 120%;
-      }
-      .card .general {
-        justify-content: center;
-        /* width: 50%; */
-        height: 100%;
-        position: absolute;
-        margin-left: 25%;
-        /* box-sizing: border-box; */
-        padding: 5rem;
-        padding-top: 5%;
-      }
-
-      .card .general .more {
-        position: absolute;
-        bottom: 0.5rem;
-        right: 1rem;
-        font-size: 0.2em;
-      }
-      .text-danger {
-        color: #c41e3a;
-        font-weight: bold;
-        font-size: 12px;
-        text-decoration: underline;
-      }
-      .text-span {
-        color: #e97451;
-        font-size: 12px;
-        font-weight: bold;
-        letter-spacing: 0px;
-        text-align: left;
-        margin-top: 5%;
-      }
-      .general > h1 {
-        font-size: 14px;
-      }
-      .text-more {
-        font-size: 10px;
-      }
-      p {
-        text-indent: 0px;
-      }
-      .img-plan {
-        margin-top: 180%;
-        width: 80px;
-        height: 80px;
-      }
-      .text-head {
-        margin-top: 10%;
-        font-size: 14px;
-      }
-      .btn {
-        font-size: 12px;
-      }
-    }
-  }
 }
 </style>

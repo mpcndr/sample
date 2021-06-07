@@ -27,12 +27,7 @@
           <div class="col-6">
             <div class="split left">
               <div>
-                <img
-                  class="png-plan"
-                  height="100px"
-                  width="100px"
-                  src="../assets/moodboard (1).png"
-                />
+                <img class="png-plan" src="../assets/moodboard (1).png" />
               </div>
               <div class="text-centered-left">
                 <h2 style="color: #000" class="header-plan">
@@ -54,12 +49,7 @@
           <div class="col-6">
             <div class="split right">
               <div>
-                <img
-                  class="png-plan"
-                  height="100px"
-                  width="100px"
-                  src="../assets/moodboard.png"
-                />
+                <img class="png-plan" src="../assets/moodboard.png" />
               </div>
               <div class="text-centered-left">
                 <h2 style="color: #000" class="header-plan">
@@ -195,7 +185,6 @@
   width: 250px;
   height: 100%;
   background: linear-gradient(#de685e, #ee786e);
-  transition: width 0.4s;
   overflow: hidden;
   z-index: 2;
 }
@@ -277,11 +266,19 @@ p {
 /* @media only screen and (min-device-width : 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   
 } */
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
+  .card {
+    margin: 1.5% 5% 1.5% 5%;
+    width: 90%;
+    height: 450px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+  }
   .card .additional {
     position: absolute;
-    width: 280px;
+    width: 340px;
     height: 100%;
     background: linear-gradient(#de685e, #ee786e);
     transition: width 0.4s;
@@ -289,36 +286,28 @@ p {
     z-index: 2;
   }
   .card .additional .user-card {
-    width: 290px;
+    width: 350px;
     height: 100%;
     position: relative;
     float: left;
-  }
-  .card .additional .user-card::after {
-    display: block;
-    position: absolute;
-    top: 10%;
-    right: -8px;
-    height: 80%;
-    border-left: 2px solid #dbd2d2;
   }
   .img-center {
     margin-top: 0%;
     width: 95px;
     height: 95px;
   }
-  .text-p {
-    font-size: 24px;
-    margin-top: 15%;
+  .level-center > p {
+    margin-top: -8%;
+    font-size: 26px;
   }
   .text-more {
-    font-size: 18px;
-    padding: 5px;
+    font-size: 16px;
+    padding: 20px;
   }
   .png-plan {
     margin-top: 10%;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
   .btn {
     font-size: 20px;
@@ -327,10 +316,14 @@ p {
     margin-left: 35%;
     margin-top: 5%;
   }
-  @media screen and (max-width: 540px) {
+  .header-plan {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  @media screen and (max-width: 1024px) {
     .card .additional {
       position: absolute;
-      width: 160px;
+      width: 360px;
       height: 100%;
       background: linear-gradient(#de685e, #ee786e);
       transition: width 0.4s;
@@ -338,45 +331,52 @@ p {
       z-index: 2;
     }
     .card .additional .user-card {
-      width: 170px;
+      width: 370px;
       height: 100%;
       position: relative;
       float: left;
     }
+    .card .additional .user-card::after {
+      display: block;
+      position: absolute;
+      top: 10%;
+      right: -12px;
+      height: 80%;
+      border-left: 2px solid #dbd2d2;
+    }
+    .level-center > p {
+      margin-top: 0%;
+      font-size: 28px;
+    }
     .img-center {
-      margin-top: 10%;
-      width: 110px;
-      height: 110px;
+      margin-top: 0%;
+      width: 95px;
+      height: 95px;
     }
     .text-p {
-      font-size: 22px;
-      margin-top: 40%;
+      font-size: 24px;
+      margin-top: 15%;
+    }
+    .text-more {
+      font-size: 18px;
+      padding: 5px;
     }
     .png-plan {
-      margin-top: 50%;
-      width: 110px;
-      height: 110px;
+      margin-top: 10%;
+      width: 150px;
+      height: 150px;
     }
     .btn {
-      font-size: 18px;
+      font-size: 20px;
     }
-    @media screen and (max-width: 414px) {
-      .card {
-        margin: 1.5% 5% 1.5% 5%;
-        width: 90%;
-        height: 400px;
-        background-color: #fff;
-        background: linear-gradient(#f8f8f8, #fff);
-        box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-        border-radius: 6px;
-      }
-      .text-span,
-      .text-span2 {
-        font-size: 18px;
-      }
+    .general {
+      margin-left: 35%;
+      margin-top: 5%;
+    }
+    @media screen and (max-width: 540px) {
       .card .additional {
         position: absolute;
-        width: 140px;
+        width: 160px;
         height: 100%;
         background: linear-gradient(#de685e, #ee786e);
         transition: width 0.4s;
@@ -384,130 +384,51 @@ p {
         z-index: 2;
       }
       .card .additional .user-card {
-        width: 150px;
+        width: 170px;
         height: 100%;
         position: relative;
         float: left;
       }
-
-      .card .additional .user-card::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 10%;
-        right: -2px;
-        height: 80%;
-        border-left: 2px solid #dbd2d2;
-      }
       .img-center {
         margin-top: 10%;
-        width: 95px;
-        height: 95px;
+        width: 110px;
+        height: 110px;
       }
       .text-p {
-        font-size: 18px;
-        margin-top: 55%;
+        font-size: 22px;
+        margin-top: 40%;
       }
-      .text-more {
-        font-size: 14px;
-      }
-      .card .general {
-        justify-content: center;
-        /* width: 50%; */
-        height: 100%;
-        margin-top: 10%;
-        /* box-sizing: border-box; */
-        /* padding-top: 5%; */
-      }
-      /* more learn */
-      .header-plan {
-        font-size: 14px;
-        margin-top: 10%;
+      .png-plan {
+        margin-top: 50%;
+        width: 110px;
+        height: 110px;
       }
       .btn {
-        font-size: 14px;
+        font-size: 18px;
       }
-      /* img select paln  */
-      .png-plan {
-        margin-top: 70%;
-        width: 90px;
-        height: 90px;
-      }
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 414px) {
         .card {
           margin: 1.5% 5% 1.5% 5%;
           width: 90%;
-          height: 350px;
+          height: 400px;
           background-color: #fff;
           background: linear-gradient(#f8f8f8, #fff);
           box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
           border-radius: 6px;
         }
-        /* .text-span, */
-        .text-span2 {
-          font-size: 18px;
-        }
-        .card .additional {
-          position: absolute;
-          width: 150px;
-          height: 100%;
-          background: linear-gradient(#de685e, #ee786e);
-          transition: width 0.4s;
-          overflow: hidden;
-          z-index: 2;
-        }
-        .card .additional .user-card {
-          width: 160px;
-          height: 100%;
-          position: relative;
-          float: left;
-        }
-        /* line between plan and select plan */
-        .card .additional .user-card::after {
-          display: block;
-          position: absolute;
-          top: 10%;
-          right: -2px;
-          height: 80%;
-          border-left: 2px solid #dbd2d2;
-        }
-        /* แผนการเรียน ก./ข. img */
-        .img-center {
-          margin-top: 25%;
-          width: 75px;
-          height: 75px;
-        }
-        div .level-center {
-          justify-content: center;
-        }
-        /* text plan a./b. */
-        .text-p {
-          font-size: 18px;
-          margin-top: 50%;
-        }
-        .text-more {
-          font-size: 14px;
-        }
         .card .general {
           justify-content: center;
           /* width: 50%; */
           height: 100%;
-          margin-left: 15%;
-          margin-right: 0%;
-          /* box-sizing: border-box; */
+          margin-top: 10%;
+          box-sizing: border-box;
           padding-top: 5%;
-        }
-        .card .general .more {
-          position: absolute;
-          bottom: 6.5rem;
-          right: 1.5rem;
-          font-size: 0.9em;
         }
         .header-plan {
           font-size: 14px;
           margin-top: 10%;
         }
-        @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+        @media only screen and (min-device-width: 414px) and (max-device-height: 896px) {
           .card .additional {
             position: absolute;
             width: 160px;
@@ -543,8 +464,12 @@ p {
           .text-span2 {
             font-size: 12px;
           }
+          .level-center > p {
+              margin-top: 0%;
+              font-size: 20px;
+            }
           .text-more {
-            font-size: 8px;
+            font-size: 10px;
           }
           .card .general {
             justify-content: center;
@@ -555,6 +480,185 @@ p {
           }
           .text-learn {
             padding: 5px;
+          }
+          .btn {
+            font-size: 14px;
+          }
+        }
+        @media screen and (max-width: 375px) {
+          .card {
+            margin: 1.5% 5% 1.5% 5%;
+            width: 90%;
+            height: 320px;
+            background-color: #fff;
+            background: linear-gradient(#f8f8f8, #fff);
+            box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+          }
+          @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            .card .additional {
+              position: absolute;
+              width: 160px;
+              height: 100%;
+              background: linear-gradient(#de685e, #ee786e);
+              transition: width 0.4s;
+              overflow: hidden;
+              z-index: 2;
+            }
+            .card .additional .user-card {
+              width: 170px;
+              height: 100%;
+              position: relative;
+              float: left;
+            }
+            .general > h1 {
+              margin-top: -15%;
+              font-size: 18px;
+              letter-spacing: 0px;
+            }
+            /* แผนการเรียน ก./ข. img */
+            .img-center {
+              margin-top: 0%;
+              width: 75px;
+              height: 75px;
+            }
+            .png-plan {
+              margin-top: 0%;
+              width: 90px;
+              height: 90px;
+            }
+            .level-center > p {
+              margin-top: 0%;
+              font-size: 20px;
+            }
+            .text-span,
+            .text-span2 {
+              font-size: 12px;
+            }
+            .text-more {
+              font-size: 10px;
+            }
+            .card .general {
+              justify-content: center;
+              height: 100%;
+              margin-left: 200px;
+              margin-right: 0%;
+              padding: 0% auto;
+            }
+            .text-learn {
+              padding: 5px;
+            }
+            .btn {
+              font-size: 14px;
+            }
+          }
+          @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 2) {
+            .card {
+              margin: 1.5% 5% 1.5% 5%;
+              width: 90%;
+              height: 370px;
+              background-color: #fff;
+              background: linear-gradient(#f8f8f8, #fff);
+              box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+              border-radius: 6px;
+            }
+            /* แผนการเรียน ก./ข. img */
+            .img-center {
+              margin-top: 0%;
+              width: 75px;
+              height: 75px;
+            }
+            .level-center > p {
+              margin-top: 0%;
+              font-size: 20px;
+            }
+            .png-plan {
+              margin-top: 20%;
+              width: 90px;
+              height: 90px;
+            }
+            .text-span,
+            .text-span2 {
+              font-size: 14px;
+            }
+            .text-more {
+              font-size: 12px;
+            }
+            .card .general {
+              justify-content: center;
+              height: 100%;
+              margin-left: 200px;
+              margin-right: 0%;
+              padding: 0% auto;
+            }
+            .text-learn {
+              padding: 5px;
+            }
+            .btn {
+              font-size: 14px;
+            }
+          }
+          @media screen and (max-width: 320px) {
+            .card {
+              margin: 1.5% 5% 1.5% 5%;
+              width: 90%;
+              height: 300px;
+              background-color: #fff;
+              background: linear-gradient(#f8f8f8, #fff);
+              box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+              border-radius: 6px;
+            }
+            .level-center > p {
+              margin-top: 0%;
+              font-size: 20px;
+            }
+            @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+              .card .additional {
+                position: absolute;
+                width: 160px;
+                height: 100%;
+                background: linear-gradient(#de685e, #ee786e);
+                overflow: hidden;
+                z-index: 2;
+              }
+              .card .additional .user-card {
+                width: 170px;
+                height: 100%;
+                position: relative;
+                float: left;
+              }
+              /* แผนการเรียน ก./ข. img */
+              .img-center {
+                margin-top: -5%;
+                width: 65px;
+                height: 65px;
+              }
+              .png-plan {
+                margin-top: 20%;
+                width: 70px;
+                height: 70px;
+              }
+              .text-span,
+              .text-span2 {
+                font-size: 12px;
+              }
+              .text-more {
+                font-size: 8px;
+              }
+              .card .general {
+                justify-content: center;
+                height: 100%;
+                margin-left: 190px;
+                margin-right: 0%;
+                padding: 0% auto;
+              }
+              .text-learn {
+                padding: 5px;
+              }
+              .btn {
+                font-size: 12px;
+              }
+            }
           }
         }
       }
