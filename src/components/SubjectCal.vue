@@ -284,6 +284,7 @@ export default {
 #mySubcal {
   position: fixed;
   z-index: -1;
+  zoom: unset;
 }
 #ac-wrapper {
   position: fixed;

@@ -240,6 +240,7 @@ export default {
   ul {
     margin-top: 40px;
   }
+
 }@media (max-width: 1200px) {
   *{
     zoom: 0.95;

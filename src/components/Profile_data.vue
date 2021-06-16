@@ -85,13 +85,21 @@ export default {
       students: [],
     };
   },
+  // สร้างหน้าให้ทำอะไร
   created() {
+    // post => send token in the link v
     Axios.post(this.$store.getters.getApi + "api/getinfostudent/", {
+      // token = key, this.$store.getters.getToken = value
       token: this.$store.getters.getToken,
     }).then((res1) => {
+      // หลังจากเสร็จข้างบนแล้ว เราเอาข้อมูล res ไปทำอะไร ใส่ตัวแปรอะไร
       this.students = res1.data.student[0];
     });
   },
+  // ทำทุกครั้งที่มีการเรียกใช้
+  mounted() {
+
+  }
 };
 </script>
 

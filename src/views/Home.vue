@@ -57,8 +57,7 @@
     <CalendarHome />
 
     <NewsEvent />
-    ------------------
-    <a href="/test1">click</a>
+
   </div>
 </template>
 
@@ -76,6 +75,32 @@ export default {
 };
 </script>
 <style scoped>
+
+.carousel-control-prev {
+  width: 40px;
+  margin-left: 25px;
+}
+
+.carousel-control-prev-icon {
+  width: 50px;
+  height: 50px;
+  padding-left: 0px;
+  background-color: black;
+  color: black;
+}
+
+.carousel-control-next {
+  width: 40px;
+  margin-right: 25px;
+}
+
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  background-color: black;
+  color: black;
+}
 .carousel-item {
   /* width: 100%; */
   height: 93vh;
