@@ -1,119 +1,122 @@
 <template>
-  <div id="app">
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container">
-        <a class="navbar-brand" id="logo-text">regGuide</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          aria-controls="#navbarResponsive"
-        >
-          <a id="icon-menu" href="javascript:void(0)" aria-hidden="true"
-            ><i class="fa fa-bars" aria-hidden="true"></i
-          ></a>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul id="ul-underline" class="navbar-nav ml-auto">
-            <router-link
-              to="/"
-              id="text-underline"
-              class="nav-link"
-              active-class
-              >หน้าแรก</router-link
-            >
-            <router-link
-              to="/newsAll"
-              id="text-underline"
-              class="nav-link"
-              active-class
-              >ข่าวสาร</router-link
-            >
-
-            <router-link
-              v-if="this.$store.getters.getLogin === 'true'"
-              to="/about_subject"
-              id="text-underline"
-              class="nav-link"
-              active-class
-              >วิชาเลือก</router-link
-            >
-            <div v-if="this.$store.getters.getDepartment === 'วิทยาการข้อมูล'">
+  <div>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+          <a class="navbar-brand" id="logo-text">regGuide</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            aria-controls="#navbarResponsive"
+          >
+            <a id="icon-menu" href="javascript:void(0)" aria-hidden="true"
+              ><i class="fa fa-bars" aria-hidden="true"></i
+            ></a>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul id="ul-underline" class="navbar-nav ml-auto">
               <router-link
-                v-if="this.$store.getters.getLogin === 'true'"
-                to="/studyplandatasci"
+                to="/"
                 id="text-underline"
                 class="nav-link"
                 active-class
-                >วางแผนหลักสูตร</router-link
+                >หน้าแรก</router-link
               >
-            </div>
-            <div v-else>
               <router-link
-                v-if="this.$store.getters.getLogin === 'true'"
-                to="/studyplancomit"
+                to="/newsAll"
                 id="text-underline"
                 class="nav-link"
                 active-class
-                >วางแผนหลักสูตร</router-link
+                >ข่าวสาร</router-link
               >
-            </div>
 
-            <div v-if="this.$store.getters.getLogin === 'true'">
-              <div class="dropdown show">
-                <a
-                  class="btn btn-danger dropdown-toggle"
-                  href="#"
-                  role="button"
-                  id="dropdownMenuLink"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+              <router-link
+                v-if="this.$store.getters.getLogin === 'true'"
+                to="/about_subject"
+                id="text-underline"
+                class="nav-link"
+                active-class
+                >วิชาเลือก</router-link
+              >
+              <div
+                v-if="this.$store.getters.getDepartment === 'วิทยาการข้อมูล'"
+              >
+                <router-link
+                  v-if="this.$store.getters.getLogin === 'true'"
+                  to="/studyplandatasci"
+                  id="text-underline"
+                  class="nav-link"
+                  active-class
+                  >วางแผนหลักสูตร</router-link
                 >
-                  {{ this.username }}
-                </a>
+              </div>
+              <div v-else>
+                <router-link
+                  v-if="this.$store.getters.getLogin === 'true'"
+                  to="/studyplancomit"
+                  id="text-underline"
+                  class="nav-link"
+                  active-class
+                  >วางแผนหลักสูตร</router-link
+                >
+              </div>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <div>
-                    <router-link
-                      to="/profile"
+              <div v-if="this.$store.getters.getLogin === 'true'">
+                <div class="dropdown show">
+                  <a
+                    class="btn btn-danger dropdown-toggle"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ this.username }}
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <div>
+                      <router-link
+                        to="/profile"
+                        id="text-underline"
+                        class="nav-link"
+                        active-class
+                        >ข้อมูลส่วนตัว</router-link
+                      >
+                    </div>
+
+                    <div
+                      @click="logOut()"
                       id="text-underline"
                       class="nav-link"
-                      active-class
-                      >ข้อมูลส่วนตัว</router-link
+                      style="cursor: pointer;"
                     >
-                  </div>
-
-                  <div
-                    @click="logOut()"
-                    id="text-underline"
-                    class="nav-link"
-                    style="cursor: pointer;"
-                  >
-                    ออกจากระบบ
+                      ออกจากระบบ
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div v-else>
-              <div
-                @click="Login()"
-                id="text-underline"
-                class="nav-link"
-                style="cursor: pointer;"
-              >
-                เข้าสู่ระบบ
+              <div v-else>
+                <div
+                  @click="Login()"
+                  id="text-underline"
+                  class="nav-link"
+                  style="cursor: pointer;"
+                >
+                  เข้าสู่ระบบ
+                </div>
               </div>
-            </div>
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    
-    <router-view />
+      </nav>
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -174,7 +177,7 @@ export default {
               token: this.$store.getters.getToken,
             }).then((res1) => {
               this.username = res1.data.name;
-              this.$store.dispatch("setDepartment", res1.data.choose)
+              this.$store.dispatch("setDepartment", res1.data.choose);
               console.log(this.$store.getters.getDepartment);
             });
           }
@@ -240,9 +243,9 @@ export default {
   ul {
     margin-top: 40px;
   }
-
-}@media (max-width: 1200px) {
-  *{
+}
+@media (max-width: 1200px) {
+  * {
     zoom: 0.95;
   }
 }
